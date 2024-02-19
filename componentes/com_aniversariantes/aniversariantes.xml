@@ -8,7 +8,7 @@
     <authorEmail>lucas.lima.rk@gmail.com</authorEmail>
     <authorUrl>http://github.com/astatonn</authorUrl>
     <version>CVS: 1.0.0</version>
-    <description>COM_ANIVERSARIANTES_XML_DESCRIPTION</description>
+    <description>Gerenciamento de aniversariantes do mês</description>
     <namespace path="src">Astatonn\Component\Aniversariantes</namespace>
     
     
