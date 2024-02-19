@@ -1,12 +1,22 @@
-<div align='center'>
-<img src='imagens/header.jpg' alt='Apoie este trabalho' style='width:100%' >
-</div>
-
-# Template Padrão Digital de Governo para Joomla! (govbr-ds-joomla)
+# Template Padrão Digital de Governo para Joomla Exército Brasileiro!
 Template para o gerenciador de conteudos Joomla! baseado no Padrão Digital de Governo instituido pela [Portaria Nº 540, de 8 de setembro de 2020 - Secretaria de Governo/Presidência da República](https://www.in.gov.br/en/web/dou/-/portaria-n-540-de-8-de-setembro-de-2020-276907456).
 
 ## Sobre o template
-Este template foi criado a partir das especificações disponíveis em https://www.gov.br/ds/, tendo em vista a compatibilidade com a atual versão do Joomla! (4.3.2, neste momento)
+Este template foi criado a partir das especificações disponíveis em https://www.gov.br/ds/, tendo em vista a compatibilidade com a atual versão do Joomla! (5.0.2, neste momento)
+
+## Requerimentos
+### Software
+- PhP 8.1.0 ou superior
+
+### Databases
+- MySQL 8.9.13 ou superior
+- MariaDB 10.4.0 ou superior
+- PostgreSQL 12.0 ou superior
+
+### Web Server
+- Apache 2.4
+- Nginx 1.21 ou superior
+- Microsoft IIS 10
 
 ## Elementos implementados
 
