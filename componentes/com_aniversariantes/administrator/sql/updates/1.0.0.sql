@@ -1,0 +1,1 @@
+/* Only premium users are allowed to update a component */

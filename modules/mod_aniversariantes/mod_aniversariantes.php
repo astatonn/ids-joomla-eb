@@ -1,0 +1,43 @@
+<?php
+defined('_JEXEC') or die;
+
+
+$model = new Astatonn\Component\Aniversariantes\Site\Model\AniversariantesModel();
+$items = $model->getItemsWithNextBirthdays();
+
+function getBirthdayEmoji($aniversario)
+{
+    $dataAtual = date('Y-m-d');
+
+    if ($aniversario == $dataAtual) {
+        return "🎉"; 
+        return "";
+    }
+}
+
+?>
+
+<div class="container">
+    <!-- HEADER  -->
+
+    <div class="autofit-float autofit-row portlet-header">
+        <div class="autofit-col autofit-col-expand">
+            <div class="portlet-title-text">
+                Aniversariantes
+            </div>
+        </div>
+    </div>
+
+    <div class="birthdays-container">
+        <div class="birthdays-col">
+            <div class="birthday-content">
+                <?php foreach ($items as $item) : ?>
+                    <?php $emoji = getBirthdayEmoji($item->aniversario); ?>
+                    <div class='birthday-data'>
+                        <?php echo $item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</div>

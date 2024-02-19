@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field name="search" type="text" description="COM_ANIVERSARIANTES_SEARCH_FILTER_SUBMIT"
+               label="COM_USERS_FILTER_SEARCH_DESC"
+               class="js-stools-search-string" />
+
+        <field name="state"
+               type="status"
+               label="COM_ANIVERSARIANTES_FILTER_STATE"
+               description="COM_ANIVERSARIANTES_FILTER_STATE_DESC"
+               onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        
+
+    </fields>
+
+    <fields name="list">
+
+        <field name="fullordering"
+               type="list"
+               label="COM_ANIVERSARIANTES_LIST_FULL_ORDERING"
+               description="COM_ANIVERSARIANTES_LIST_FULL_ORDERING_DESC"
+               onchange="this.form.submit();"
+               default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.id ASC">COM_ANIVERSARIANTES_ID_ASC</option><option value="a.id DESC">COM_ANIVERSARIANTES_ID_DESC</option><option value="a.nome ASC">COM_ANIVERSARIANTES_NOME_ASC</option><option value="a.nome DESC">COM_ANIVERSARIANTES_NOME_DESC</option><option value="a.aniversario ASC">COM_ANIVERSARIANTES_ANIVERSARIO_ASC</option><option value="a.aniversario DESC">COM_ANIVERSARIANTES_ANIVERSARIO_DESC</option><option value="a.pg ASC">COM_ANIVERSARIANTES_PG_ASC</option><option value="a.pg DESC">COM_ANIVERSARIANTES_PG_DESC</option>
+
+        </field>
+
+       <field name="limit"
+               type="limitbox"
+               label="COM_ANIVERSARIANTES_LIST_LIMIT"
+               description="COM_ANIVERSARIANTES_LIST_LIMIT_DESC"
+               class="input-mini"
+               default="25"
+               onchange="this.form.submit();"
+        />
+
+    </fields>
+
+</form>

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_aniversariantes",
+  "version": "CVS: 1.0.0",
+  "license": "GNU General Public License version 2 or later; see LICENSE.txt",
+  "assets": [
+    {
+      "name": "com_aniversariantes.admin",
+      "type": "style",
+      "uri": "com_aniversariantes/admin.css"
+    },
+    {
+      "name": "com_aniversariantes.admin",
+      "type": "script",
+      "uri": "com_aniversariantes/admin.js",
+      "dependencies": [
+        "jquery"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+        "name": "com_aniversariantes.list",
+        "type": "style",
+        "uri": "com_aniversariantes/list.css"
+    }
+  ]
+}

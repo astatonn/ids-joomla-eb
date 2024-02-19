@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form addfieldprefix="Astatonn\Component\Aniversariantes\Administrator\Field">
+  <fieldset>
+    <field name="id" type="text" readonly="true" class="readonly" default="0" description="JGLOBAL_FIELD_ID_DESC"/>
+    <field name="nome" filter="safehtml" type="text" required="true" label="COM_ANIVERSARIANTES_FORM_LBL_ANIVERSARIANTE_NOME" description="COM_ANIVERSARIANTES_FORM_DESC_ANIVERSARIANTE_NOME" hint="COM_ANIVERSARIANTES_FORM_LBL_ANIVERSARIANTE_NOME"/>
+    <field name="aniversario" type="calendar" class="inputbox" filter="safehtml" required="true" label="COM_ANIVERSARIANTES_FORM_LBL_ANIVERSARIANTE_ANIVERSARIO" description="COM_ANIVERSARIANTES_FORM_DESC_ANIVERSARIANTE_ANIVERSARIO" hint="COM_ANIVERSARIANTES_FORM_LBL_ANIVERSARIANTE_ANIVERSARIO"/>
+    <field name="pg" filter="safehtml" type="list" required="true" label="COM_ANIVERSARIANTES_FORM_LBL_ANIVERSARIANTE_PG" description="COM_ANIVERSARIANTES_FORM_DESC_ANIVERSARIANTE_PG" hint="COM_ANIVERSARIANTES_FORM_LBL_ANIVERSARIANTE_PG">
+      <option value="Gen Ex">Gen Ex</option>
+      <option value="Gen Div">Gen Div</option>
+      <option value="Gen Bda">Gen Bda</option>
+      <option value="Cel">Cel</option>
+      <option value="TC">TC</option>
+      <option value="Maj">Maj</option>
+      <option value="Cap">Cap</option>
+      <option value="1º Ten">1º Ten</option>
+      <option value="2º Ten">2º Ten</option>
+      <option value="Asp Of">Asp Of</option>
+      <option value="ST">ST</option>
+      <option value="1º Sgt">1º Sgt</option>
+      <option value="2º Sgt">2º Sgt</option>
+      <option value="3º Sgt">3º Sgt</option>
+      <option value="Cb">Cb</option>
+      <option value="Sd EP">Sd EP</option>
+      <option value="Sd Ev">Sd Ev</option>
+      <option value="Al">Al</option>
+      <option value="Cad">Cad</option>
+    </field>
+    <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" description="JGLOBAL_FIELD_VERSION_NOTE_DESC" class="inputbox" size="45" labelclass="control-label"/>
+  </fieldset>
+
+
+</form>

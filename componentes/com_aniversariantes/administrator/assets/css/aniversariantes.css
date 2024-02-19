@@ -1,0 +1,18 @@
+.icon-48-aniversariantes {
+      background-image: url(../images/l_aniversariantes.png);
+      padding-left:60px!important;
+}
+
+.icon-48-aniversariante {
+      background-image: url(../images/l_aniversariantes.png);
+      padding-left:60px!important;
+}
+
+.color-box-aniversariantes { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}
