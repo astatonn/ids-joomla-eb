@@ -15,6 +15,7 @@ Componentes:
 * com_content.category: Visualização estilo _blog_ para categorias
 * com_finder.search: Visualização de resultados de busca
 * com_tags.tag: Visualização de lista de artigos com a _tag_ específica
+* com_aniversariantes: Responsável por gerenciar o conteúdo de aniversariantes do mês a ser apresentado no módulo mod_aniversariantes
 
 Módulos:
 * mod_articles_latest: Visualização de artigos em texto (Últimas Notícias)
@@ -23,6 +24,8 @@ Módulos:
 * mod_breadcrumbs: Visualização da trilha de navegação
 * mod_finder: Visualização do formulário de busca
 * mod_menu: Visualizações de menus em _layouts_ diversos: Acesso Rápido, Cards, Mapa do Site, Menu Principal, Menu Principal (Área de Links) e Menu Principal (Área de Logos)
+* mod_links: Cria uma seção com apontamentos para links e título personalizado
+* mod_aniversariantes: Responsável por apresentar as informações do componente aniversariantes do mês
 
 Layouts:
 * joomla.pagination: Paginação utilizada para navegar em listas de itens
