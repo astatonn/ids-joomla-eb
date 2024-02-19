@@ -1,3 +1,7 @@
+<div align='center'>
+<img src='imagens/header.jpg' alt='Apoie este trabalho' style='width:100%' >
+</div>
+
 # Template Padrão Digital de Governo para Joomla! (govbr-ds-joomla)
 Template para o gerenciador de conteudos Joomla! baseado no Padrão Digital de Governo instituido pela [Portaria Nº 540, de 8 de setembro de 2020 - Secretaria de Governo/Presidência da República](https://www.in.gov.br/en/web/dou/-/portaria-n-540-de-8-de-setembro-de-2020-276907456).
 
@@ -69,19 +73,34 @@ Parâmetros de estilo configurados na área "Avançado" do tema:
 Este template está atualmente em uso em alguns dos sites listados abaixo:
 
 ## Instalação
-- Baixe este projeto em formato .zip pela interface ou no terminal através do comando
-``` curl "https://github.com/astatonn/ids-joomla-eb/archive/refs/heads/master.zip" ```
-Extraia os arquivos na pasta que desejar.
-Ván no painel de administrador do Joomla em sistema -> extensões -> instalar extensões e selecione o caminho até o arquivo .zip
-- Após isso,  vá no mesmo caminho (sistema -> extensões -> instalar extensões) e escolha a opção Instalar de pasta (Install from Folder) e cole o caminho referente ao local de onde você extraiu o projeto para cada um dos componentes e módulos
+### Baixe e Extraia o Projeto:
 
-Exemplo
+- Baixe este projeto em formato .zip pela interface ou no terminal através do comando:
+``` curl -LJO "https://github.com/astatonn/ids-joomla-eb/archive/refs/heads/master.zip" ```
 
-/home/usuario/documentos/ids-joomla-eb/*componentes/com_aniversariantes*
-/home/usuario/documentos/ids-joomla-eb/*modules/mod_aniversariantes*
-/home/usuario/documentos/ids-joomla-eb/*modules/mod_links*
+- Extraia os arquivos na pasta de sua escolha.
 
-Utilize a funcionalidade para [baixar o código em formato zip](https://github.com/marceloalencar/govbr-ds-joomla/archive/refs/heads/master.zip) para obter a versão em desenvolvimento.
+### Instale o template
+- Acesse o painel de administrador do Joomla.
+- Navegue até "Sistema" -> "Extensões" -> "Gerenciar" -> "Instalar".
+- Selecione o arquivo .zip que você baixou e clique em "Enviar Arquivo e Instalar".
+
+### Instale os Componentes e Módulos Individualmente
+- Ainda em "Sistema" -> "Extensões" -> "Gerenciar" -> "Instalar", escolha a opção "Instalar de Pasta" (Install from Folder).
+- Cole o caminho referente ao local onde você extraiu o projeto para cada um dos componentes e módulos.
+
+#### Exemplo
+- Para o componente com_aniversariantes:
+```/caminho/para/a/pasta/ids-joomla-eb/componentes/com_aniversariantes```
+
+- Para o módulo mod_aniversariantes:
+```/caminho/para/a/pasta/ids-joomla-eb/modules/mod_aniversariantes```
+
+- Para o módulo mod_links:
+```/caminho/para/a/pasta/ids-joomla-eb/modules/mod_links```
+
+*Certifique-se de substituir "/caminho/para/a/pasta" pelo caminho correto onde você extraiu os arquivos do projeto.*
+
 
 ## Contribuições
 Este espaço está aberto a contribuições da comunidade. Sinta-se livre para enviar _pull requests_ ou relatar falhas ou sugestões.
