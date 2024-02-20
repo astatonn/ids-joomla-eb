@@ -24,7 +24,7 @@ function getBirthdayEmoji($aniversario)
         <div class="autofit-col autofit-col-expand">
             <div class="portlet-title-text">
                 Aniversariantes
-            </div>
+                </div>
         </div>
     </div>
 

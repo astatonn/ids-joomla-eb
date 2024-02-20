@@ -8,6 +8,20 @@ use Joomla\CMS\Uri\Uri;
 $app = Factory::getApplication();
 $wa  = $this->getWebAssetManager();
 
+$model = new Astatonn\Component\Aniversariantes\Site\Model\AniversariantesModel();
+$items = $model->getItemsWithNextBirthdays();
+
+function getBirthdayEmoji($aniversario)
+{
+    $dataAtual = date('Y-m-d');
+
+    if ($aniversario == $dataAtual) {
+        return "🎉";
+        return "";
+    }
+}
+
+
 $wa->registerAndUseStyle('font-rawline', 'https://fonts.cdnfonts.com/css/rawline');
 $wa->registerAndUseStyle('dsgov-core-css', 'media/templates/site/govbr-ds/css/core.css');
 $wa->registerAndUseStyle('fontawesome-all', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
@@ -243,6 +257,31 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                             <jdoc:include type="component" />
                             <jdoc:include type="modules" name="content-bottom" />
                         </div>
+
+                        <div class="container">
+
+                            <div class="autofit-float autofit-row portlet-header">
+                                <div class="autofit-col autofit-col-expand">
+                                    <div class="portlet-title-text">
+                                        Aniversariantes
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="birthdays-container">
+                                <div class="birthdays-col">
+                                    <div class="birthday-content">
+                                        <?php foreach ($items as $item) : ?>
+                                            <?php $emoji = getBirthdayEmoji($item->aniversario); ?>
+                                            <div class='birthday-data'>
+                                                <?php echo $item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <?php if ($this->params->get('componente_atendimentocidadao', '1')) : ?>
                             <?php if ($app->getMenu()->getActive() == $app->getMenu()->getDefault()) : ?>
                                 <div id="ouvidoria-acessoinformacao">
