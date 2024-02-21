@@ -1,14 +1,18 @@
 <?php
 
+$model = new Astatonn\Component\Aniversariantes\Site\Model\AniversariantesModel();
+$items = $model->getItemsWithNextBirthdays();
+
 function getBirthdayEmoji($aniversario)
 {
     $dataAtual = date('Y-m-d');
 
     if ($aniversario == $dataAtual) {
-        return "🎉"; 
+        return "🎉";
         return "";
     }
 }
+
 
 ?>
 
@@ -29,7 +33,7 @@ function getBirthdayEmoji($aniversario)
                 <?php foreach ($items as $item) : ?>
                     <?php $emoji = getBirthdayEmoji($item->aniversario); ?>
                     <div class='birthday-data'>
-                        <?php echo $item->postogradu .' '.$item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
+                        <?php echo $item->pg .' '.$item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
                     </div>
                 <?php endforeach; ?>
             </div>

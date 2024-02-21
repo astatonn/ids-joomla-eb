@@ -8,18 +8,6 @@ use Joomla\CMS\Uri\Uri;
 $app = Factory::getApplication();
 $wa  = $this->getWebAssetManager();
 
-$model = new Astatonn\Component\Aniversariantes\Site\Model\AniversariantesModel();
-$items = $model->getItemsWithNextBirthdays();
-
-function getBirthdayEmoji($aniversario)
-{
-    $dataAtual = date('Y-m-d');
-
-    if ($aniversario == $dataAtual) {
-        return "🎉";
-        return "";
-    }
-}
 
 
 $wa->registerAndUseStyle('font-rawline', 'https://fonts.cdnfonts.com/css/rawline');
