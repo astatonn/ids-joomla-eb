@@ -258,29 +258,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                             <jdoc:include type="modules" name="content-bottom" />
                         </div>
 
-                        <div class="container">
-
-                            <div class="autofit-float autofit-row portlet-header">
-                                <div class="autofit-col autofit-col-expand">
-                                    <div class="portlet-title-text">
-                                        Aniversariantes
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="birthdays-container">
-                                <div class="birthdays-col">
-                                    <div class="birthday-content">
-                                        <?php foreach ($items as $item) : ?>
-                                            <?php $emoji = getBirthdayEmoji($item->aniversario); ?>
-                                            <div class='birthday-data'>
-                                                <?php echo $item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         <?php if ($this->params->get('componente_atendimentocidadao', '1')) : ?>
                             <?php if ($app->getMenu()->getActive() == $app->getMenu()->getDefault()) : ?>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="install">
+	<name>Seção de Aniversariantes do Mês</name>
+	<author>3º Sgt Souza Lima</author>
+	<creationDate>21/02/2024</creationDate>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<version>1.0.0</version>
+	<description>Módulo da seção de Aniversariantes</description>
+	<namespace path="modules/mod_aniver">Joomla\Module\Aniver</namespace>
+	<files>
+		<filename module="mod_aniver">mod_aniver.php</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<help key="Site_Modules:_Aniver" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic-config" label='Configuração dos Menus'>
+                <field name="show-birthdays" type="list" label='Exibir' description='Exibir aniversariantes'>
+                    <option value="1">Exibir</option>
+                    <option value="2">Não exibir</option>
+
+                </field>
+               
+            </fieldset>
+		</fields>
+	</config>
+</extension>

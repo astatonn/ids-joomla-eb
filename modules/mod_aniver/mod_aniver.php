@@ -1,9 +1,4 @@
 <?php
-defined('_JEXEC') or die;
-
-
-$model = new Astatonn\Component\Aniversariantes\Site\Model\AniversariantesModel();
-$items = $model->getItemsWithNextBirthdays();
 
 function getBirthdayEmoji($aniversario)
 {
@@ -24,7 +19,7 @@ function getBirthdayEmoji($aniversario)
         <div class="autofit-col autofit-col-expand">
             <div class="portlet-title-text">
                 Aniversariantes
-                </div>
+            </div>
         </div>
     </div>
 
@@ -34,7 +29,7 @@ function getBirthdayEmoji($aniversario)
                 <?php foreach ($items as $item) : ?>
                     <?php $emoji = getBirthdayEmoji($item->aniversario); ?>
                     <div class='birthday-data'>
-                        <?php echo $item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
+                        <?php echo $item->postogradu .' '.$item->nome . " - " . date('d/m', strtotime($item->aniversario)) . " " . $emoji; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
