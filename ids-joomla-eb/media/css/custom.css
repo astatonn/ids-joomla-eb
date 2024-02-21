@@ -286,7 +286,6 @@ div h2.newsflash-title {
 div h2.newsflash-title a {
     text-decoration: none;
     color: #fff;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;

@@ -62,7 +62,7 @@ endif;
                                     <?php echo $item->title; ?>
                                 </a>
                             </h2>
-                            <p><?php echo $item->introtext; ?></p>
+                            <p><?php echo strip_tags($item->introtext); ?></p>
                         </div>
 
                     </div>
