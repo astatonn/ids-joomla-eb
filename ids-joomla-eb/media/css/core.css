@@ -31314,6 +31314,7 @@ hr {
   margin-left: 20px;
   color: #fff !important;
   padding-bottom: 5px;
+  font-weight: normal !important;
 
 }
 
@@ -33162,6 +33163,7 @@ button.br-item:not(:disabled):active {
 
 .br-menu .menu-footer .menu-links a {
   display: block;
+  font-weight: normal !important;
 }
 
 .br-menu .menu-footer .menu-links a:not(:last-child) {
