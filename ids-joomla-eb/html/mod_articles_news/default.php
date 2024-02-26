@@ -75,7 +75,7 @@ endif;
         <?php endforeach; ?>
     </div>
     <div class="news-readmore">
-        <a href="<?php echo Uri::root() ?>index.php/<?php echo $list[0]->category_route ?>">
+        <a href="<?php echo Uri::root() ?>index.php/<?php echo $list[0]->category_alias ?>">
             <div class="br-button br-button-readmore">
                 Leia Mais
             </div>
