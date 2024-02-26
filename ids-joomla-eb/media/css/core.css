@@ -508,12 +508,12 @@ span.flatpickr-weekday {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-weight: bolder
+  font-weight: bolder;
 }
 
 .dayContainer,
 .flatpickr-weeks {
-  padding: 1px 0 0 0
+  padding: 1px 0 0 0;
 }
 
 .flatpickr-days {
@@ -527,11 +527,11 @@ span.flatpickr-weekday {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  width: 307.875px
+  width: 307.875px;
 }
 
 .flatpickr-days:focus {
-  outline: 0
+  outline: 0;
 }
 
 .dayContainer {
@@ -20681,11 +20681,11 @@ a:focus-visible {
 }
 
 a:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 a:not(:disabled):active {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--pressed)), rgba(var(--interactive-rgb), var(--pressed)));
+  background-image: none;
 }
 
 .main-content a {
@@ -21010,6 +21010,10 @@ pre,
 
 }
 
+.menu-links ul li ul {
+  padding-left: 20px !important;
+}
+
 .menu-links ul li:nth-child(1) {
   position: relative;
   transition: border-bottom 0.3s ease;
@@ -21042,6 +21046,7 @@ pre,
 
 .menu-links ul li a {
   color: var(--green-warm-vivid-50);
+  margin-bottom: 8px !important;
 }
 
 .menu-links ul li::after {
@@ -31312,6 +31317,45 @@ hr {
 
 }
 
+.news-readmore {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.br-button-readmore {
+  border: 1px solid;
+  padding: 20px 80px;
+  font-size: var(--font-size-scale-up-02);
+  background-image: none !important;
+  
+}
+
+.news-readmore a {
+  background-image: none !important;
+
+}
+
+.news-readmore {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.br-button-readmore {
+  border: 1px solid;
+  padding: 20px 80px;
+  font-size: var(--font-size-scale-up-02);
+}
+
+.br-footer-menu ul li ul {
+  margin-top: 8px !important;
+}
+
 .br-footer-menu ul li:nth-child(1) {
   position: relative;
   transition: border-bottom 0.3s ease;
@@ -33125,7 +33169,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-menu .menu-footer .menu-links a:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-menu .menu-footer .social-network,
@@ -36816,7 +36860,7 @@ button.br-item:not(:disabled):active {
 
 .br-tab .tab-item button:not(:disabled):hover,
 .br-tab .tab-item a:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--color-rgb), var(--hover)), rgba(var(--color-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tab .tab-item:first-child {
