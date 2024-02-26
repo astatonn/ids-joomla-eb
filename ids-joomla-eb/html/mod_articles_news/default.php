@@ -11,6 +11,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Layout\LayoutHelper;
+use Joomla\CMS\Uri\Uri;
 use Joomla\Module\ArticlesNews\Site\Helper\ArticlesNewsHelper;
 
 if (!$list) {
@@ -23,6 +24,8 @@ if (count($list) < 5) :
         $colunas = "col-md-6";
     endif;
 endif;
+
+
 
 
 ?>
@@ -70,5 +73,12 @@ endif;
 
             <?php endif; ?>
         <?php endforeach; ?>
+    </div>
+    <div class="news-readmore">
+        <a href="<?php echo Uri::root() ?>index.php/<?php echo $list[0]->category_route ?>">
+            <div class="br-button br-button-readmore">
+                Leia Mais
+            </div>
+        </a>
     </div>
 </div>
