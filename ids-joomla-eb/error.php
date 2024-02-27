@@ -287,61 +287,64 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                 </div>
             </main>
             <footer class="<?php echo $cor_footer ?>" id="footer">
-				<div class="<?php echo $largura ?>">
-					<div class="logo"><img src="<?php echo $this->params->get('imagem_logo_footer', Uri::root() . $logo_footer); ?>" alt="Imagem"/></div>
-                    <?php if ($this->countModules('menumapa')) : ?>
-                        <div class="br-list horizontal" data-toggle="data-toggle" data-sub="data-sub">
-                            <jdoc:include type="modules" name="menumapa" style="none" />
-                        </div>
-                    <?php endif; ?>
-					<div class="d-none d-sm-block">
-						<div class="row align-items-end justify-content-between py-5">
-                            <?php if ($this->params->get('redes_sociais', '1')) : ?>
-                                <div class="col social-network">
-                                    <p class="text-up-01 text-extra-bold text-uppercase">Redes Sociais</p>
-                                    <?php if (!empty($this->params->get('redes_instagram', ''))) : ?>
-                                        <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_instagram', ''); ?>" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram"></i></a>
-                                    <?php endif; ?>
-                                    <?php if (!empty($this->params->get('redes_twitter', ''))) : ?>
-                                        <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_twitter', ''); ?>" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter"></i></a>
-                                    <?php endif; ?>
-                                    <?php if (!empty($this->params->get('redes_facebook', ''))) : ?>
-                                        <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_facebook', ''); ?>" aria-label="Facebook"><i aria-hidden="true" class="fab fa-facebook"></i></a>
-                                    <?php endif; ?>
-                                    <?php if (!empty($this->params->get('redes_youtube', ''))) : ?>
-                                        <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_youtube', ''); ?>" aria-label="YouTube"><i aria-hidden="true" class="fab fa-youtube"></i></a>
-                                    <?php endif; ?>
-                                </div>
+            <div class="<?php echo $largura ?>">
+                <div class="logo"><img src="<?php echo $this->params->get('imagem_logo_footer', $logo_footer); ?>" alt="Imagem" /></div>
+                <?php if ($this->countModules('menumapa')) : ?>
+                    <div class="horizontal br-footer-menu" data-toggle="data-toggle" data-sub="data-sub">
+                        <jdoc:include type="modules" name="menumapa" style="none" />
+                    </div>
+                <?php endif; ?>
+                <div class="d-none d-sm-block">
+                    <div class="row align-items-end justify-content-between py-5">
+                        <?php if ($this->params->get('redes_sociais', '1')) : ?>
+                            <div class="col social-network">
+                                <p class="text-up-01 text-extra-bold text-uppercase">Redes Sociais</p>
+                                <?php if (!empty($this->params->get('redes_instagram', ''))) : ?>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_instagram', ''); ?>" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                <?php endif; ?>
+                                <?php if (!empty($this->params->get('redes_twitter', ''))) : ?>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_twitter', ''); ?>" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                <?php endif; ?>
+                                <?php if (!empty($this->params->get('redes_facebook', ''))) : ?>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_facebook', ''); ?>" aria-label="Facebook"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+                                <?php endif; ?>
+                                <?php if (!empty($this->params->get('redes_youtube', ''))) : ?>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_youtube', ''); ?>" aria-label="YouTube"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="col assigns text-right">
+                            <?php if ($this->params->get('imagem_footer_acesso', '1')) : ?>
+                                <a class="d-inline-block ml-4" href="https://www.gov.br/acessoainformacao"><img src="<?php echo $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds/img/acesso_footer_claro.svg' : 'media/templates/site/govbr-ds/img/acesso_footer.svg'; ?>" alt="Acesso a Informação" /></a>
                             <?php endif; ?>
-							<div class="col assigns text-right">
-								<?php if ($this->params->get('imagem_footer_acesso', '1')) : ?>
-									<a class="d-inline-block ml-4" href="https://www.gov.br/acessoainformacao"><img src="<?php echo $this->params->get('cor_footer') ? Uri::root() . 'media/templates/site/govbr-ds/img/acesso_footer_claro.svg' : Uri::root() . 'media/templates/site/govbr-ds/img/acesso_footer.svg'; ?>" alt="Acesso a Informação"/></a>
-								<?php endif; ?>
-								<?php if ($this->params->get('imagem_footer_brasil', '1')) : ?>
-									<a class="d-inline-block ml-4" href="https://www.gov.br/"><img src="<?php echo $this->params->get('imagem_footer_brasil_src', Uri::root() . 'media/templates/site/govbr-ds/img/brasil_footer.svg')?>" alt="Imagem"/></a>
-								<?php endif; ?>
-							</div>
-						</div>
-					</div>
-				</div>
-				<span class="br-divider my-3"></span>
-                <div class="<?php echo $largura ?>">
-                    <div class="info">
-                        <div class="text-down-01 text-medium pb-3">
-                            <?php echo $this->params->get('texto_licenca', 'Desenvolvido com o CMS de c&oacute;digo aberto <strong><a aria-label="Desenvolvido por Comunidade Joomla" href="https://www.joomla.org">Joomla</a></strong>.'); ?>
+                            <?php if ($this->params->get('imagem_footer_brasil', '1')) : ?>
+                                <a class="d-inline-block ml-4" href="https://www.gov.br/"><img src="<?php echo $this->params->get('imagem_footer_brasil_src', 'media/templates/site/govbr-ds/img/brasil_footer.svg') ?>" alt="Imagem" /></a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
-            </footer>
-            <button id="gotop" class="br-button primary circle backtotop" aria-label="Ir para o topo" onclick="goTop()"><i class="fa fa-chevron-up"></i></button>
-            <jdoc:include type="modules" name="debug" style="none" />
-        </div>
-        <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-                <div class="vw-plugin-top-wrapper"></div>
             </div>
+
+
+            <span class="br-divider my-3"></span>
+            <div class="<?php echo $largura ?>">
+                <div class="info">
+                    <div class="text-down-01 text-medium pb-3">
+                        Desenvolvido por 3º Sgt Int/2017 Souza Lima • <a href="github.com/astatonn">Github</a> • <a href="https://www.linkedin.com/in/lucas-lima-477377a5/">Linkedin</a> - 1º Centro de Telemática de Área
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <button id="gotop" class="br-button primary circle backtotop" aria-label="Ir para o topo" onclick="goTop()"><i class="fa fa-chevron-up"></i></button>
+        <jdoc:include type="modules" name="debug" style="none" />
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
         </div>
-    </body>
-    <jdoc:include type="scripts" />
+    </div>
+</body>
+<jdoc:include type="scripts" />
+
 </html>
