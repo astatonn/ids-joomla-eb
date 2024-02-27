@@ -23,7 +23,7 @@
                     <option value="no">Não</option>
                 </field>
 
-                <field name="menu-readmore" type="menu" default="mainmenu" label="Selecione um menu" description="Selecione um menu para criar o redirecionamento para todos os artigos da categoria" />
+                <field name="menu-readmore" type="menuitem" default="mainmenu" label="Selecione um menu" description="Selecione um menu para criar o redirecionamento para todos os artigos da categoria" />
 
 
             </fieldset>
