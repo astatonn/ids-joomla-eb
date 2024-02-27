@@ -26,8 +26,6 @@ if (count($list) < 5) :
 endif;
 
 
-
-
 ?>
 <div class="container">
     <div class="autofit-float autofit-row portlet-header">
@@ -74,11 +72,5 @@ endif;
             <?php endif; ?>
         <?php endforeach; ?>
     </div>
-    <div class="news-readmore">
-        <a href="<?php echo Uri::root() ?>index.php/<?php echo $list[0]->category_alias ?>">
-            <div class="br-button br-button-readmore">
-                Leia Mais
-            </div>
-        </a>
-    </div>
+    
 </div>
