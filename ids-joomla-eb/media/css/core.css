@@ -20682,7 +20682,7 @@ a:focus-visible {
 }
 
 a:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 a:not(:disabled):active {
@@ -21003,13 +21003,7 @@ pre,
 }
 
 
-.menu-links ul li {
-  position: relative;
-  transition: border-bottom 0.3s ease;
-  margin-bottom: 15px;
-  margin-left: 20px;
 
-}
 
 .menu-links ul li ul {
   padding-left: 20px !important;
@@ -29050,7 +29044,7 @@ mark,
 }
 
 *[data-toggle=collapse]:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 *[data-toggle=collapse]:focus {
@@ -29132,7 +29126,7 @@ mark,
 }
 
 .br-accordion .header:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-accordion .content {
@@ -29248,7 +29242,7 @@ mark,
 }
 
 .br-avatar-action:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-avatar-action:focus {
@@ -29602,7 +29596,7 @@ mark,
 }
 
 .br-button:not(:disabled):not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-button:not(:disabled):not(:disabled):active {
@@ -30377,7 +30371,7 @@ a.br-button {
 
 .br-checkbox input:hover:not(:disabled)+label::before {
   --interactive-rgb: var(--interactive-light-rgb);
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-checkbox:not(.disabled) input:disabled+label {
@@ -30511,7 +30505,7 @@ a.br-button {
 }
 
 .br-radio input:hover:not(:disabled)+label::before {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-radio.inverted,
@@ -30978,7 +30972,7 @@ a.br-button {
 .flatpickr-calendar .flatpickr-day.inRange {
   --interactive-rgb: var(--blue-warm-vivid-50-rgb);
   --hover: var(--hover-dark);
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
   border-color: transparent;
   box-shadow: none;
   color: var(--color-dark);
@@ -31070,7 +31064,7 @@ a.br-button {
 }
 
 .flatpickr-calendar .flatpickr-time .numInputWrapper span:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .flatpickr-calendar .flatpickr-time .numInputWrapper span::after {
@@ -31308,21 +31302,6 @@ hr {
 }
 
 
-.br-footer-menu ul li {
-  position: relative;
-  transition: border-bottom 0.3s ease;
-  margin-bottom: 15px;
-  margin-left: 20px;
-  color: #fff !important;
-  padding-bottom: 5px;
-  font-weight: normal !important;
-
-}
-
-.br-footer-menu ul li ul {
-  margin-top: 8px !important;
-
-}
 
 .br-footer-menu ul li:nth-child(1) {
   position: relative;
@@ -31336,7 +31315,7 @@ hr {
   animation: none !important;
   transition: none !important;
 
-}
+} 
 
 .tabela {
   margin: 0 50px;
@@ -31565,7 +31544,7 @@ hr {
 }
 
 .br-footer .br-item:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-footer .br-item.active {
@@ -31660,7 +31639,7 @@ hr {
 }
 
 .br-header .header-bottom {
-  justify-content: end;
+  justify-content: space-between;
   margin-top: var(--header-padding-small);
 }
 
@@ -31855,6 +31834,31 @@ hr {
 .br-header[data-no-login] .header-actions .header-login {
   display: none;
 }
+
+.deeper.parent ul {
+  margin-left: 5px !important;
+  list-style-type: "\279C" !important;
+}
+
+.deeper.parent ul li {
+  margin-left: 0 !important;
+  font-size: var(--font-size);
+  padding-left: 10px;
+  
+}
+
+.deeper.parent ul li:nth-child(1) {
+ 
+  margin-bottom: 0 !important;
+  margin-left: 0px !important;
+  text-transform: capitalize;
+  font-weight: normal !important;
+  animation: none !important;
+  transition: none !important;
+
+}
+
+
 
 @media (min-width: 576px) {
 
@@ -32839,7 +32843,7 @@ a.br-item {
 }
 
 a.br-item:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 a.br-item:not(:disabled):active {
@@ -32949,7 +32953,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-list .br-item .content:hover button.br-button {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-list .br-item[data-toggle] {
@@ -33174,7 +33178,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-menu .menu-footer .menu-links a:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-menu .menu-footer .social-network,
@@ -33398,7 +33402,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-menu a.menu-item:not(:disabled):not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-loading {
@@ -34667,7 +34671,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-pagination .page:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-pagination .page.active {
@@ -35113,7 +35117,7 @@ button.br-item:not(:disabled):active {
 .br-select .br-item.highlighted .br-radio:hover,
 .br-select .br-item[highlighted] .br-checkbox:hover,
 .br-select .br-item[highlighted] .br-radio:hover {
-  background: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background: none;
 }
 
 .br-select .br-item.highlighted .br-checkbox:hover label,
@@ -35366,7 +35370,7 @@ button.br-item:not(:disabled):active {
 
 .br-sign-in:not(:disabled):not(:disabled):hover,
 .br-button.sign-in:not(:disabled):not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-sign-in:not(:disabled):not(:disabled):active,
@@ -36113,7 +36117,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-step .step-progress-btn:hover:not(:disabled)::before {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-step .step-progress-btn:disabled {
@@ -37018,7 +37022,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-tag.interaction:hover .br-button {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tag.interaction:active .br-button {
@@ -37088,7 +37092,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-tag.interaction-select input:hover+label {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tag.interaction-select input:active+label {
@@ -37184,7 +37188,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-tag.interaction:hover .br-button {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tag.interaction:active .br-button {
@@ -37254,7 +37258,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-tag.interaction-select input:hover+label {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tag.interaction-select input:active+label {
@@ -37297,7 +37301,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-tag.interaction:hover .br-button {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tag.interaction:active .br-button {
@@ -37367,7 +37371,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-tag.interaction-select input:hover+label {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-tag.interaction-select input:active+label {
@@ -38223,7 +38227,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-upload .upload-button:not(:disabled):not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-upload .upload-button:not(:disabled):not(:disabled):active {
@@ -38281,7 +38285,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-upload.dragging .upload-button {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-wizard {
@@ -38388,7 +38392,7 @@ button.br-item:not(:disabled):active {
 }
 
 .br-wizard .wizard-progress-btn:hover:not([disabled])::before {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .br-wizard .wizard-progress-btn:active:not([disabled])::before {
@@ -38887,7 +38891,7 @@ button.br-item:not(:disabled):active {
 }
 
 .accordion-example .br-list .br-item .content:hover button.br-button {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .accordion-example .br-list .br-item .br-checkbox,
@@ -38899,7 +38903,7 @@ button.br-item:not(:disabled):active {
 
 .accordion-example .br-list .br-item .br-checkbox input:hover:not(:disabled)+label::before,
 .accordion-example .br-list .br-item .br-radio input:hover:not(:disabled)+label::before {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .accordion-example .br-list .br-item[data-toggle] {
@@ -39060,7 +39064,7 @@ button.br-item:not(:disabled):active {
 }
 
 .checkgroup-example input:hover:not(:disabled)+label::before {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 .checkgroup-example input:disabled+label {
@@ -39216,7 +39220,7 @@ button.br-item:not(:disabled):active {
 }
 
 *[data-toggle=collapse]:not(:disabled):hover {
-  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+  background-image: none;
 }
 
 *[data-toggle=collapse]:focus {
