@@ -31639,7 +31639,7 @@ hr {
 }
 
 .br-header .header-bottom {
-  justify-content: space-between;
+  justify-content: end;
   margin-top: var(--header-padding-small);
 }
 
