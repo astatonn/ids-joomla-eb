@@ -65,6 +65,14 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
         <header class="br-header mb-4" id="header" data-sticky="data-sticky">
             <div class="<?php echo $largura ?>">
                 <div class="header-top">
+                    <div class="menu-align-top">
+                        <div class="header-menu">
+                            <div class="header-menu-trigger" id="header-navigation">
+                                <button class="br-button small circle" type="button" aria-label="Menu" data-toggle="menu" data-target="#main-navigation" id="navigation"><i class="fas fa-bars" style="font-size: 25px;" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="header-logo">
                         <div class="logo-om">
                             <?php if ($this->params->get('logo_comlink', '0') == 1) : ?>
@@ -82,10 +90,27 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                 <?php endif; ?>
                         </div>
                         <span class="br-divider vertical"></span>
-                        <a href="https://www.gov.br/defesa/" class="header-sign h8 m-0">Ministério da Defesa</a>
+
+
+                        <div class="header-info">
+                            <div class="header-title">
+                                <a href="<?php echo Uri::root(); ?>" title="<?php echo $this->params->get('texto_titulo', 'Template básico'); ?>">
+                                    <?php echo $this->params->get('texto_titulo', 'Template básico'); ?>
+                                </a>
+                            </div>
+                            <?php if (!empty($this->params->get('texto_subtitulo', ''))) : ?>
+                                <div class="header-subtitle"><?php echo $this->params->get('texto_subtitulo', 'Subtítulo do Header'); ?></div>
+                            <?php endif; ?>
+                        </div>
+
+
                     </div>
                     <div class="header-govlinks">
+
                         <ul aria-label="Páginas do site">
+                            <li>
+                                <a href="https://www.gov.br/defesa/" class="header-sign h8 m-0 header-sign-border">Ministério da Defesa</a>
+                            </li>
                             <li>
                                 <a href="https://www.gov.br/pt-br/orgaos-do-governo" target="_blank">
                                     <span> Órgãos do Governo </span>
@@ -151,22 +176,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                     </div>
                 </div>
                 <div class="header-bottom">
-                    <div class="header-menu">
-                        <div class="header-menu-trigger" id="header-navigation">
-                            <button class="br-button small circle" type="button" aria-label="Menu" data-toggle="menu" data-target="#main-navigation" id="navigation"><i class="fas fa-bars" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="header-info">
-                            <div class="header-title">
-                                <a href="<?php echo Uri::root(); ?>" title="<?php echo $this->params->get('texto_titulo', 'Template básico'); ?>">
-                                    <?php echo $this->params->get('texto_titulo', 'Template básico'); ?>
-                                </a>
-                            </div>
-                            <?php if (!empty($this->params->get('texto_subtitulo', ''))) : ?>
-                                <div class="header-subtitle"><?php echo $this->params->get('texto_subtitulo', 'Subtítulo do Header'); ?></div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
+
                     <jdoc:include type="modules" name="search" style="none" />
                 </div>
             </div>
@@ -246,7 +256,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                             <jdoc:include type="modules" name="content-bottom" />
                         </div>
 
-                       
+
 
                         <?php if ($this->params->get('componente_atendimentocidadao', '1')) : ?>
                             <?php if ($app->getMenu()->getActive() == $app->getMenu()->getDefault()) : ?>
