@@ -21022,46 +21022,14 @@ pre,
 
 }
 
-.menu-links ul li:nth-child(1)::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  /* Inicialmente, a largura é zero para começar da esquerda */
-  height: 0px;
-  background-color: transparent;
-  transition: none !important;
-}
 
-.menu-links ul li:nth-child(1):hover::after {
-  width: 0%;
-  background-color: var(--green-vivid-80);
-}
 
 .menu-links ul li a {
   color: var(--green-warm-vivid-50);
   margin-bottom: 8px !important;
 }
 
-.menu-links ul li::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  /* Inicialmente, a largura é zero para começar da esquerda */
-  height: 2px;
-  background-color: transparent;
-  transition: width 0.3s ease-in;
-  /* Use 'width' para a transição da esquerda para a direita */
-}
 
-.menu-links ul li:hover::after {
-  width: 100%;
-  /* Aumenta a largura para 100% ao passar o mouse, criando o efeito de aparecimento da esquerda para a direita */
-  background-color: var(--green-vivid-80);
-}
 
 pre code,
 .pre code {

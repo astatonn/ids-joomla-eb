@@ -5,7 +5,8 @@ $items = $model->getItemsWithNextBirthdays();
 
 function getBirthdayEmoji($aniversario)
 {
-    $dataAtual = date('Y-m-d');
+    $dataAtual = date('m-d');
+    $aniversario = date ('m-d', strtotime($aniversario));
 
     if ($aniversario == $dataAtual) {
         return "🎉";
