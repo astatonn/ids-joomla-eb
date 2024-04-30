@@ -22,6 +22,9 @@ Este template foi criado a partir das especificações disponíveis em https://w
 Novidades:
 * ✨mod_links: Permite a associação de ícones acima dos textos usando font-awesome (ref.: https://www.w3schools.com/icons/fontawesome5_icons_communication.asp)
 * 🔧mod_links: Corrigido o problema de instalação do módulo
+* 🔥✨ids-joomla-eb: Nova feature de temas personalizados (verde, azul, vermelho e amarelo)
+
+
 
 Componentes:
 * com_content.article: Visualização de artigos individuais
