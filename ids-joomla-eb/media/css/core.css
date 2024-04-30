@@ -31185,6 +31185,121 @@ hr {
   --focus: var(--focus-color);
 }
 
+/* tema azul */
+.tema-azul-main, .tema-azul-main ul li a  {
+  color: var(--blue-warm-vivid-50) !important;
+}
+
+.tema-azul-main-header-border  {
+  border-right: 2px solid var(--blue-vivid-80) !important;
+}
+
+.tema-azul-main-search div button i {
+  color: var(--blue-warm-vivid-50) !important;
+}
+
+
+.tema-azul-second{
+  color: var(--blue-warm-vivid-20) !important;
+}
+
+.tema-azul-third {
+  color: var(--blue-vivid-80) !important;
+}
+
+.tema-azul-bg {
+  background: var(--blue-vivid-80);
+}
+
+.tema-azul-menu ul li a{
+  color: var(--blue-warm-vivid-20) !important;
+}
+
+.tema-azul-menu-links ul li a {
+  color: var(--blue-warm-vivid-50);
+}
+
+/* tema vermelho */
+.tema-vermelho-main, .tema-vermelho-main ul li a  {
+  color: var(--red-warm-vivid-50) !important;
+}
+
+.tema-vermelho-main-header-border  {
+  border-right: 2px solid var(--red-vivid-80) !important;
+}
+
+.tema-vermelho-main-search div button i {
+  color: var(--red-warm-vivid-50) !important;
+}
+
+
+.tema-vermelho-second{
+  color: var(--red-warm-vivid-20) !important;
+}
+
+.tema-vermelho-third {
+  color: var(--red-vivid-80) !important;
+}
+
+.tema-vermelho-bg {
+  background: var(--red-vivid-80);
+}
+
+.tema-vermelho-menu ul li a{
+  color: var(--red-warm-vivid-20) !important;
+}
+
+.tema-vermelho-menu-links ul li a {
+  color: var(--red-warm-vivid-50);
+}
+
+
+
+/* tema amarelo */
+.tema-amarelo-main, .tema-amarelo-main ul li a  {
+  color: #f8ba07 !important;
+  text-shadow: 1px 2px 7px var(--yellow-vivid-50);
+}
+
+.tema-amarelo-main-header-border  {
+  border-right: 2px solid var(--yellow-vivid-80) !important;
+}
+
+.tema-amarelo-main-search div button i {
+  color: var(--yellow-vivid-50) !important;
+}
+
+
+.tema-amarelo-second{
+  color: var(--yellow-vivid-20) !important;
+}
+
+.tema-amarelo-third {
+  color: var(--yellow-vivid-80) !important;
+}
+
+.tema-amarelo-bg {
+  background: var(--yellow-vivid-80);
+}
+
+.tema-amarelo-menu ul li a{
+  color: var(--yellow-vivid-20) !important;
+  text-shadow: 1px 2px 7px var(--yellow-vivid-50);
+}
+
+.tema-amarelo-menu-links ul li a {
+  color: var(--yellow-vivid-50);
+  text-shadow: 1px 2px 7px var(--yellow-vivid-50);
+}
+
+
+
+
+.tema--third {
+  color: var(--green-vivid-80) !important;
+}
+
+
 .br-green-vivid-80 {
   color: var(--green-vivid-80) !important;
 }

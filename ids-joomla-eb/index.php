@@ -68,7 +68,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                     <div class="menu-align-top">
                         <div class="header-menu">
                             <div class="header-menu-trigger" id="header-navigation">
-                                <button class="br-button small circle" type="button" aria-label="Menu" data-toggle="menu" data-target="#main-navigation" id="navigation"><i class="fas fa-bars" style="font-size: 25px;" aria-hidden="true"></i>
+                                <button class="br-button small circle" type="button" aria-label="Menu" data-toggle="menu" data-target="#main-navigation" id="navigation"><i class="fas fa-bars tema-<?php echo $this->params->get('tema'); ?>-main" style="font-size: 25px;" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
@@ -105,11 +105,11 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
 
 
                     </div>
-                    <div class="header-govlinks">
+                    <div class="header-govlinks tema-<?php echo $this->params->get('tema'); ?>-main">
 
                         <ul aria-label="Páginas do site">
                             <li>
-                                <a href="https://www.gov.br/defesa/" class="header-sign h8 m-0 header-sign-border">Ministério da Defesa</a>
+                                <a href="https://www.gov.br/defesa/" class="header-sign h8 m-0 header-sign-border tema-<?php echo $this->params->get('tema'); ?>-main-header-border">Ministério da Defesa</a>
                             </li>
                             <li>
                                 <a href="https://www.gov.br/pt-br/orgaos-do-governo" target="_blank">
@@ -162,20 +162,20 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                     <div class="title">Funcionalidades do Sistema</div>
                                 </div>
                                 <div class="align-items-center br-item">
-                                    <button class="br-button circle small" type="button" aria-label="Alto contraste" onclick="window.toggleContrast()"><i class="fas fa-adjust" aria-hidden="true"></i><span class="text">Alto contraste</span>
+                                    <button class="br-button circle small" type="button" aria-label="Alto contraste" onclick="window.toggleContrast()"><i class="fas fa-adjust tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i><span class="text">Alto contraste</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <?php if ($this->countModules("search")) : ?>
                             <div class="header-search-trigger">
-                                <button class="br-button circle" type="button" aria-label="Abrir Busca" data-toggle="search" data-target=".header-search"><i class="fas fa-search" aria-hidden="true"></i>
+                                <button class="br-button circle" type="button" aria-label="Abrir Busca" data-toggle="search" data-target=".header-search"><i class="fas fa-search tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i>
                                 </button>
                             </div>
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="header-bottom">
+                <div class="header-bottom tema-<?php echo $this->params->get('tema'); ?>-main-search">
 
                     <jdoc:include type="modules" name="search" style="none" />
                 </div>
@@ -212,7 +212,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                         </div>
                                     <?php endif; ?>
                                     <?php if ($this->countModules('menu-links')) : ?>
-                                        <div class="menu-links">
+                                        <div class="menu-links tema-<?php echo $this->params->get('tema'); ?>-menu-links">
                                             <jdoc:include type="modules" name="menu-links" style="none" />
                                         </div>
                                     <?php endif; ?>
@@ -221,16 +221,16 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                             <div class="social-network-title">Redes Sociais</div>
                                             <div class="d-flex">
                                                 <?php if (!empty($this->params->get('redes_instagram', ''))) : ?>
-                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_instagram', ''); ?>" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_instagram', ''); ?>" aria-label="Instagram"><i class="fab fa-instagram tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i></a>
                                                 <?php endif; ?>
                                                 <?php if (!empty($this->params->get('redes_twitter', ''))) : ?>
-                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_twitter', ''); ?>" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_twitter', ''); ?>" aria-label="Twitter"><i class="fab fa-twitter tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i></a>
                                                 <?php endif; ?>
                                                 <?php if (!empty($this->params->get('redes_facebook', ''))) : ?>
-                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_facebook', ''); ?>" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_facebook', ''); ?>" aria-label="Facebook"><i class="fab fa-facebook-f tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i></a>
                                                 <?php endif; ?>
                                                 <?php if (!empty($this->params->get('redes_youtube', ''))) : ?>
-                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_youtube', ''); ?>" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                                                    <a class="br-button circle" href="<?php echo $this->params->get('redes_youtube', ''); ?>" aria-label="YouTube"><i class="fab fa-youtube tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i></a>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -262,7 +262,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                             <?php if ($app->getMenu()->getActive() == $app->getMenu()->getDefault()) : ?>
                                 <div id="ouvidoria-acessoinformacao">
                                     <div class="row d-block mx-auto text-center" id="ouvidoria-acessoinformacao-header">
-                                        <h1 class="br-green-vivid-80">Ouvidoria e Acesso à Informação</h1>
+                                        <h1 class="tema-<?php echo $this->params->get('tema'); ?>-third">Ouvidoria e Acesso à Informação</h1>
                                         <h2>Você pode realizar manifestações nos seguintes canais</h2>
                                     </div>
                                     <div class="row mx-auto px-3 " id="ouvidoria-acessoinformacao-cards">
@@ -270,7 +270,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                             <div class="br-card hover">
                                                 <a href="https://falabr.cgu.gov.br/publico/Manifestacao/RegistrarManifestacao.aspx?tipo=1&orgaoDestinatario=<?php echo $this->params->get('atendimentocidadao_siorg', ''); ?>">
                                                     <div class="card-content d-flex flex-column justify-content-center align-items-center">
-                                                        <i class="fas fa-bullhorn br-green-vivid-80" aria-hidden="true"></i><span class="br-engengrau">Denúncia</span>
+                                                        <i class="fas fa-bullhorn tema-<?php echo $this->params->get('tema'); ?>-third" aria-hidden="true"></i><span class="br-engengrau">Denúncia</span>
                                                     </div>
                                                 </a>
                                             </div>
@@ -279,7 +279,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                             <div class="br-card hover">
                                                 <a href="https://falabr.cgu.gov.br/publico/Manifestacao/RegistrarManifestacao.aspx?tipo=5&orgaoDestinatario=<?php echo $this->params->get('atendimentocidadao_siorg', ''); ?>">
                                                     <div class="card-content d-flex flex-column justify-content-center align-items-center">
-                                                        <i class="fas fa-comments br-green-vivid-80" aria-hidden="true"></i><span class="br-engengrau">Solicitação</span>
+                                                        <i class="fas fa-comments tema-<?php echo $this->params->get('tema'); ?>-third" aria-hidden="true"></i><span class="br-engengrau">Solicitação</span>
                                                     </div>
                                                 </a>
                                             </div>
@@ -288,7 +288,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                             <div class="br-card hover">
                                                 <a href="https://falabr.cgu.gov.br/publico/Manifestacao/RegistrarManifestacao.aspx?tipo=3&orgaoDestinatario=<?php echo $this->params->get('atendimentocidadao_siorg', ''); ?>">
                                                     <div class="card-content d-flex flex-column justify-content-center align-items-center">
-                                                        <i class="fas fa-thumbs-up br-green-vivid-80" aria-hidden="true"></i><span class="br-engengrau">Elogio</span>
+                                                        <i class="fas fa-thumbs-up tema-<?php echo $this->params->get('tema'); ?>-third" aria-hidden="true"></i><span class="br-engengrau">Elogio</span>
                                                     </div>
                                                 </a>
                                             </div>
@@ -297,7 +297,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                             <div class="br-card hover">
                                                 <a href="https://falabr.cgu.gov.br/publico/Manifestacao/RegistrarManifestacao.aspx?tipo=2&orgaoDestinatario=<?php echo $this->params->get('atendimentocidadao_siorg', ''); ?>">
                                                     <div class="card-content d-flex flex-column justify-content-center align-items-center">
-                                                        <i class="fas fa-thumbs-down br-green-vivid-80" aria-hidden="true"></i><span class="br-engengrau">Reclamação</span>
+                                                        <i class="fas fa-thumbs-down tema-<?php echo $this->params->get('tema'); ?>-third" aria-hidden="true"></i><span class="br-engengrau">Reclamação</span>
                                                     </div>
                                                 </a>
                                             </div>
@@ -313,11 +313,11 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
             </div>
         </main>
 
-        <footer class="<?php echo $cor_footer ?>" id="footer">
+        <footer class="<?php echo $cor_footer ?> tema-<?php echo $this->params->get('tema'); ?>-bg" id="footer">
             <div class="<?php echo $largura ?>">
                 <div class="logo"><img src="<?php echo $this->params->get('imagem_logo_footer', $logo_footer); ?>" alt="Imagem" /></div>
                 <?php if ($this->countModules('menumapa')) : ?>
-                    <div class="horizontal br-footer-menu" data-toggle="data-toggle" data-sub="data-sub">
+                    <div class="horizontal br-footer-menu tema-<?php echo $this->params->get('tema'); ?>-menu" data-toggle="data-toggle" data-sub="data-sub">
                         <jdoc:include type="modules" name="menumapa" style="none" />
                     </div>
                 <?php endif; ?>
@@ -327,16 +327,16 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                             <div class="col social-network">
                                 <p class="text-up-01 text-extra-bold text-uppercase">Redes Sociais</p>
                                 <?php if (!empty($this->params->get('redes_instagram', ''))) : ?>
-                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_instagram', ''); ?>" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram"></i></a>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_instagram', ''); ?>" aria-label="Instagram"><i aria-hidden="true" class="fab fa-instagram tema-<?php echo $this->params->get('tema'); ?>-main"></i></a>
                                 <?php endif; ?>
                                 <?php if (!empty($this->params->get('redes_twitter', ''))) : ?>
-                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_twitter', ''); ?>" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_twitter', ''); ?>" aria-label="Twitter"><i aria-hidden="true" class="fab fa-twitter tema-<?php echo $this->params->get('tema'); ?>-main"></i></a>
                                 <?php endif; ?>
                                 <?php if (!empty($this->params->get('redes_facebook', ''))) : ?>
-                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_facebook', ''); ?>" aria-label="Facebook"><i aria-hidden="true" class="fab fa-facebook"></i></a>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_facebook', ''); ?>" aria-label="Facebook"><i aria-hidden="true" class="fab fa-facebook tema-<?php echo $this->params->get('tema'); ?>-main"></i></a>
                                 <?php endif; ?>
                                 <?php if (!empty($this->params->get('redes_youtube', ''))) : ?>
-                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_youtube', ''); ?>" aria-label="YouTube"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+                                    <a class="br-button circle large mr-3" href="<?php echo $this->params->get('redes_youtube', ''); ?>" aria-label="YouTube"><i aria-hidden="true" class="fab fa-youtube tema-<?php echo $this->params->get('tema'); ?>-main"></i></a>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>

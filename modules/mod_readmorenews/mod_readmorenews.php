@@ -5,7 +5,7 @@ use Joomla\CMS\Uri\Uri;
 ?>
 
 <?php if ($params['showbuttonreademore'] == 'yes'): ?>
-<div class="news-readmore">
+<div class="news-readmore tema-<?php echo $this->params->get('tema'); ?>-main">
         <a href="<?php echo Uri::root() ?>index.php?Itemid=<?php echo $params['menu-readmore'] ?>">
             <div class="br-button br-button-readmore">
                 Leia Mais
