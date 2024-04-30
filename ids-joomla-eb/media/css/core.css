@@ -31198,6 +31198,11 @@ hr {
   color: var(--blue-warm-vivid-50) !important;
 }
 
+.tema-azul-main-content .news-readmore a div {
+  color: var(--blue-warm-vivid-50) !important;
+  border-color: var(--blue-warm-vivid-50) !important;;
+}
+
 
 .tema-azul-second{
   color: var(--blue-warm-vivid-20) !important;
@@ -31230,6 +31235,11 @@ hr {
 
 .tema-vermelho-main-search div button i {
   color: var(--red-warm-vivid-50) !important;
+}
+
+.tema-vermelho-main-content .news-readmore a div {
+  color: var(--red-warm-vivid-50) !important;
+  border-color: var(--red-warm-vivid-50) !important;;
 }
 
 
@@ -31272,6 +31282,11 @@ hr {
 
 .tema-amarelo-second{
   color: var(--yellow-vivid-20) !important;
+}
+
+.tema-amarelo-main-content .news-readmore a div {
+  color: var(--yellow-vivid-50) !important;
+  border-color: var(--yellow-vivid-50) !important;;
 }
 
 .tema-amarelo-third {

@@ -249,7 +249,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                         <?php if ($app->getMenu()->getActive() != $app->getMenu()->getDefault()) : ?>
                             <jdoc:include type="modules" name="breadcrumbs" />
                         <?php endif; ?>
-                        <div class="main-content pl-sm-3" id="main-content">
+                        <div class="main-content  pl-sm-3 tema-<?php echo $this->params->get('tema'); ?>-main-content" id="main-content">
                             <jdoc:include type="message" />
                             <jdoc:include type="modules" name="content-top" />
                             <jdoc:include type="component" />
