@@ -25,6 +25,10 @@ Novidades:
 * 🔥✨ids-joomla-eb: Nova feature de temas personalizados (verde, azul, vermelho e amarelo)
 
 
+## TODO LIST
+Novidades:
+* responsividade: Ajustar css para responsividade de dispositivos móveis
+* pop-up: Criar módulo de pop-up
 
 Componentes:
 * com_content.article: Visualização de artigos individuais
