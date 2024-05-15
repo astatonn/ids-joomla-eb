@@ -27,8 +27,9 @@ Novidades:
 
 ## TODO LIST
 Novidades:
-* responsividade: Ajustar css para responsividade de dispositivos móveis
-* pop-up: Criar módulo de pop-up
+- [ ] responsividade: Ajustar css para responsividade de dispositivos móveis
+- [ ] pop-up: Criar módulo de pop-up
+- [ ] Plugin: Criar plugin semelhante ao Tabs
 
 Componentes:
 * com_content.article: Visualização de artigos individuais
