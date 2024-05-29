@@ -30,7 +30,10 @@ Novidades:
 - [ ] responsividade: Ajustar css para responsividade de dispositivos móveis
 - [ ] pop-up: Criar módulo de pop-up
 - [ ] Plugin: Criar plugin semelhante ao Tabs
+- [ ] Menu lateral: Criar estilo collapse
+- [ ] Bug: Container de aniversariantes do mês muito pequeno.
 
+      
 Componentes:
 * com_content.article: Visualização de artigos individuais
 * com_content.category: Visualização estilo _blog_ para categorias
