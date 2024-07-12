@@ -26,8 +26,7 @@ Novidades:
 
 
 ## TODO LIST
-Novidades:
-- [ ] responsividade: Ajustar css para responsividade de dispositivos móveis
+- [X] responsividade: Ajustar css para responsividade de dispositivos móveis (IN PROGRESS)
 - [ ] pop-up: Criar módulo de pop-up
 - [ ] Plugin: Criar plugin semelhante ao Tabs
 - [ ] Menu lateral: Criar estilo collapse
