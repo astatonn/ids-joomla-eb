@@ -2372,6 +2372,18 @@ template {
   display: inline-flex !important;
 }
 
+@media (max-width: 800px) {
+  .logo-om {
+    display: none;
+  }
+
+  .header-govlinks {
+    display: none !important;
+  }
+}
+
+
+
 @media (min-width: 576px) {
 
   .d-sm-none {
