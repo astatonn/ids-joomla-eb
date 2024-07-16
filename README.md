@@ -31,6 +31,7 @@ Novidades:
 - [ ] Plugin: Criar plugin semelhante ao Tabs
 - [ ] Menu lateral: Criar estilo collapse
 - [ ] Bug: Container de aniversariantes do mês muito pequeno.
+- [ ] Integração: Implementar funcionalidade com o Phoca Download
 
       
 Componentes:
