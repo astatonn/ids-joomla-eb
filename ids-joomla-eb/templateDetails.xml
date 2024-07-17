@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="template" method="install" client="site">
+<extension type="template" method="upgrade" client="site">
 	<name>IDS Gov - Exército Brasileiro</name>
-	<version>1.0</version>
+	<version>1.1</version>
 	<creationDate>Janeiro 2024</creationDate>
 	<author>3º Sgt Souza Lima</author>
 	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
@@ -19,6 +19,13 @@
 		<folder>images</folder>
 		<folder>img</folder>
 		<folder>js</folder>
+		<folder>fonts</folder>
+		<folder>less</folder>
+		<folder>metadata</folder>
+		<folder>scss</folder>
+		<folder>sprites</folder>
+		<folder>svgs</folder>
+		<folder>webfonts</folder>
 	</media>
 	<positions>
 		<position>menuacesso</position>

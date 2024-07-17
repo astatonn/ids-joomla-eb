@@ -10,9 +10,11 @@ $wa  = $this->getWebAssetManager();
 
 
 
-$wa->registerAndUseStyle('font-rawline', 'https://fonts.cdnfonts.com/css/rawline');
+// $wa->registerAndUseStyle('font-rawline', 'https://fonts.cdnfonts.com/css/rawline');
+$wa->registerAndUseStyle('font-rawline', 'media/templates/site/govbr-ds/css/rawline.css');
 $wa->registerAndUseStyle('dsgov-core-css', 'media/templates/site/govbr-ds/css/core.css');
-$wa->registerAndUseStyle('fontawesome-all', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+// $wa->registerAndUseStyle('fontawesome-all', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+$wa->registerAndUseStyle('fontawesome-all', 'media/templates/site/govbr-ds/css/all.min.css'); /* font awesome */
 $wa->registerAndUseStyle('dsgov-custom', 'media/templates/site/govbr-ds/css/custom.css');
 $wa->registerAndUseScript('dsgov-core-js', 'media/templates/site/govbr-ds/js/core-init.js');
 $wa->registerAndUseScript('dsgov-contrast-js', 'media/templates/site/govbr-ds/js/contrast.class.js');
