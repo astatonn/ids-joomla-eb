@@ -28858,7 +28858,8 @@ mark,
   display: inline-block;
   font-size: var(--icon-size);
   text-align: center;
-  width: calc(var(--icon-size) + 8px);
+  width: auto;
+  margin: 0 auto;
 }
 
 .svg-inline--fa.fa-w-20,
@@ -29386,6 +29387,9 @@ mark,
 }
 
 @media (max-width: 436px) {
+  .birthday-data {
+    font-size: var(--font-size-scale-base) !important;
+  }
   .link-col {
     flex: 0 0 100% !important;
     /* 100% para mostrar 1 cartão por linha */
@@ -38046,11 +38050,12 @@ button.br-item:not(:disabled):active {
 }
 
 .birthdays-col {
-  flex: 0 0 25%;
-  max-width: 25%;
+  flex: 0 0 80%;
+  max-width: 80%;
   padding: 10px;
   box-sizing: border-box;
   min-height: 246px;
+  text-align: center;
 }
 
 .birthday-content {
@@ -38064,6 +38069,7 @@ button.br-item:not(:disabled):active {
 }
 
 .birthday-data {
+  padding-top: 8px;
   font-size: var(--font-size-scale-up-02);
 }
 .links-container {
