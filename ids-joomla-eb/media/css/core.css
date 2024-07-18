@@ -29390,10 +29390,26 @@ mark,
   .birthday-data {
     font-size: var(--font-size-scale-base) !important;
   }
+
   .link-col {
     flex: 0 0 100% !important;
     /* 100% para mostrar 1 cartão por linha */
     max-width: 100% !important;
+  }
+}
+
+@media (max-width: 375px) {
+  img {
+    width: 350px !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px){
+  
+  img {
+    width: 500px !important;
+    height: auto;
   }
 }
 
