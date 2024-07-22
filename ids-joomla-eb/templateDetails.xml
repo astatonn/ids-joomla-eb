@@ -5,7 +5,15 @@
 	<creationDate>Janeiro 2024</creationDate>
 	<author>3º Sgt Souza Lima</author>
 	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
-	<description>Template baseado no Padrão Digital de Governo.</description>
+	<description><![CDATA[
+		<h1>Template baseado no Padrão Digital de Governo.</h1>
+	    <br>
+		<strong>Prencha para receber as notificações de atualização do template:<br></strong>
+		<a href='https://forms.gle/Qxh9eRQdC8Kt1NUL8'>Formulário</a>
+		<br><br>
+		<p>Este template foi desenvolvido para melhorar a experiência dos usuários e seguir os padrões de acessibilidade.
+		A versão atual inclui várias melhorias e correções de bugs.</p>
+		]]></description>
 	<inheritable>1</inheritable>
 	<files>
 		<filename>error.php</filename>
