@@ -49,6 +49,9 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
 <head>
+    <?php if(!empty($this->params->get('title_page', ''))) : ?>
+        <title><?php echo $this->params->get('title_page', '') ?></title>
+    <?php endif ?>
     <jdoc:include type="metas" />
     <jdoc:include type="styles" />
 </head>
