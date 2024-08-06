@@ -34,7 +34,6 @@ Features:
 - [ ] pop-up: Criar módulo de pop-up
 - [ ] Plugin: Criar plugin semelhante ao Tabs
 - [X] Menu lateral: Criar estilo collapse (IN PROGRESS)
-- [ ] Bug: Container de aniversariantes do mês muito pequeno.
 - [ ] Integração: Implementar funcionalidade com o Phoca Download
 
       

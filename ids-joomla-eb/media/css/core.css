@@ -29405,9 +29405,8 @@ mark,
   }
 }
 
+@media (max-width: 768px) {
 
-@media (max-width: 768px){
-  
   img {
     width: 500px !important;
     height: auto;
@@ -31219,11 +31218,12 @@ hr {
 }
 
 /* tema azul */
-.tema-azul-main, .tema-azul-main ul li a  {
+.tema-azul-main,
+.tema-azul-main ul li a {
   color: var(--blue-warm-vivid-50) !important;
 }
 
-.tema-azul-main-header-border  {
+.tema-azul-main-header-border {
   border-right: 2px solid var(--blue-vivid-80) !important;
 }
 
@@ -31233,11 +31233,12 @@ hr {
 
 .tema-azul-main-content .news-readmore a div {
   color: var(--blue-warm-vivid-50) !important;
-  border-color: var(--blue-warm-vivid-50) !important;;
+  border-color: var(--blue-warm-vivid-50) !important;
+  ;
 }
 
 
-.tema-azul-second{
+.tema-azul-second {
   color: var(--blue-warm-vivid-20) !important;
 }
 
@@ -31249,7 +31250,7 @@ hr {
   background: var(--blue-vivid-80);
 }
 
-.tema-azul-menu ul li a{
+.tema-azul-menu ul li a {
   color: var(--blue-warm-vivid-20) !important;
 }
 
@@ -31258,11 +31259,12 @@ hr {
 }
 
 /* tema vermelho */
-.tema-vermelho-main, .tema-vermelho-main ul li a  {
+.tema-vermelho-main,
+.tema-vermelho-main ul li a {
   color: var(--red-warm-vivid-50) !important;
 }
 
-.tema-vermelho-main-header-border  {
+.tema-vermelho-main-header-border {
   border-right: 2px solid var(--red-vivid-80) !important;
 }
 
@@ -31272,11 +31274,12 @@ hr {
 
 .tema-vermelho-main-content .news-readmore a div {
   color: var(--red-warm-vivid-50) !important;
-  border-color: var(--red-warm-vivid-50) !important;;
+  border-color: var(--red-warm-vivid-50) !important;
+  ;
 }
 
 
-.tema-vermelho-second{
+.tema-vermelho-second {
   color: var(--red-warm-vivid-20) !important;
 }
 
@@ -31288,7 +31291,7 @@ hr {
   background: var(--red-vivid-80);
 }
 
-.tema-vermelho-menu ul li a{
+.tema-vermelho-menu ul li a {
   color: var(--red-warm-vivid-20) !important;
 }
 
@@ -31299,12 +31302,13 @@ hr {
 
 
 /* tema amarelo */
-.tema-amarelo-main, .tema-amarelo-main ul li a  {
+.tema-amarelo-main,
+.tema-amarelo-main ul li a {
   color: #f8ba07 !important;
   text-shadow: 1px 2px 7px var(--yellow-vivid-50);
 }
 
-.tema-amarelo-main-header-border  {
+.tema-amarelo-main-header-border {
   border-right: 2px solid var(--yellow-vivid-80) !important;
 }
 
@@ -31313,13 +31317,14 @@ hr {
 }
 
 
-.tema-amarelo-second{
+.tema-amarelo-second {
   color: var(--yellow-vivid-20) !important;
 }
 
 .tema-amarelo-main-content .news-readmore a div {
   color: var(--yellow-vivid-50) !important;
-  border-color: var(--yellow-vivid-50) !important;;
+  border-color: var(--yellow-vivid-50) !important;
+  ;
 }
 
 .tema-amarelo-third {
@@ -31330,7 +31335,7 @@ hr {
   background: var(--yellow-vivid-80);
 }
 
-.tema-amarelo-menu ul li a{
+.tema-amarelo-menu ul li a {
   color: var(--yellow-vivid-20) !important;
   text-shadow: 1px 2px 7px var(--yellow-vivid-50);
 }
@@ -31446,11 +31451,12 @@ hr {
   animation: none !important;
   transition: none !important;
 
-} 
+}
 
 .tabela {
   margin: 0 50px;
 }
+
 .br-footer-menu ul li:nth-child(1)::after {
   content: '';
   position: absolute;
@@ -31470,10 +31476,10 @@ hr {
 
 .br-footer-menu ul li a {
   color: var(--green-warm-vivid-20);
-  
+
 }
 
-.br-footer-menu ul li a:not(:disabled):hover{
+.br-footer-menu ul li a:not(:disabled):hover {
   background-image: none !important;
 }
 
@@ -31492,7 +31498,7 @@ hr {
 
 .br-footer-menu ul li:hover::after {
   width: 100%;
-  
+
   background-color: #fff;
 }
 
@@ -31967,19 +31973,19 @@ hr {
 }
 
 .deeper.parent ul {
-  margin-left: 5px !important;
-  list-style-type: "\279C" !important;
+  margin-left: 5px;
+  list-style-type: "\279C";
 }
 
 .deeper.parent ul li {
   margin-left: 0 !important;
   font-size: var(--font-size);
   padding-left: 10px;
-  
+
 }
 
 .deeper.parent ul li:nth-child(1) {
- 
+
   margin-bottom: 0 !important;
   margin-left: 0px !important;
   text-transform: capitalize;
@@ -32010,6 +32016,7 @@ hr {
   margin: auto 0;
   padding: 0 15px;
 }
+
 @media (min-width: 1280px) {
 
   .br-header .header-actions .header-links [data-toggle=dropdown],
@@ -32434,7 +32441,7 @@ hr {
   padding: 20px 80px;
   font-size: var(--font-size-scale-up-02);
   background-image: none !important;
-  
+
 }
 
 .news-readmore a {
@@ -38089,6 +38096,7 @@ button.br-item:not(:disabled):active {
   padding-top: 8px;
   font-size: var(--font-size-scale-up-02);
 }
+
 .links-container {
   display: flex;
   flex-wrap: wrap;
@@ -39368,5 +39376,108 @@ button.br-item:not(:disabled):active {
   outline-width: var(--focus-width);
 }
 
+.menu-box-horizontal {
+  display: none;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 5;
+  color: #333;
+  padding: 2rem 0;
+  box-shadow: inset 0px 19px 6px -6px #ccc;
+}
+
+.menu-box-horizontal.menu-ativo {
+  display: block;
+  font-size: 40px;
+}
+
+.menu-box-horizontal-container {
+  width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+@media (min-width: 1232px) {.menu-box-horizontal-container {min-width: 1200px; max-width: 1200px;}}
+@media (min-width: 1200px) {
+  .menu-box-horizontal-container  {
+      max-width: 1140px;
+  }
+}
+@media (min-width: 992px) {
+  .menu-box-horizontal-container  {
+      max-width: 960px;
+  }
+}
+@media (min-width: 768px) {
+  .menu-box-horizontal-container  {
+      max-width: 720px;
+  }
+}
+@media (min-width: 576px) {
+  .menu-box-horizontal-container  {
+      max-width: 80%;
+  }
+}
+
+.menu-box-horizontal .menu-box-horizontal-container:before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  height: 20px;
+  width: 20px;
+  transform: rotate(45deg);
+  top: -9px;
+  margin-left: 3px;
+}
+
+.menu-box-horizontal-row {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.menu-box-horizontal-row .nav-header {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  display: block;
+  font-size: 2rem;
+}
+
+.menu-box-horizontal-row ul {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding: 0;
+  flex: 0 0 300px;
+  min-width: 200px;
+}
+
+.menu-box-horizontal ul li a {
+  color: #333;
+  font-size: .95rem ;
+  margin-bottom: 1rem ;
+  display: block;
+}
+
+.menu-box-horizontal .nav-item {
+  border-right: 1px solid #ececec !important;
+}
+
+.menu-box-horizontal .nav-item:last-child {
+  border: 0;
+}
+
+@media (max-width: 1250px) {
+  .header-govlinks {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=core.css.map*/

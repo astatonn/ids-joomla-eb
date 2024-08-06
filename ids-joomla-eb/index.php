@@ -49,7 +49,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
 <html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
 <head>
-    <?php if(!empty($this->params->get('title_page', ''))) : ?>
+    <?php if (!empty($this->params->get('title_page', ''))) : ?>
         <title><?php echo $this->params->get('title_page', '') ?></title>
     <?php endif ?>
     <jdoc:include type="metas" />
@@ -70,10 +70,18 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                 <div class="header-top">
                     <div class="menu-align-top">
                         <div class="header-menu">
+                        <?php if($this->params->get('tipo-menu') == 0): ?>
                             <div class="header-menu-trigger" id="header-navigation">
                                 <button class="br-button small circle" type="button" aria-label="Menu" data-toggle="menu" data-target="#main-navigation" id="navigation"><i class="fas fa-bars tema-<?php echo $this->params->get('tema'); ?>-main" style="font-size: 25px;" aria-hidden="true"></i>
                                 </button>
                             </div>
+                        <?php endif; ?>
+                        <?php if($this->params->get('tipo-menu') == 1): ?>  
+                            <div class="header-menu-trigger" id="header-navigation2">
+                                <button class="br-button small circle" type="button" id="header-navigation2"><i class="fas fa-bars tema-<?php echo $this->params->get('tema'); ?>-main" style="font-size: 25px;" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        <?php endif ?>
                         </div>
                     </div>
                     <div class="header-logo">
@@ -183,13 +191,24 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                     <jdoc:include type="modules" name="search" style="none" />
                 </div>
             </div>
+            <div id="menu-box-horizontal" class="menu-box-horizontal">
+            <div class="menu-box-horizontal-container">
+                <div class="menu-box-horizontal-row">
+                    <jdoc:include type="modules" name="menu-links" style="none" />
+
+                </div>
+            </div>
+
+        </div>
         </header>
+        
 
         <main class="d-flex flex-fill mb-5" id="main">
             <div class="<?php echo $largura ?>">
                 <jdoc:include type="modules" name="main-top" />
                 <div class="row">
                     <div class="<?php echo $tipomenu ?>" id="main-navigation">
+
                         <div class="menu-container">
                             <div class="menu-panel">
                                 <div class="menu-header">
@@ -357,13 +376,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
 
 
             <span class="br-divider my-3"></span>
-            <div class="<?php echo $largura ?>">
-                <div class="info">
-                    <div class="text-down-01 text-medium pb-3">
-                        Desenvolvido por 3º Sgt Int/2017 Souza Lima • <a href="github.com/astatonn">Github</a> • <a href="https://www.linkedin.com/in/lucas-lima-477377a5/">Linkedin</a> - 1º Centro de Telemática de Área
-                    </div>
-                </div>
-            </div>
+
         </footer>
         <button id="gotop" class="br-button primary circle backtotop" aria-label="Ir para o topo" onclick="goTop()"><i class="fa fa-chevron-up"></i></button>
         <jdoc:include type="modules" name="debug" style="none" />
@@ -376,5 +389,18 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
     </div>
 </body>
 <jdoc:include type="scripts" />
+<script>
+    document.getElementById('header-navigation2').addEventListener('click', function() {
+    var menu = document.getElementById('menu-box-horizontal');
+    if (menu.classList.contains('menu-ativo')) {
+        menu.classList.remove('menu-ativo');
+    } else {
 
+        menu.classList.add('menu-ativo');
+    }
+
+});
+
+
+</script>
 </html>
