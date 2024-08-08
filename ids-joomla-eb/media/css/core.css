@@ -29398,20 +29398,6 @@ mark,
   }
 }
 
-@media (max-width: 375px) {
-  img {
-    width: 350px !important;
-    height: auto !important;
-  }
-}
-
-@media (max-width: 768px) {
-
-  img {
-    width: 500px !important;
-    height: auto;
-  }
-}
 
 @media (max-width: 575px) {
 
