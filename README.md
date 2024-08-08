@@ -20,8 +20,7 @@ Este template foi criado a partir das especificações disponíveis em https://w
 
 ## Elementos implementados
 Novidades:
-* ✨Assets: Para evitar problemas de carregamento, os assets vão ser carregados localmente na página.
-* 🔧Responsividade: CSS ajustado para dispositivos móveis
+* ✨Articles Newsflash: Agora o módulo de últimas notícias tem o cabeçalho baseado na categoria tornando dinâmica a criação do módulo. 
 
 
 Features:

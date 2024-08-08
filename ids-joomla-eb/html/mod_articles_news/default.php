@@ -31,7 +31,7 @@ endif;
     <div class="autofit-float autofit-row portlet-header">
         <div class="autofit-col autofit-col-expand">
             <div class="portlet-title-text">
-                Últimas Notícias
+            <?php echo $list[0]->category_title ?>
             </div>
         </div>
     </div>
