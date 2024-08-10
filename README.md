@@ -172,8 +172,19 @@ http://agsp.eb.mil.br
    ```bash
    docker-compose up -d
    ```
-4 .**Acesse o Joomla**
-Se estiver utilizando as portas padrão configuradas no docker-compose.yaml, o Joomla estará disponível em http://localhost:8080. Caso contrário, substitua localhost pelo seu endereço IP ou nome de domínio.
+4. **Acesse o Joomla**
+  Se estiver utilizando as portas padrão configuradas no docker-compose.yaml, o Joomla estará disponível em http://localhost:8080. Caso contrário, substitua localhost pelo seu endereço IP ou nome de domínio.
+
+5. **Importar o template**
+    Não sera possivel importar o template pelo painel de administrador do Joomla. Para isso, voce deve copiar a pasta do template para o joomla. Para isso, execute o comando abaixo:
+    ```bash
+    docker cp ids-joomla-eb <id-do-seu-container>:/var/www/html/tmp    
+    ```
+    Para saber o id do container, execute o comando abaixo:
+    ```bash
+    docker ps
+    ```
+    agora acesse localhost:8080/administrator -> System -> Templates -> Site Templates -> Styles -> Configure como default o template IDS Gov...
 
 ## Contribuições
 Este espaço está aberto a contribuições da comunidade. Sinta-se livre para enviar _pull requests_ ou relatar falhas ou sugestões.
