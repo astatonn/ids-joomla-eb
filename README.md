@@ -20,6 +20,7 @@ Este template foi criado a partir das especificações disponíveis em https://w
 
 ## Elementos implementados
 Novidades:
+* ✨docker-compose: Agora você pode levantar um container docker com joomla rodando, dispensando os passos de instalção manual. Veja mais detalhes em [Docker: Configuração do Joomla com Docker](#docker-configuração-do-joomla-com-docker).
 * ✨Articles Newsflash: Agora o módulo de últimas notícias tem o cabeçalho baseado na categoria tornando dinâmica a criação do módulo. 
 
 
@@ -136,6 +137,54 @@ http://agsp.eb.mil.br
 
 *Certifique-se de substituir "/caminho/para/a/pasta" pelo caminho correto onde você extraiu os arquivos do projeto.*
 
+## Docker: Configuração do Joomla com Docker 
+
+### Requisitos
+
+- [Docker Engine](https://docs.docker.com/engine/install/) ou [Docker Desktop](https://docs.docker.com/desktop/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Configuração
+
+1. **Baixe o arquivo Docker Compose**  
+   O arquivo `docker-compose.yaml` está disponível no repositório oficial do [Docker Hub Joomla](https://hub.docker.com/_/joomla). 
+
+2. **Edite o arquivo `docker-compose.yaml`**  
+   Abra o arquivo `docker-compose.yaml` e personalize as credenciais do banco de dados e do Joomla conforme necessário. Certifique-se de ajustar os seguintes parâmetros:
+   
+   - Banco de Dados:
+     ```yaml
+     MYSQL_DATABASE: seu_nome_banco
+     MYSQL_USER: seu_usuario
+     MYSQL_PASSWORD: sua_senha
+     MYSQL_ROOT_PASSWORD: sua_senha_root
+     ```
+   - Joomla:
+     ```yaml
+     JOOMLA_DB_HOST: nome_do_servico_db
+     JOOMLA_DB_NAME: seu_nome_banco
+     JOOMLA_DB_USER: seu_usuario
+     JOOMLA_DB_PASSWORD: sua_senha
+     ```
+
+3. **Execute o Docker Compose**  
+   No diretório onde o arquivo `docker-compose.yaml` está localizado, execute o comando a seguir para iniciar os containers:
+   ```bash
+   docker-compose up -d
+   ```
+4. **Acesse o Joomla**
+  Se estiver utilizando as portas padrão configuradas no docker-compose.yaml, o Joomla estará disponível em http://localhost:8080. Caso contrário, substitua localhost pelo seu endereço IP ou nome de domínio.
+
+5. **Importar o template**
+    Não sera possivel importar o template pelo painel de administrador do Joomla. Para isso, voce deve copiar a pasta do template para o joomla. Para isso, execute o comando abaixo:
+    ```bash
+    docker cp ids-joomla-eb <id-do-seu-container>:/var/www/html/tmp    
+    ```
+    Para saber o id do container, execute o comando abaixo:
+    ```bash
+    docker ps
+    ```
+    agora acesse localhost:8080/administrator -> System -> Templates -> Site Templates -> Styles -> Configure como default o template IDS Gov...
 
 ## Contribuições
 Este espaço está aberto a contribuições da comunidade. Sinta-se livre para enviar _pull requests_ ou relatar falhas ou sugestões.
