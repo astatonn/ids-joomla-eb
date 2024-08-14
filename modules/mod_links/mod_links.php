@@ -2,7 +2,9 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\Factory;
 
+$app = Factory::getApplication();
 
 
 ?>
@@ -24,7 +26,7 @@ use Joomla\CMS\Helper\ModuleHelper;
                 <a href="<?php echo $params['url-link-' . $i]; ?>" target="_blank" class="link-link">
                     <div class="link-card br-card">
                         <div class="link-content">
-                            <i class="<?php echo $params['icon-link-'. $i ]?>" style="color:var(--green-vivid-60);font-size:40px;margin:10px 0"></i>
+                            <i class="<?php echo $params['icon-link-'. $i ]?> tema-<?php echo $app->getConfig()['themeParams']['tema']; ?>-third" style="font-size:40px;margin:10px 0"></i>
                             <h5 class="link-title"><?php echo $params['name-link-' . $i]; ?></h5>
                         </div>
                     </div>

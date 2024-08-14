@@ -39466,4 +39466,8 @@ button.br-item:not(:disabled):active {
   }
 }
 
+.swiper-container img {
+  max-width: 100% !important;
+}
+
 /*# sourceMappingURL=core.css.map*/

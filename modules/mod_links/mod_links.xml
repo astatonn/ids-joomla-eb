@@ -5,7 +5,7 @@
 	<creationDate>31/01/2024</creationDate>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
-	<version>1.1.0</version>
+	<version>1.1.2</version>
 	<description>Módulo da seção de links</description>
 	<namespace path="modules/mod_links">Joomla\Module\Links</namespace>
 	<files>
