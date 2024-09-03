@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+    <name>Imagem PopUp</name>
+    <version>1.0.1</version>
+    <author>Cb Michels - 8º RC Mec</author>
+    <creationDate>2024/08/17</creationDate>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>hm_voicolesco@hotmail.com</authorEmail>
+    <description>Adiciona uma imagem PopUp na tela assim que a página carregar</description>
+    <namespace path="modules/mod_imagempopup">Joomla\Module\Imagem PopUp</namespace>
+    <files>
+        <filename module="mod_imagempopup">mod_imagempopup.php</filename>
+		<folder>tmpl</folder>
+    </files>
+
+    <help key="Site_Modules:_ImagemPopUp"/>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic-config" label="Configurações do PopUp">
+                <field name="imagem" type="media" label="Imagem" description="Imagem que irá aparecer na tela"/>
+                <field name="cor" type="color" label="Cor do Fundo e Opacidade" description="Define a cor e a opacidade da sobreposição" format="rgba"/>
+                <field name="temporizador" type="radio" label="Temporizador" description="Habilita a imagem desaparecer da tela após um período" layout="joomla.form.field.radio.switcher">
+                    <option value="0">Não</option>
+                    <option value="1">Sim</option>
+                </field>
+                <field name="segundos" type="integer" label="Desaparecer após quantos segundos" description="Remover a imagem após X segundos" showon="temporizador:1" first="1" last="10" step="1"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
