@@ -218,13 +218,28 @@ Este espaço está aberto a contribuições da comunidade. Sinta-se livre para e
 ## Contribuidores
 
 Agradecemos a todos que contribuíram para este projeto!
-
-<div align="center" style="display: inline-block; border: 1px solid #1d1d1f; padding: 20px 15px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-  <a href="https://github.com/joao-pedro-rdo">
+<table border="0">
+  <tr>
+    <td align="center">
+        <a href="https://github.com/joao-pedro-rdo">
     <img src="https://avatars.githubusercontent.com/u/122635721?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
     <br />
     <sub><b>João Pedro Ramos</b></sub>
     <br />
     <sub><b>Docker Container</b></sub>
   </a>
+    </td>
+    <td align="center">
+       <a href="https://github.com/HenriqueMichelsVoicolesco">
+    <img src="https://avatars.githubusercontent.com/u/50555545?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <br />
+    <sub><b>Henrique Michels Voicolesco</b></sub>
+    <br />
+    <sub><b>Módulo PopUp</b></sub>
+  </a>
+    </td>
+        
+  </tr>
+</table>
+
 </div>
