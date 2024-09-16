@@ -99,8 +99,40 @@ Parâmetros de estilo configurados na área "Avançado" do tema:
 * error-search: Área para exibição do módulo Busca Inteligente (finder) na página de erro. É obrigatório o uso do layout "busca-erro" no módulo.
 * debug: Área para exibição de módulos quando a depuração está habilitada no Joomla.
 
+
 ## Demonstração
 Este template está atualmente em uso em alguns dos sites listados abaixo:
+<table border="0">
+  <tr>
+    <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/1cta.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="1º Centro de Telemática de Área" />
+       <br />
+          <a href="http://1cta.eb.mil.br"><sub><b>Internet</b></sub></a>
+          <br />
+    </td>
+    <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/agsp_logo.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Arsenal de Guerra de General Câmara" />
+       <br />
+    <a href="http://intranet.agsp.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+    <br />
+      <a href="http://agsp.eb.mil.br/"><sub><b>Internet</b></sub></a>
+       <br />  
+    </td>
+         <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/logocolog.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+       <br />
+    <a href="http://intranet.colog.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+    <br />
+    </td>
+          <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/Brasao%20CI%20Art%20.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+       <br />
+    <a href="http://intranet.ciartmslfgt.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+    <br />
+    </td>
+  </tr>
+</table>
+
 http://1cta.eb.mil.br
 http://intranet.agsp.eb.mil.br/ (EBNet)
 http://intranet.colog.eb.mil.br (EBNet)
@@ -115,7 +147,6 @@ http://agsp.eb.mil.br
 ``` curl -LJO "https://github.com/astatonn/ids-joomla-eb/archive/refs/heads/master.zip" ```
 
 - Extraia os arquivos na pasta de sua escolha.
-
 ### Instale o template
 - Acesse o painel de administrador do Joomla.
 - Navegue até "Sistema" -> "Extensões" -> "Gerenciar" -> "Instalar".
@@ -188,3 +219,17 @@ http://agsp.eb.mil.br
 
 ## Contribuições
 Este espaço está aberto a contribuições da comunidade. Sinta-se livre para enviar _pull requests_ ou relatar falhas ou sugestões.
+
+## Contribuidores
+
+Agradecemos a todos que contribuíram para este projeto!
+
+<div align="center" style="display: inline-block; border: 1px solid #1d1d1f; padding: 20px 15px; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <a href="https://github.com/joao-pedro-rdo">
+    <img src="https://avatars.githubusercontent.com/u/122635721?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <br />
+    <sub><b>João Pedro Ramos</b></sub>
+    <br />
+    <sub><b>Docker Container</b></sub>
+  </a>
+</div>
