@@ -133,11 +133,6 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
   </tr>
 </table>
 
-http://1cta.eb.mil.br
-http://intranet.agsp.eb.mil.br/ (EBNet)
-http://intranet.colog.eb.mil.br (EBNet)
-http://agsp.eb.mil.br
-
 
 
 ## Instalação
