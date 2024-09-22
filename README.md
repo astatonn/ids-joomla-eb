@@ -238,7 +238,15 @@ Agradecemos a todos que contribuíram para este projeto!
     <sub><b>Módulo PopUp</b></sub>
   </a>
     </td>
-        
+         <td align="center">
+       <a href="https://github.com/vieiranetodev">
+    <img src="https://avatars.githubusercontent.com/u/147254493?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <br />
+    <sub><b>José Vieira Neto</b></sub>
+    <br />
+    <sub><b>Moderador Discord</b></sub>
+  </a>
+    </td>
   </tr>
 </table>
 
