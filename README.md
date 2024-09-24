@@ -130,6 +130,13 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <a href="http://intranet.ciartmslfgt.eb.mil.br/"><sub><b>Intranet</b></sub></a>
     <br />
     </td>
+   <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/badmcurado.jpg?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+       <br />
+    <a href="http://intranet.baadmcurado.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+    <br />
+    </td>
+        
   </tr>
 </table>
 
