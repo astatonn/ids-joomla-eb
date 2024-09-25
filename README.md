@@ -60,6 +60,8 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
   </tr>
 </table>
 
+## Como usar
+Acesse nossa [Wiki](https://github.com/astatonn/ids-joomla-eb/wiki) para realizar a instalação
 
 ## Contribuições
 Este espaço está aberto a contribuições da comunidade. Sinta-se livre para enviar _pull requests_ ou relatar falhas ou sugestões.
