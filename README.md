@@ -62,7 +62,15 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <a href="https://3rm.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
     </td>
-         
+           <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/3rcg-removebg-preview.png?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="3º Regimento de Cavalaria de Guardas" />
+       <br />
+    <a href="http://intranet.3rcg.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+    <br />
+      <a href="https://3rcg.eb.mil.br/"><sub><b>Internet</b></sub></a>
+       <br />  
+    </td>
+
   </tr>
 </table>
 
