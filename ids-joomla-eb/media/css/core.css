@@ -38097,7 +38097,6 @@ button.br-item:not(:disabled):active {
   justify-content: center;
 }
 
-
 .link-col {
   flex: 0 0 25%;
   max-width: 25%;
@@ -38123,12 +38122,9 @@ button.br-item:not(:disabled):active {
   justify-content: center;
 }
 
-
-
 .link-card:hover {
   background: #f8f9fa;
 }
-
 
 .link-content {
   height: var(--card-size);
@@ -38140,16 +38136,26 @@ button.br-item:not(:disabled):active {
   box-sizing: border-box;
 }
 
-
 .link-title {
   font-size: 18px;
   margin: 0;
 }
 
-
 .link-link {
   text-decoration: none;
   color: #007bff;
+}
+
+.links-compact .link-col{
+  min-height: 0;
+}
+
+.links-compact .link-card{
+  height: auto;
+}
+
+.links-compact h5{
+  padding-bottom: 0.2em;
 }
 
 .br-tooltip .popover-header {
