@@ -6,8 +6,8 @@ use Joomla\CMS\Factory;
 
 $app = Factory::getApplication();
 
-
 ?>
+
 <div class="container">
     <!-- HEADER  -->
 
@@ -20,13 +20,15 @@ $app = Factory::getApplication();
     </div>
 
 
-    <div class="links-container">
+    <div class="links-container<?php echo ($params['compact-links'] == 1) ? " links-compact": "";?>">
         <?php for ($i = 1; $i <= $params['link-amount'] ; $i++) : ?>
             <div class="link-col">
                 <a href="<?php echo $params['url-link-' . $i]; ?>" target="_blank" class="link-link">
                     <div class="link-card br-card">
                         <div class="link-content">
-                            <i class="<?php echo $params['icon-link-'. $i ]?> tema-<?php echo $app->getConfig()['themeParams']['tema']; ?>-third" style="font-size:40px;margin:10px 0"></i>
+                            <?php if($params['compact-links'] == 0) : ?> 
+                                <i class="<?php echo $params['icon-link-'. $i ]?> tema-<?php echo $app->getConfig()['themeParams']['tema']; ?>-third" style="font-size:40px;margin:10px 0"></i>
+                            <?php endif; ?>    
                             <h5 class="link-title"><?php echo $params['name-link-' . $i]; ?></h5>
                         </div>
                     </div>
