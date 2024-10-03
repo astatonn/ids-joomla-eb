@@ -22,7 +22,7 @@ Este template foi criado a partir das especificações disponíveis em https://w
 
 ## Demonstração
 Este template está atualmente em uso em alguns dos sites listados abaixo:
-<table border="0">
+<table border="0" align="center">
   <tr>
     <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/main/1cta.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="1º Centro de Telemática de Área" />
@@ -88,7 +88,7 @@ Este espaço está aberto a contribuições da comunidade. Sinta-se livre para e
 ## Contribuidores
 
 Agradecemos a todos que contribuíram para este projeto!
-<table border="0">
+<table border="0" align="center">
   <tr>
     <td align="center">
         <a href="https://github.com/joao-pedro-rdo">
