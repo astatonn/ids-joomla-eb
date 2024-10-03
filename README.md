@@ -76,7 +76,9 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <a href="https://8ciacom.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
     </td>
-    <td align="center">
+  </tr>
+  <tr>
+  <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/c72da8295564c779f6a2883bd06ceaf3e60ce365/8rcmec.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
     <a href="http://intranet.8rcmec.eb.mil.br/"><sub><b>Intranet</b></sub></a>
