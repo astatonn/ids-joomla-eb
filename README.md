@@ -45,19 +45,19 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <br />
     </td>
           <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/Brasao%20CI%20Art%20.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/Brasao%20CI%20Art%20.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Centro de Instrução de Artilharia de Mísseis e Foguetes" />
        <br />
     <a href="http://intranet.ciartmslfgt.eb.mil.br/"><sub><b>Intranet</b></sub></a>
     <br />
     </td>
    <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/badmcurado.jpg?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/badmcurado.jpg?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Base Administrativa do Curado" />
        <br />
     <a href="http://intranet.baadmcurado.eb.mil.br/"><sub><b>Intranet</b></sub></a>
     <br />
     </td>
       <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/Brasao_3RM.png?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/Brasao_3RM.png?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="3ª Região Militar" />
        <br />
     <a href="https://3rm.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
@@ -70,10 +70,16 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
       <a href="https://3rcg.eb.mil.br/"><sub><b>Internet</b></sub></a>
        <br />  
     </td>
- <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/8_cia_com.png?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
+    <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/8_cia_com.png?raw=true" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8ª Companhia de Comunicações" />
        <br />
     <a href="https://8ciacom.eb.mil.br/"><sub><b>Internet</b></sub></a>
+    <br />
+    </td>
+    <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/c72da8295564c779f6a2883bd06ceaf3e60ce365/8rcmec.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <br />
+    <a href="http://intranet.8rcmec.eb.mil.br/"><sub><b>Intranet</b></sub></a>
     <br />
     </td>
   </tr>
@@ -92,7 +98,7 @@ Agradecemos a todos que contribuíram para este projeto!
   <tr>
     <td align="center">
         <a href="https://github.com/joao-pedro-rdo">
-    <img src="https://avatars.githubusercontent.com/u/122635721?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <img src="https://avatars.githubusercontent.com/u/122635721?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro Ramos" />
     <br />
     <sub><b>João Pedro Ramos</b></sub>
     <br />
@@ -101,7 +107,7 @@ Agradecemos a todos que contribuíram para este projeto!
     </td>
     <td align="center">
        <a href="https://github.com/HenriqueMichelsVoicolesco">
-    <img src="https://avatars.githubusercontent.com/u/50555545?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <img src="https://avatars.githubusercontent.com/u/50555545?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Henrique Michels Voicolesco" />
     <br />
     <sub><b>Henrique Michels Voicolesco</b></sub>
     <br />
@@ -110,7 +116,7 @@ Agradecemos a todos que contribuíram para este projeto!
     </td>
          <td align="center">
        <a href="https://github.com/vieiranetodev">
-    <img src="https://avatars.githubusercontent.com/u/147254493?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <img src="https://avatars.githubusercontent.com/u/147254493?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="José Vieira Neto" />
     <br />
     <sub><b>José Vieira Neto</b></sub>
     <br />
@@ -119,7 +125,7 @@ Agradecemos a todos que contribuíram para este projeto!
     </td>
               <td align="center">
        <a href="https://github.com/vicariskr">
-    <img src="https://avatars.githubusercontent.com/u/84245596?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="João Pedro" />
+    <img src="https://avatars.githubusercontent.com/u/84245596?v=4" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Gabriel Augusto Vicari" />
     <br />
     <sub><b>Gabriel Augusto Vicari</b></sub>
     <br />
