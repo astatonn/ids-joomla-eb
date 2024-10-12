@@ -31244,6 +31244,17 @@ hr {
   color: var(--blue-warm-vivid-50);
 }
 
+.tema-azul-menu-body ul li a {
+  color: var(--blue-warm-vivid-50);
+}
+
+.tema-azul-menu-body .drop-menu ul li a {
+  background-color:  var(--blue-vivid-80) !important;
+  color: white  !important;
+
+}
+
+
 /* tema vermelho */
 .tema-vermelho-main,
 .tema-vermelho-main ul li a {
@@ -31283,6 +31294,26 @@ hr {
 
 .tema-vermelho-menu-links ul li a {
   color: var(--red-warm-vivid-50);
+}
+
+.tema-vermelho-menu-body ul li a {
+  color: var(--red-warm-vivid-50);
+}
+
+
+.tema-vermelho-menu-body .drop-menu>.menu-item {
+  color: var(--red-vivid-80) !important;
+}
+
+.tema-vermelho-menu-body .drop-menu ul li a{
+  color: var(--red-vivid-50) !important;
+  
+}
+
+.tema-vermelho-menu-body .drop-menu ul li a {
+  background-color:  var(--red-vivid-80) !important;
+  color: white !important;
+
 }
 
 
@@ -31331,8 +31362,43 @@ hr {
   text-shadow: 1px 2px 7px var(--yellow-vivid-50);
 }
 
+.tema-amarelo-menu-body .drop-menu>.menu-item {
+  color: var(--yellow-vivid-50) !important;
+  
+}
+.tema-amarelo-menu-body .drop-menu ul li a{
+  color: var(--yellow-vivid-50) !important;
+  
+}
 
+.tema-amarelo-menu-body .drop-menu ul li a {
+  background-color:  var(--yellow-vivid-80) !important;
+  color: white  !important;
 
+}
+
+.tema-amarelo-menu-body ul li a {
+  color: var(--yellow-vivid-50);
+  text-shadow: 1px 2px 7px var(--yellow-vivid-50);
+}
+
+.tema--menu-body {
+  color: var(--green-vivid-50) !important;
+}
+
+.tema--menu-body .drop-menu>.menu-item {
+  color: var(--green-vivid-80) !important;
+}
+
+.tema--menu-body ul li a {
+  color: var(--green-vivid-50) !important;
+}
+
+.tema--menu-body .drop-menu ul li a {
+  background-color:  var(--green-vivid-80) !important;
+  color: white  !important;
+
+}
 
 .tema--third {
   color: var(--green-vivid-80) !important;
@@ -33518,7 +33584,7 @@ button.br-item:not(:disabled):active {
 .br-menu a.menu-item:not(:disabled).active {
   --interactive: var(--color-dark);
   --interactive-rgb: var(--color-dark-rgb);
-  background-color: var(--active);
+  /* background-color: var(--active); */
 }
 
 .br-menu a.menu-item:not(:disabled).active:focus {
