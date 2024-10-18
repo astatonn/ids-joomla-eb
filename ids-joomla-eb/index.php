@@ -221,7 +221,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
                                         <?php endif; ?>
                                     </div>
                                     <div class="menu-close">
-                                        <button class="br-button circle" type="button" aria-label="Fechar o menu" data-dismiss="menu"><i class="fas fa-times" aria-hidden="true"></i></button>
+                                        <button class="br-button circle" type="button" aria-label="Fechar o menu" data-dismiss="menu"><i class="fas fa-times tema-<?php echo $this->params->get('tema'); ?>-main" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                                 <nav class="menu-body tema-<?php echo $this->params->get('tema'); ?>-menu-body">
