@@ -51,6 +51,10 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
 <head>
     <?php if (!empty($this->params->get('title_page', ''))) : ?>
         <title><?php echo $this->params->get('title_page', '') ?></title>
+        <!-- Meta tag para autor do template -->
+        <meta name="author" content="Sgt Souza Lima - 1o CTA">
+        <!-- Comentário HTML com links para redes sociais -->
+        <!--Desenvolvido por Sgt Souza Lima • Github: https://github.com/astatonn • LinkedIn: https://www.linkedin.com/in/astatonn-->
     <?php endif ?>
     <jdoc:include type="metas" />
     <jdoc:include type="styles" />
