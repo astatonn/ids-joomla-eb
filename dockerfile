@@ -1,10 +1,22 @@
 FROM joomla:php8.3-apache
+
+# Instalar pacotes adicionais
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     bash \
-    curl 
-COPY ids-joomla-eb/ /var/www/html/tmp  
-#RUN chown -R www-data:www-data /var/www/html/tmp
+    curl
+
+# Copiar o diretório de ids-joomla-eb para dentro do container
+COPY ids-joomla-eb/ /var/www/html/tmp
+
+# Criar um arquivo customizado de configuração do PHP para permitir uploads de até 20 MB
+RUN echo "upload_max_filesize = 20M\npost_max_size = 20M" > /usr/local/etc/php/conf.d/custom-php.ini
+
+# Definir o diretório de trabalho
 WORKDIR /var/www/html
+
+# Expor a porta 80
 EXPOSE 80
+
+# Comando padrão de execução
 CMD ["apache2-foreground"]
