@@ -18,7 +18,7 @@
   <h1>Sobre o Template</h1>
 </div>
 
-Este template foi criado a partir das especificações disponíveis em https://www.gov.br/ds/, tendo em vista a compatibilidade com a atual versão do Joomla! (5.0.3, neste momento)
+Este template foi criado a partir das especificações disponíveis em https://www.gov.br/ds/, tendo em vista a compatibilidade com a atual versão do Joomla! (5.x, neste momento)
 
 ## Demonstração
 Este template está atualmente em uso em alguns dos sites listados abaixo:
