@@ -114,6 +114,12 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <a href="http://intranet.13bdainfmtz.eb.mil.br "><sub><b>Intranet</b></sub></a>
     <br />
     </td>
+        <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/logo_52ct.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <br />
+    <a href="http://intranet.52ct.eb.mil.br "><sub><b>Intranet</b></sub></a>
+    <br />
+    </td>
   </tr>
 </table>
 
