@@ -17,7 +17,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic-config" label='Configuração dos Menus'>
-		<field name="compact-links" type="list" label="Links Pequenos" descripition="Deixa os links pequenos sem ícone">
+		<field name="compact-links" type="radio" label="Links Pequenos" descripition="Deixa os links pequenos sem ícone">
 			<option value="0">Não compactar</option>
 			<option value="1">Compactar</option>
 		</field>
