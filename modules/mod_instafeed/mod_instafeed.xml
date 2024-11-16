@@ -31,7 +31,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic-config" label='Configuração dos Menus'>
-                <field name="profile" type="text" label='Perfil do Instagram' placeholer='oficial_exercito ou om_exercito' />
+                <field name="profile" type="text" label='Perfil do Instagram' hint='oficial_exercito ou om_exercito' />
             </fieldset>
 		</fields>
 	</config>
