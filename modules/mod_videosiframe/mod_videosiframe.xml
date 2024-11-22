@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>Módulo para exibição de vídeos em carrossel</name>
+	<author>3º Sgt Souza Lima</author>
+	<creationDate>22/11/2024</creationDate>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<version>1.0.0</version>
+    	<description><![CDATA[
+		<h1>Módulo de Carrossel para Vídeos do Youtube</h1>
+	    <br>
+		<strong>Adicione um carrossel de vídeos iterativo<br></strong>
+		<br><br>
+		<small>Versão atual: 1.0.0</small>
+		<small>última atualização: 22/11/2024</small>
+		]]></description>
+	<namespace path="modules/mod_videosiframe">Joomla\Module\videosiframe</namespace>
+	<files>
+		<filename module="mod_videosiframe">mod_videosiframe.php</filename>
+		<filename>css/videosiframe.css</filename>
+		<filename>js/videosiframe.js</filename>
+		<folder>tmpl</folder>
+        <folder>js</folder>
+        <folder>css</folder>
+
+	</files>
+    <scripts>
+        <script src="modules/mod_videosiframe/js/videosiframe.js" />
+    </scripts>
+	<help key="Site_Modules:_VideosIframe" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic-config" label='Configuração das Vídeos'>
+			<field name="video-amount" type="list" label='Quantidade de Vídeos' hint='Escolhe a quantidade de vídeos a serem exibidos na seção' default='4'>         
+                    <option value="1">1 Links</option>
+                    <option value="2">2 Links</option>
+                    <option value="3">3 Links</option>
+                    <option value="4">4 Links</option>
+                    <option value="5">5 Links</option>
+                    <option value="6">6 Links</option>
+                    <option value="7">7 Links</option>
+                    <option value="8">8 Links</option>
+                    <option value="9">9 Links</option>
+                    <option value="10">10 Links</option>
+                    <option value="11">11 Links</option>
+                    <option value="12">12 Links</option>
+                </field>
+			
+                <field name='video-link-1' type='text' label='Link 1' hint="Insira o link do youtube" showon='video-amount:1,2,3,4,5,6,7,8,9,10,11,12' default=''/>
+               
+                <field name='video-link-2' type='text' label='Link 2' hint="Insira o link do youtube" showon='video-amount:2,3,4,5,6,7,8,9,10,11,12' default=''/>
+
+                <field name='video-link-3' type='text' label='Link 3' hint="Insira o link do youtube" showon='video-amount:3,4,5,6,7,8,9,10,11,12' default=''/>
+
+                <field name='video-link-4' type='text' label='Link 4' hint="Insira o link do youtube" showon='video-amount:3,4,5,6,7,8,9,10,11,12' default=''/>
+
+                <field name='video-link-5' type='text' label='Link 5' hint="Insira o link do youtube" showon='video-amount:5,6,7,8,9,10,11,12' default=''/>
+
+                <field name='video-link-6' type='text' label='Link 6' hint="Insira o link do youtube" showon='video-amount:6,7,8,9,10,11,12' default=''/>
+
+                <field name='video-link-7' type='text' label='Link 7' hint="Insira o link do youtube" showon='video-amount:7,8,9,10,11,12' default=''/>
+
+                <field name='video-link-8' type='text' label='Link 8' hint="Insira o link do youtube" showon='video-amount:8,9,10,11,12' default=''/>
+
+                <field name='video-link-9' type='text' label='Link 9' hint="Insira o link do youtube" showon='video-amount:9,10,11,12' default=''/>
+
+                <field name='video-link-10' type='text' label='Link 10' hint="Insira o link do youtube" showon='video-amount:10,11,12' default=''/>
+
+                <field name='video-link-11' type='text' label='Link 11' hint="Insira o link do youtube" showon='video-amount:11,12' default=''/>
+
+                <field name='video-link-12' type='text' label='Link 12' hint="Insira o link do youtube" showon='video-amount:12' default=''/>
+
+            </fieldset>
+            <fieldset name="size-config" label='Configuração de dimensões dos vídeos'>
+                <field name='video-width' type='text' label='Largura dos Videos ' hint="Insira a largura dos vídeos" default="560"/>
+                <field name='video-height' type='text' label='Altura dos Vídeos' hint="Insira a alutra dos vídeos" default="315"/>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

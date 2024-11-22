@@ -1,0 +1,26 @@
+.video-carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+}
+
+.video-carousel {
+    display: flex;
+    gap: 20px;
+    animation: slide 10s infinite;
+    transition: transform 1s ease-in-out;
+}
+
+.video-item {
+    flex: 1 0 25%; /* Cada vídeo ocupa 25% da largura */
+    box-sizing: border-box;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
