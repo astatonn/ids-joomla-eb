@@ -379,6 +379,7 @@ $logo_footer = $this->params->get('cor_footer') ? 'media/templates/site/govbr-ds
             </div>
             <span class="br-divider my-3"></span>
             <div class="texto-copyright">
+                <!-- revisando direitos de licença -->
                 <?php echo $this->params->get('texto_licenca', ''); ?>
             </div>
         </footer>
