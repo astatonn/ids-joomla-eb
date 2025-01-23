@@ -11838,28 +11838,28 @@
           ;// CONCATENATED MODULE: ./src/partial/js/globals-class.js
           // Script Templates
 
-          // document.addEventListener("DOMContentLoaded", function() {
-          //   // Converte a string hexadecimal de volta para HTML
-          //   function base64ToHtml(base64) {
-          //               return decodeURIComponent(escape(window.atob(base64)));
-          //           }
+          document.addEventListener("DOMContentLoaded", function() {
+            // Converte a string hexadecimal de volta para HTML
+            function base64ToHtml(base64) {
+                        return decodeURIComponent(escape(window.atob(base64)));
+                    }
 
-          //           // String base64 do HTML com estilos inline
-          //           var base64String = "PGRpdiBjbGFzcz0iY29udGFpbmVyLWxnIj4KICAgIDxkaXYgY2xhc3M9ImluZm8iPgogICAgICAgIDxkaXYgY2xhc3M9InRleHQtZG93bi0wMSB0ZXh0LW1lZGl1bSBwYi0zIj4KICAgICAgICAgICAgRGVzZW52b2x2aWRvIHBvciBTZ3QgU291emEgTGltYSDigKIgPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL2FzdGF0b25uIj5HaXRodWI8L2E+IOKAoiA8YSBocmVmPSJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vYXN0YXRvbm4iPkxpbmtlZGluPC9hPiAtIDFvIENUQQogICAgICAgIDwvZGl2PgogICAgPC9kaXY+CjwvZGl2Pg==";
+                    // String base64 do HTML com estilos inline
+                    var base64String = "PGRpdiBjbGFzcz0iY29udGFpbmVyLWxnIj4KICAgIDxkaXYgY2xhc3M9ImluZm8iPgogICAgICAgIDxkaXYgY2xhc3M9InRleHQtZG93bi0wMSB0ZXh0LW1lZGl1bSBwYi0zIj4KICAgICAgICAgICAgRGVzZW52b2x2aWRvIHBvciBTZ3QgU291emEgTGltYSDigKIgPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL2FzdGF0b25uIj5HaXRodWI8L2E+IOKAoiA8YSBocmVmPSJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vYXN0YXRvbm4iPkxpbmtlZGluPC9hPiAtIDFvIENUQQogICAgICAgIDwvZGl2PgogICAgPC9kaXY+CjwvZGl2Pg==";
 
-          //           // Decodifica o base64 para HTML
-          //           var decodedHtml = base64ToHtml(base64String);
+                    // Decodifica o base64 para HTML
+                    var decodedHtml = base64ToHtml(base64String);
 
-          //           // Cria um div com o conteúdo decodificado
-          //           var div = document.createElement('div');
-          //           div.innerHTML = decodedHtml;
+                    // Cria um div com o conteúdo decodificado
+                    var div = document.createElement('div');
+                    div.innerHTML = decodedHtml;
 
-          //           // Adiciona o conteúdo antes do fechamento do footer
-          //           var footer = document.querySelector('footer');
-          //           if (footer) {
-          //               footer.insertAdjacentElement('beforeend', div);
-          //           }
-          // });
+                    // Adiciona o conteúdo antes do fechamento do footer
+                    var footer = document.querySelector('footer');
+                    if (footer) {
+                        footer.insertAdjacentElement('beforeend', div);
+                    }
+          });
 
 
 
