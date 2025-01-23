@@ -24,6 +24,15 @@
 }
 
 
+.brew-selection {
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 200px;
+  margin: 0 15px;
+  scrollbar-width: 20px;
+}
+
+
 .flatpickr-calendar.open,
 .flatpickr-calendar.inline {
   opacity: 1;
