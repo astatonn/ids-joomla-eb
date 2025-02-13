@@ -149,7 +149,7 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <br />
     </td>
        <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/logo3bsup.pngstyle="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/logo3bsup.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
     <a href="https://www.3bsup.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
