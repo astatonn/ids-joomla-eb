@@ -136,6 +136,12 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <a href="https://www.1bdacmec.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
     </td>
+        <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/logo41ct.jpeg" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <br />
+    <a href="https://www.intranet.11ct.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+    <br />
+    </td>
 
   </tr>
 </table>
