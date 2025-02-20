@@ -19,12 +19,17 @@
         <fields name="params">
             <fieldset name="basic-config" label="Configurações do PopUp">
                 <field name="imagem" type="media" label="Imagem" description="Imagem que irá aparecer na tela"/>
-                <field name="cor" type="color" label="Cor do Fundo e Opacidade" description="Define a cor e a opacidade da sobreposição" format="rgba"/>
                 <field name="temporizador" type="radio" label="Temporizador" description="Habilita a imagem desaparecer da tela após um período" layout="joomla.form.field.radio.switcher">
                     <option value="0">Não</option>
                     <option value="1">Sim</option>
                 </field>
-                <field name="segundos" type="integer" label="Desaparecer após quantos segundos" description="Remover a imagem após X segundos" showon="temporizador:1" first="1" last="10" step="1"/>
+                <field name="segundos" type="integer" label="Desaparecer após quantos segundos" description="Remover a imagem após X segundos" showon="temporizador:1" first="5" last="30" step="1"/>
+                <field          name="popuptext" 
+                type="editor" 
+                label="Texto" 
+                description="" 
+
+                filter="safehtml"/>
             </fieldset>
         </fields>
     </config>
