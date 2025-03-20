@@ -112,6 +112,8 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <img src="https://github.com/astatonn/bras-esEB/blob/main/13bdaimz.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
     <a href="http://intranet.13bdainfmtz.eb.mil.br "><sub><b>Intranet</b></sub></a>
+            <br />
+         <a href="https://13bdainfmtz.eb.mil.br/"><sub><b>Intranet</b></sub></a>   
     <br />
     </td>
         <td align="center">
@@ -163,6 +165,13 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
         <a href="https://www.6rcb.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
            <a href="https://www.intranet.6rcb.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+        <br />
+    </td>
+      </td>
+       <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/6cta_logo.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <br />
+           <a href="https://www.intranet.6cta.eb.mil.br/"><sub><b>Intranet</b></sub></a>
         <br />
     </td>
   </tr>
