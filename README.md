@@ -120,6 +120,8 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <img src="https://github.com/astatonn/bras-esEB/blob/main/logo_52ct.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
     <a href="http://intranet.52ct.eb.mil.br "><sub><b>Intranet</b></sub></a>
+              <br />
+    <a href="http://52ct.eb.mil.br "><sub><b>Internet</b></sub></a>
     <br />
     </td>
         <td align="center">
@@ -172,6 +174,18 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <img src="https://github.com/astatonn/bras-esEB/blob/main/6cta_logo.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
            <a href="https://www.intranet.6cta.eb.mil.br/"><sub><b>Intranet</b></sub></a>
+        <br />
+    </td>
+     <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/logo_10rm.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <br />
+           <a href="https://www.10rm.eb.mil.br/"><sub><b>Internet</b></sub></a>
+        <br />
+    </td>
+     <td align="center">
+       <img src="https://github.com/astatonn/bras-esEB/blob/main/logo-cro9.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
+       <br />
+           <a href="https://www.intranet.cro9.eb.mil.br/"><sub><b>Intranet</b></sub></a>
         <br />
     </td>
   </tr>
