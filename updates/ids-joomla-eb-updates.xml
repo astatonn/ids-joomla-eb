@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+    <update>
+        <name>IDS Joomla EB Package</name>
+        <description>Pacote de instalação completo do IDS Joomla EB</description>
+        <element>pkg_ids_joomla_eb</element>
+        <type>package</type>
+        <version>1.0.0</version>
+        <infourl title="IDS Joomla EB">https://github.com/astatonn/ids-joomla-eb</infourl>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/astatonn/ids-joomla-eb/releases/download/v1.0.0/pkg_ids_joomla_eb.zip</downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <maintainer>Seu Nome</maintainer>
+        <maintainerurl>https://github.com/astatonn</maintainerurl>
+        <targetplatform name="joomla" version="4.[0123456789]" />
+    </update>
+</updates>
