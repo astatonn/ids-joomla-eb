@@ -6,9 +6,6 @@ RUN apt-get update && \
     bash \
     curl
 
-# Copiar o diretório de ids-joomla-eb para dentro do container
-COPY ids-joomla-eb/ /var/www/html/tmp
-
 # Criar um arquivo customizado de configuração do PHP para permitir uploads de até 20 MB
 RUN echo "upload_max_filesize = 20M\npost_max_size = 20M" > /usr/local/etc/php/conf.d/custom-php.ini
 
