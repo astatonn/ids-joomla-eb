@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site" method="upgrade">
+  <name>mod_exemplo</name>
+  <author>Seu Nome</author>
+  <version>1.0.0</version>
+  <description>Exemplo de módulo Joomla com boas práticas.</description>
+  <files>
+    <filename module="mod_exemplo">mod_exemplo.php</filename>
+  </files>
+  <languages>
+    <language tag="en-GB">language/en-GB.mod_exemplo.ini</language>
+    <language tag="pt-BR">language/pt-BR.mod_exemplo.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="exibir_saudacao" type="radio" default="1" label="Exibir saudação?" description="Exibe ou oculta a saudação do módulo.">
+          <option value="1">Sim</option>
+          <option value="0">Não</option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

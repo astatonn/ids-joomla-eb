@@ -19,28 +19,35 @@ use Joomla\CMS\Language\Text;
 class pkg_ids_joomla_ebInstallerScript extends InstallerScript
 {
     /**
-     * Minimum PHP version required
-     *
-     * @var    string
+     * Versão mínima do PHP exigida
+     * @var string
      */
-    protected $minimumPhp = '7.4.0';
+    protected $minimumPhp = '8.1.0';
 
     /**
-     * Minimum Joomla version required
-     *
-     * @var    string
+     * Versão mínima do Joomla exigida
+     * @var string
      */
-    protected $minimumJoomla = '4.0.0';
+    protected $minimumJoomla = '5.0.0';
 
     /**
-     * List of required extensions
-     *
-     * @var    array
+     * Lista de extensões obrigatórias
+     * @var array
      */
     protected $extensionDependencies = [
-        // Adicione qualquer extensão necessária aqui
-        // ['type' => 'component', 'name' => 'com_exemplo', 'version' => '1.0.0']
+        // Exemplo: ['type' => 'component', 'name' => 'com_exemplo', 'version' => '1.0.0']
     ];
+
+    /**
+     * Valida dependências antes da instalação
+     */
+    protected function checkDependencies()
+    {
+        // Aqui você pode implementar validação de extensões obrigatórias
+        // Exemplo: checar se componentes necessários estão instalados
+        // Retorne true se tudo ok, false se faltar algo
+        return true;
+    }
 
     /**
      * Function called before extension installation/update/removal procedure commences
@@ -52,10 +59,18 @@ class pkg_ids_joomla_ebInstallerScript extends InstallerScript
      */
     public function preflight($type, $parent)
     {
+        // Executa validações padrão do Joomla
         if (!parent::preflight($type, $parent)) {
             return false;
         }
 
+        // Valida dependências customizadas
+        if (!$this->checkDependencies()) {
+            Factory::getApplication()->enqueueMessage('Dependências obrigatórias não encontradas.', 'error');
+            return false;
+        }
+
+        // Mensagem informativa
         $app = Factory::getApplication();
         $app->enqueueMessage(Text::_('PKG_IDS_JOOMLA_EB_PREFLIGHT_' . strtoupper($type) . '_MESSAGE'));
 
@@ -72,16 +87,18 @@ class pkg_ids_joomla_ebInstallerScript extends InstallerScript
      */
     public function postflight($type, $parent)
     {
+        // Executa pós-processamento padrão do Joomla
         if (!parent::postflight($type, $parent)) {
             return false;
         }
-        
+
         $app = Factory::getApplication();
-        
+
+        // Mensagem de sucesso após instalar/atualizar
         if ($type === 'install' || $type === 'update') {
             $app->enqueueMessage(Text::_('PKG_IDS_JOOMLA_EB_POSTFLIGHT_' . strtoupper($type) . '_MESSAGE'));
         }
-        
+
         return true;
     }
 }

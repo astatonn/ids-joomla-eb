@@ -29,21 +29,15 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <br />
           <a href="http://1cta.eb.mil.br"><sub><b>Internet</b></sub></a>
           <br />
-    </td>
+
     <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/agsp_logo.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Arsenal de Guerra de General Câmara" />
-       <br />
-    <a href="http://intranet.agsp.eb.mil.br/"><sub><b>Intranet</b></sub></a>
     <br />
       <a href="http://agsp.eb.mil.br/"><sub><b>Internet</b></sub></a>
-       <br />  
-    </td>
          <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/main/logocolog.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Comando Logístico" />
        <br />
     <a href="http://intranet.colog.eb.mil.br/"><sub><b>Intranet</b></sub></a>
     <br />
-    </td>
           <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/main/Brasao%20CI%20Art%20.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="Centro de Instrução de Artilharia de Mísseis e Foguetes" />
        <br />
@@ -78,11 +72,8 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     </td>
   </tr>
   <tr>
-  <td align="center">
+
        <img src="https://github.com/astatonn/bras-esEB/blob/c72da8295564c779f6a2883bd06ceaf3e60ce365/8rcmec.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
-       <br />
-    <a href="http://intranet.8rcmec.eb.mil.br/"><sub><b>Intranet</b></sub></a>
-    <br />
     </td>
        <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/main/3gaaae.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
@@ -91,13 +82,8 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <br />
     </td>
        <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/19rcmeclogo.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
-       <br />
     <a href="https://19rcmec.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
-    </td>
-         <td align="center">
-       <img src="https://github.com/astatonn/bras-esEB/blob/main/CIBld.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
     <a href="https://cibld.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />

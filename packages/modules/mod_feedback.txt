@@ -1,0 +1,15 @@
+# Proposta de módulo: mod_feedback
+
+Este módulo permite coletar opiniões dos usuários do site Joomla.
+
+## Funcionalidades sugeridas
+- Formulário simples de feedback
+- Armazenamento em arquivo ou envio por e-mail
+- Opção de anonimato
+- Mensagem de agradecimento personalizada
+
+## Como implementar
+1. Crie um novo módulo Joomla baseado em `mod_feedback`.
+2. Adicione campos de texto e botão de envio.
+3. Configure destino do feedback (arquivo, e-mail, etc).
+4. Traduza para todos os idiomas suportados.
