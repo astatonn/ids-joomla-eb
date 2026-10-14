@@ -1,0 +1,66 @@
+/* IDS Joomla EB - mod_videosiframe: carrossel de vídeos do YouTube */
+.video-carousel-container {
+  margin: auto;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+}
+
+.video-carousel {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.video-item {
+  flex: 0 0 auto;
+  max-width: 90vw;
+  width: var(--video-largura, 560px);
+}
+
+.video-item iframe {
+  border: 0;
+  display: block;
+  max-width: 100%;
+}
+
+/* Movimento contínuo: a lista é exibida duas vezes e desliza metade da largura total. */
+.video-carousel-animado {
+  overflow: hidden;
+}
+
+.video-carousel-animado .video-carousel {
+  animation: mod-videosiframe-slide var(--video-duracao, 20s) linear infinite;
+}
+
+/* Pausa ao passar o mouse ou ao navegar pelo teclado */
+.video-carousel-animado:hover .video-carousel,
+.video-carousel-animado:focus-within .video-carousel {
+  animation-play-state: paused;
+}
+
+@keyframes mod-videosiframe-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    /* metade da faixa + metade do espaçamento entre as duas cópias */
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+/* Quem prefere menos animação recebe a lista parada, com rolagem horizontal. */
+@media (prefers-reduced-motion: reduce) {
+  .video-carousel-animado {
+    overflow-x: auto;
+  }
+
+  .video-carousel-animado .video-carousel {
+    animation: none;
+  }
+
+  .video-carousel-animado .video-item[aria-hidden="true"] {
+    display: none;
+  }
+}

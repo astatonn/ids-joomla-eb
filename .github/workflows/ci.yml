@@ -1,0 +1,77 @@
+name: Testes
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  estaticos:
+    name: Verificações estáticas (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.1', '8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: zlib, mbstring, simplexml
+          coverage: none
+      - name: Sintaxe, APIs removidas do Joomla 6, manifestos, idiomas e servidores de atualização
+        run: php tests/lint.php
+      - name: packages/ e updates/ em dia com src/
+        run: php build/build.php --check
+
+  integracao:
+    name: Joomla real em Docker (${{ matrix.cenario }})
+    runs-on: ubuntu-latest
+    needs: estaticos
+    strategy:
+      fail-fast: false
+      matrix:
+        cenario: [limpa-5.4.1, limpa-5.4.1-php8.2, limpa-6.0.1, limpa-5-atual, limpa-6-atual, atualizacao, recuperacao, avisos]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: curl, zip, dom
+          coverage: none
+      - run: php build/build.php --check
+      - name: Cenário ${{ matrix.cenario }}
+        run: php tests/integration/run.php --only=${{ matrix.cenario }}
+
+  publicado:
+    # Depois de chegar à master, os sites em produção passam a ver a versão anunciada em updates/.
+    # Este job confere que os arquivos anunciados existem na release e têm o checksum declarado.
+    name: Arquivos anunciados em updates/ estão publicados
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar cada arquivo anunciado e conferir o SHA-256
+        run: |
+          falhas=0
+          for xml in updates/*-updates.xml; do
+            url=$(grep -oP '(?<=<downloadurl type="full" format="zip">)[^<]+' "$xml")
+            esperado=$(grep -oP '(?<=<sha256>)[^<]+' "$xml")
+            obtido=$(curl -fsSL "$url" | sha256sum | cut -d' ' -f1) || obtido="(download falhou)"
+            if [ "$obtido" = "$esperado" ]; then
+              echo "✔ $url"
+            else
+              echo "::error file=$xml::$url → $obtido (esperado $esperado)"
+              falhas=1
+            fi
+          done
+          exit $falhas

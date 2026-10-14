@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_pagtesouro</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2025-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>COM_PAGTESOURO_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Component\Pagtesouro</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Site -->
+	<files folder="site">
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/com_pagtesouro.ini</language>
+		<language tag="pt-BR">pt-BR/com_pagtesouro.ini</language>
+	</languages>
+
+	<media destination="com_pagtesouro" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>joomla.asset.json</filename>
+	</media>
+
+	<!-- Administrador -->
+	<administration>
+		<menu img="class:credit-card">COM_PAGTESOURO</menu>
+		<submenu>
+			<menu link="option=com_pagtesouro&amp;view=uasgs" view="uasgs" img="class:building">COM_PAGTESOURO_SUBMENU_UASGS</menu>
+			<menu link="option=com_pagtesouro&amp;view=servicos" view="servicos" img="class:list">COM_PAGTESOURO_SUBMENU_SERVICOS</menu>
+		</submenu>
+		<files folder="administrator">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="administrator/language">
+			<language tag="en-GB">en-GB/com_pagtesouro.ini</language>
+			<language tag="en-GB">en-GB/com_pagtesouro.sys.ini</language>
+			<language tag="pt-BR">pt-BR/com_pagtesouro.ini</language>
+			<language tag="pt-BR">pt-BR/com_pagtesouro.sys.ini</language>
+		</languages>
+	</administration>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - PagTesouro">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/com_pagtesouro-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

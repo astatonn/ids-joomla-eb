@@ -1,58 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Gerado por build/build.php. Não edite à mão: os checksums precisam bater com os arquivos da release. -->
 <updates>
-    <!-- Versão 2.0.0 - Joomla 5.4+ e 6.x -->
-    <update>
-        <name>IDS Joomla EB Package</name>
-        <description>Pacote de instalação completo do IDS Joomla EB - Compatível com Joomla 5.4+ e 6.x</description>
-        <element>pkg_ids_joomla_eb</element>
-        <type>package</type>
-        <version>2.0.0</version>
-        <infourl title="IDS Joomla EB">https://github.com/astatonn/ids-joomla-eb</infourl>
-        <downloads>
-            <downloadurl type="full" format="zip">https://github.com/astatonn/ids-joomla-eb/releases/download/v2.0.0/pkg_ids_joomla_eb.zip</downloadurl>
-        </downloads>
-        <tags>
-            <tag>stable</tag>
-        </tags>
-        <maintainer>Sgt Souza Lima</maintainer>
-        <maintainerurl>https://github.com/astatonn</maintainerurl>
-        <section>Updates</section>
-        <targetplatform name="joomla" version="(5\.(4|5|6|7|8|9)|6\.[0-9]+)" />
-        <php_minimum>8.3.0</php_minimum>
-        <client>site</client>
-        <changelog>
-            <![CDATA[
-                <h3>Versão 2.0.0 - Outubro 2025</h3>
-                <ul>
-                    <li>Compatibilidade com Joomla 6.x</li>
-                    <li>Suporte ao plugin de retrocompatibilidade Joomla 6</li>
-                    <li>Requisito mínimo: PHP 8.3 e Joomla 5.4+</li>
-                    <li>Refatoração completa do código para padrões modernos</li>
-                    <li>Melhorias de performance e otimizações</li>
-                    <li>Tipagem forte em todas as extensões</li>
-                    <li>Namespace moderno implementado</li>
-                </ul>
-            ]]>
-        </changelog>
-    </update>
-
-    <!-- Versão 1.0.0 - Joomla 4.x (histórico) -->
-    <update>
-        <name>IDS Joomla EB Package</name>
-        <description>Pacote de instalação completo do IDS Joomla EB - Joomla 4.x</description>
-        <element>pkg_ids_joomla_eb</element>
-        <type>package</type>
-        <version>1.0.0</version>
-        <infourl title="IDS Joomla EB">https://github.com/astatonn/ids-joomla-eb</infourl>
-        <downloads>
-            <downloadurl type="full" format="zip">https://github.com/astatonn/ids-joomla-eb/releases/download/v1.0.0/pkg_ids_joomla_eb.zip</downloadurl>
-        </downloads>
-        <tags>
-            <tag>stable</tag>
-        </tags>
-        <maintainer>Sgt Souza Lima</maintainer>
-        <maintainerurl>https://github.com/astatonn</maintainerurl>
-        <targetplatform name="joomla" version="4\.[0-9]+" />
-        <php_minimum>7.4.0</php_minimum>
-    </update>
+	<update>
+		<name>IDS Joomla EB (pacote completo)</name>
+		<description>IDS Joomla EB (pacote completo) 3.1.0 - compatível com Joomla 5.4 e Joomla 6</description>
+		<element>pkg_ids_joomla_eb</element>
+		<type>package</type>
+		<client>site</client>
+		<version>3.1.0</version>
+		<infourl title="IDS Joomla EB 3.1.0">https://github.com/astatonn/ids-joomla-eb/releases/tag/v3.1.0</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/astatonn/ids-joomla-eb/releases/download/v3.1.0/pkg_ids_joomla_eb.zip</downloadurl>
+		</downloads>
+		<sha256>33f8a7e6c61b2c69c1fdd16a59954ad0ba70a5a0903a36e4f01a33eeb76c4b34</sha256>
+		<sha512>cc59970875b08771c43337d78430cd6c3830c3e795d088127f942df8c36f6bd1a6907473ee6cc8935714586ba7471d28795dd9dfb8cf9148ad7d029217bb5266</sha512>
+		<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>3º Sgt Souza Lima</maintainer>
+		<maintainerurl>https://github.com/astatonn/ids-joomla-eb</maintainerurl>
+		<targetplatform name="joomla" version="(5\.[4-9]|6\.[0-9]+)" />
+		<php_minimum>8.1.0</php_minimum>
+	</update>
 </updates>

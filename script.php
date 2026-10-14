@@ -1,140 +1,205 @@
 <?php
+
 /**
  * @package     IDS Joomla EB
  * @subpackage  pkg_ids_joomla_eb
- * @copyright   Copyright (C) 2025 Seu Nome. All rights reserved.
+ * @copyright   (C) 2024-2026 Lucas Lima e colaboradores
  * @license     GNU General Public License version 2 or later
  */
 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+\defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
-use Joomla\CMS\Installer\InstallerScript;
-use Joomla\CMS\Language\Text;
+use Joomla\CMS\Installer\InstallerAdapter;
+use Joomla\CMS\Installer\InstallerScriptInterface;
+use Joomla\CMS\Log\Log;
+use Joomla\Database\DatabaseInterface;
+use Joomla\DI\Container;
+use Joomla\DI\ServiceProviderInterface;
+use Joomla\Filesystem\File;
 
-/**
- * Script file for the IDS Joomla EB package
- */
-class pkg_ids_joomla_ebInstallerScript extends InstallerScript
-{
-    /**
-     * Minimum PHP version required to run Joomla 6
-     *
-     * @var    string
-     */
-    protected $minimumPhp = '8.3.0';
-
-    /**
-     * Minimum Joomla version required
-     * Compatible with Joomla 5.4+ and Joomla 6.x
-     *
-     * @var    string
-     */
-    protected $minimumJoomla = '5.4.0';
-
-    /**
-     * List of required extensions
-     *
-     * @var    array
-     */
-    protected $extensionDependencies = [
-        // Adicione qualquer extensão necessária aqui
-        // ['type' => 'component', 'name' => 'com_exemplo', 'version' => '1.0.0']
-    ];
-
-    /**
-     * Function called before extension installation/update/removal procedure commences
-     *
-     * @param   string            $type    The type of change (install, update or discover_install)
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    public function preflight($type, $parent)
+return new class () implements ServiceProviderInterface {
+    public function register(Container $container): void
     {
-        if (!parent::preflight($type, $parent)) {
-            return false;
-        }
+        $container->set(
+            InstallerScriptInterface::class,
+            new class ($container->get(DatabaseInterface::class)) implements InstallerScriptInterface {
+                private const MINIMUM_JOOMLA = '5.4.0';
+                private const MINIMUM_PHP    = '8.1.0';
 
-        $app = Factory::getApplication();
+                /** Extensões instaladas pelo pacote: [tipo, elemento]. */
+                private const FILHOS = [
+                    ['template', 'idsgov-exrcitobrasileiro'],
+                    ['component', 'com_aniversariantes'],
+                    ['component', 'com_pagtesouro'],
+                    ['module', 'mod_aniver'],
+                    ['module', 'mod_imagempopup'],
+                    ['module', 'mod_instafeed'],
+                    ['module', 'mod_links'],
+                    ['module', 'mod_readmorenews'],
+                    ['module', 'mod_videosiframe'],
+                ];
 
-        // Verificar compatibilidade com Joomla 6
-        $jVersion = new \Joomla\CMS\Version();
-        $joomlaVersion = $jVersion->getShortVersion();
+                /** Arquivos de idioma do pacote instalados pelas versões 1.x/2.x. */
+                private const OBSOLETE_FILES = [
+                    '/language/en-GB/en-GB.pkg_ids_joomla_eb.ini',
+                    '/language/en-GB/en-GB.pkg_ids_joomla_eb.sys.ini',
+                    '/language/pt-BR/pt-BR.pkg_ids_joomla_eb.ini',
+                    '/language/pt-BR/pt-BR.pkg_ids_joomla_eb.sys.ini',
+                    '/administrator/language/en-GB/en-GB.pkg_ids_joomla_eb.ini',
+                    '/administrator/language/en-GB/en-GB.pkg_ids_joomla_eb.sys.ini',
+                    '/administrator/language/pt-BR/pt-BR.pkg_ids_joomla_eb.ini',
+                    '/administrator/language/pt-BR/pt-BR.pkg_ids_joomla_eb.sys.ini',
+                ];
 
-        // Informar sobre compatibilidade com Joomla 6
-        if (version_compare($joomlaVersion, '6.0', '>=')) {
-            $app->enqueueMessage(
-                Text::sprintf(
-                    'Esta instalação está utilizando Joomla %s. '
-                    . 'Recomenda-se habilitar o plugin "Behaviour - Backward Compatibility 6" para melhor compatibilidade.',
-                    $joomlaVersion
-                ),
-                'info'
-            );
-        }
+                private DatabaseInterface $db;
 
-        // Verificar se PHP 8.3+ está instalado
-        $phpVersion = PHP_VERSION;
-        if (version_compare($phpVersion, '8.3.0', '>=')) {
-            $app->enqueueMessage(
-                Text::sprintf('PHP %s detectado - Requisito atendido ✓', $phpVersion),
-                'message'
-            );
-        }
+                public function __construct(DatabaseInterface $db)
+                {
+                    $this->db = $db;
+                }
 
-        $app->enqueueMessage(Text::_('PKG_IDS_JOOMLA_EB_PREFLIGHT_' . strtoupper($type) . '_MESSAGE'), 'message');
+                public function install(InstallerAdapter $adapter): bool
+                {
+                    return true;
+                }
 
-        return true;
-    }
+                public function update(InstallerAdapter $adapter): bool
+                {
+                    return true;
+                }
 
-    /**
-     * Function called after extension installation/update/removal procedure commences
-     *
-     * @param   string            $type    The type of change (install, update or discover_install)
-     * @param   InstallerAdapter  $parent  The class calling this method
-     *
-     * @return  boolean  True on success
-     */
-    public function postflight($type, $parent)
-    {
-        if (!parent::postflight($type, $parent)) {
-            return false;
-        }
+                public function uninstall(InstallerAdapter $adapter): bool
+                {
+                    return true;
+                }
 
-        $app = Factory::getApplication();
+                /**
+                 * Confere os requisitos ANTES de qualquer extensão do pacote ser instalada.
+                 */
+                public function preflight(string $type, InstallerAdapter $adapter): bool
+                {
+                    if ($type === 'uninstall') {
+                        return true;
+                    }
 
-        if ($type === 'install' || $type === 'update') {
-            $app->enqueueMessage(Text::_('PKG_IDS_JOOMLA_EB_POSTFLIGHT_' . strtoupper($type) . '_MESSAGE'), 'success');
+                    if (version_compare(PHP_VERSION, self::MINIMUM_PHP, '<')) {
+                        $this->mensagem(
+                            sprintf('O pacote IDS Joomla EB requer PHP %s ou superior. Este servidor usa PHP %s.', self::MINIMUM_PHP, PHP_VERSION),
+                            'error'
+                        );
 
-            // Mostrar informações sobre atualizações automáticas
-            if ($type === 'install' || $type === 'update') {
-                $app->enqueueMessage(
-                    '<h4>Sistema de Atualizações Automáticas</h4>'
-                    . '<p>Este pacote e todas as suas extensões agora suportam atualizações automáticas via Joomla Update System.</p>'
-                    . '<ul>'
-                    . '<li>Acesse <strong>Sistema → Atualizar → Extensões</strong> para verificar atualizações</li>'
-                    . '<li>Todas as atualizações são baixadas diretamente do repositório GitHub</li>'
-                    . '<li>Changelog disponível para cada atualização</li>'
-                    . '</ul>'
-                    . '<p><strong>Versão instalada:</strong> 2.0.0 (Compatível com Joomla 5.4+ e 6.x)</p>',
-                    'info'
-                );
+                        return false;
+                    }
+
+                    if (version_compare(JVERSION, self::MINIMUM_JOOMLA, '<')) {
+                        $this->mensagem(
+                            sprintf(
+                                'O pacote IDS Joomla EB requer Joomla %s ou superior. Este site usa Joomla %s: '
+                                . 'atualize primeiro o Joomla para a versão 5.4 e depois instale o pacote.',
+                                self::MINIMUM_JOOMLA,
+                                JVERSION
+                            ),
+                            'error'
+                        );
+
+                        return false;
+                    }
+
+                    return true;
+                }
+
+                public function postflight(string $type, InstallerAdapter $adapter): bool
+                {
+                    if ($type === 'uninstall') {
+                        return true;
+                    }
+
+                    $this->removerArquivosObsoletos();
+                    $this->unificarSitesDeAtualizacao();
+
+                    $versao = (string) $adapter->getManifest()->version;
+
+                    $this->mensagem(
+                        '<h4>IDS Joomla EB ' . htmlspecialchars($versao, ENT_QUOTES, 'UTF-8') . ' '
+                        . ($type === 'update' ? 'atualizado' : 'instalado') . ' com sucesso</h4>'
+                        . '<ul>'
+                        . '<li><strong>Template:</strong> em <em>Sistema → Estilos de templates do site</em>, defina '
+                        . '<em>IDS Gov - Exército Brasileiro</em> como padrão. As opções estão organizadas em abas.</li>'
+                        . '<li><strong>Componentes:</strong> Aniversariantes e PagTesouro, no menu <em>Componentes</em>.</li>'
+                        . '<li><strong>Módulos:</strong> em <em>Conteúdo → Módulos do site → Novo</em>, todos começam com '
+                        . '<em>IDS Gov</em>.</li>'
+                        . '<li><strong>Atualizações:</strong> quando houver versão nova, o aviso aparece no painel inicial e em '
+                        . '<em>Sistema → Atualizar → Extensões</em>.</li>'
+                        . '</ul>',
+                        'message'
+                    );
+
+                    return true;
+                }
+
+                private function removerArquivosObsoletos(): void
+                {
+                    foreach (self::OBSOLETE_FILES as $arquivo) {
+                        if (is_file(JPATH_ROOT . $arquivo)) {
+                            try {
+                                File::delete(JPATH_ROOT . $arquivo);
+                            } catch (\Throwable $e) {
+                                Log::add('pkg_ids_joomla_eb: não foi possível remover ' . $arquivo . ': ' . $e->getMessage(), Log::WARNING, 'jerror');
+                            }
+                        }
+                    }
+                }
+
+                /**
+                 * Com o pacote instalado, basta UM aviso de atualização: o do próprio pacote, que
+                 * atualiza tudo de uma vez. Cada extensão também declara um servidor de atualização
+                 * próprio (útil para quem a instala avulsa); aqui eles são removidos para o
+                 * administrador não ver dez avisos repetidos da mesma versão.
+                 */
+                private function unificarSitesDeAtualizacao(): void
+                {
+                    try {
+                        $db  = $this->db;
+                        $ids = [];
+
+                        foreach (self::FILHOS as [$tipo, $elemento]) {
+                            $query = $db->getQuery(true)
+                                ->select($db->quoteName('s.update_site_id'))
+                                ->from($db->quoteName('#__update_sites', 's'))
+                                ->join('INNER', $db->quoteName('#__update_sites_extensions', 'x'), $db->quoteName('x.update_site_id') . ' = ' . $db->quoteName('s.update_site_id'))
+                                ->join('INNER', $db->quoteName('#__extensions', 'e'), $db->quoteName('e.extension_id') . ' = ' . $db->quoteName('x.extension_id'))
+                                ->where($db->quoteName('e.type') . ' = ' . $db->quote($tipo))
+                                ->where($db->quoteName('e.element') . ' = ' . $db->quote($elemento))
+                                ->where($db->quoteName('s.location') . ' LIKE ' . $db->quote('%/astatonn/ids-joomla-eb/%'));
+
+                            $ids = array_merge($ids, $db->setQuery($query)->loadColumn() ?: []);
+                        }
+
+                        $ids = array_values(array_unique(array_map('intval', $ids)));
+
+                        if (!$ids) {
+                            return;
+                        }
+
+                        foreach (['#__updates', '#__update_sites_extensions', '#__update_sites'] as $tabela) {
+                            $db->setQuery(
+                                $db->getQuery(true)
+                                    ->delete($db->quoteName($tabela))
+                                    ->whereIn($db->quoteName('update_site_id'), $ids)
+                            )->execute();
+                        }
+                    } catch (\Throwable $e) {
+                        // Avisos duplicados são apenas um incômodo: nunca interrompem a instalação.
+                        Log::add('pkg_ids_joomla_eb: não foi possível unificar os sites de atualização: ' . $e->getMessage(), Log::WARNING, 'jerror');
+                    }
+                }
+
+                private function mensagem(string $texto, string $tipo): void
+                {
+                    Factory::getApplication()->enqueueMessage($texto, $tipo);
+                }
             }
-
-            // Lista de extensões instaladas
-            $app->enqueueMessage(
-                '<h4>Extensões Incluídas neste Pacote</h4>'
-                . '<ul>'
-                . '<li><strong>Template:</strong> IDS Gov - Exército Brasileiro (govbr-ds)</li>'
-                . '<li><strong>Componentes:</strong> Aniversariantes, PagTesouro</li>'
-                . '<li><strong>Módulos:</strong> Aniversariantes, Popup de Imagem, Feed Instagram, Links, Leia Mais, Vídeos</li>'
-                . '</ul>',
-                'message'
-            );
-        }
-
-        return true;
+        );
     }
-}
+};

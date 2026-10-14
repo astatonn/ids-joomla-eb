@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_imagempopup</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>Cb Michels - 8º RC Mec</author>
+	<authorEmail>hm_voicolesco@hotmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Henrique Michels Voicolesco, Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>MOD_IMAGEMPOPUP_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Module\Imagempopup</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<folder module="mod_imagempopup">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<media destination="mod_imagempopup" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>joomla.asset.json</filename>
+	</media>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="imagem"
+					type="media"
+					label="MOD_IMAGEMPOPUP_IMAGEM_LABEL"
+					description="MOD_IMAGEMPOPUP_IMAGEM_DESC"
+					preview="true"
+				/>
+				<field
+					name="imagem_alt"
+					type="text"
+					label="MOD_IMAGEMPOPUP_IMAGEM_ALT_LABEL"
+					description="MOD_IMAGEMPOPUP_IMAGEM_ALT_DESC"
+					filter="string"
+				/>
+				<field
+					name="link"
+					type="url"
+					label="MOD_IMAGEMPOPUP_LINK_LABEL"
+					description="MOD_IMAGEMPOPUP_LINK_DESC"
+					hint="https://"
+					relative="true"
+					filter="url"
+					validate="url"
+				/>
+				<field
+					name="popuptext"
+					type="editor"
+					label="MOD_IMAGEMPOPUP_TEXTO_LABEL"
+					description="MOD_IMAGEMPOPUP_TEXTO_DESC"
+					buttons="true"
+					hide="readmore,pagebreak,module,menu,contact,fields"
+					filter="safehtml"
+				/>
+			</fieldset>
+
+			<fieldset name="comportamento" label="MOD_IMAGEMPOPUP_FIELDSET_COMPORTAMENTO">
+				<field
+					name="frequencia"
+					type="list"
+					label="MOD_IMAGEMPOPUP_FREQUENCIA_LABEL"
+					description="MOD_IMAGEMPOPUP_FREQUENCIA_DESC"
+					default="sempre"
+					validate="options"
+					>
+					<option value="sempre">MOD_IMAGEMPOPUP_FREQUENCIA_SEMPRE</option>
+					<option value="sessao">MOD_IMAGEMPOPUP_FREQUENCIA_SESSAO</option>
+					<option value="dia">MOD_IMAGEMPOPUP_FREQUENCIA_DIA</option>
+				</field>
+				<field
+					name="temporizador"
+					type="radio"
+					label="MOD_IMAGEMPOPUP_TEMPORIZADOR_LABEL"
+					description="MOD_IMAGEMPOPUP_TEMPORIZADOR_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">MOD_IMAGEMPOPUP_NAO</option>
+					<option value="1">MOD_IMAGEMPOPUP_SIM</option>
+				</field>
+				<field
+					name="segundos"
+					type="integer"
+					label="MOD_IMAGEMPOPUP_SEGUNDOS_LABEL"
+					description="MOD_IMAGEMPOPUP_SEGUNDOS_DESC"
+					showon="temporizador:1"
+					default="10"
+					first="5"
+					last="60"
+					step="1"
+				/>
+				<field
+					name="fechar_fora"
+					type="radio"
+					label="MOD_IMAGEMPOPUP_FECHAR_FORA_LABEL"
+					description="MOD_IMAGEMPOPUP_FECHAR_FORA_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">MOD_IMAGEMPOPUP_NAO</option>
+					<option value="1">MOD_IMAGEMPOPUP_SIM</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Popup">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/mod_imagempopup-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

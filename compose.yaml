@@ -1,7 +1,17 @@
+# Joomla + MySQL para experimentar o IDS Joomla EB localmente.
+#
+#   php build/build.php        # gera dist/pkg_ids_joomla_eb.zip (opcional)
+#   docker compose up --build
+#
+# Site: http://localhost:8080  ·  Administrador: http://localhost:8080/administrator
+# Usuário "joomla", senha "joomla@secured" (troque antes de qualquer uso real).
+#
+# Se dist/pkg_ids_joomla_eb.zip existir, o pacote é instalado automaticamente na primeira subida.
+# Caso contrário, instale em Sistema → Instalar → Extensões.
 services:
   db:
     image: mysql:8.0
-    restart: always
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: joomla_db
       MYSQL_USER: joomla
@@ -12,18 +22,21 @@ services:
     networks:
       - joomla_network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
-      interval: 30s
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -ujoomla -pexamplepass --silent"]
+      interval: 10s
       timeout: 5s
-      retries: 3
+      retries: 12
       start_period: 30s
+
   joomla:
     build:
       context: .
       dockerfile: dockerfile
-    restart: always
+      args:
+        JOOMLA_IMAGE: ${JOOMLA_IMAGE:-joomla:php8.3-apache}
+    restart: unless-stopped
     ports:
-      - 8080:80
+      - "${JOOMLA_PORT:-8080}:80"
     environment:
       JOOMLA_DB_HOST: db
       JOOMLA_DB_USER: joomla
@@ -34,18 +47,23 @@ services:
       JOOMLA_ADMIN_USERNAME: joomla
       JOOMLA_ADMIN_PASSWORD: joomla@secured
       JOOMLA_ADMIN_EMAIL: joomla@example.com
+      # Instalado pela imagem oficial logo após a instalação do Joomla (ignorado se o arquivo não existir)
+      JOOMLA_EXTENSIONS_PATHS: /extensions/pkg_ids_joomla_eb.zip
     volumes:
       - joomla_data:/var/www/html
+      # Sem ":ro": o instalador do Joomla descompacta o pacote ao lado do arquivo
+      - ./dist:/extensions
     networks:
       - joomla_network
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      test: ["CMD", "curl", "-fsS", "http://localhost/"]
       interval: 15s
       timeout: 5s
-      retries: 3
-      start_period: 30s
+      retries: 5
+      start_period: 60s
 
 volumes:
   joomla_data:

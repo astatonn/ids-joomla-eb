@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tipo de item de menu: Aniversariantes → Lista de aniversariantes -->
+<metadata>
+	<layout title="COM_ANIVERSARIANTES_VIEW_ANIVERSARIANTES_TITLE" option="COM_ANIVERSARIANTES_VIEW_ANIVERSARIANTES_OPTION">
+		<message>
+			<![CDATA[COM_ANIVERSARIANTES_VIEW_ANIVERSARIANTES_DESC]]>
+		</message>
+	</layout>
+
+	<fields name="params">
+		<fieldset name="basic" label="COM_ANIVERSARIANTES_FIELDSET_EXIBICAO">
+			<field
+				name="periodo"
+				type="list"
+				label="COM_ANIVERSARIANTES_FIELD_PERIODO_LABEL"
+				description="COM_ANIVERSARIANTES_FIELD_PERIODO_DESC"
+				default="mes"
+				validate="options"
+				>
+				<option value="mes">COM_ANIVERSARIANTES_PERIODO_MES</option>
+				<option value="hoje">COM_ANIVERSARIANTES_PERIODO_HOJE</option>
+				<option value="proximos">COM_ANIVERSARIANTES_PERIODO_PROXIMOS</option>
+				<option value="ano">COM_ANIVERSARIANTES_PERIODO_ANO</option>
+			</field>
+			<field
+				name="dias"
+				type="number"
+				label="COM_ANIVERSARIANTES_FIELD_DIAS_LABEL"
+				description="COM_ANIVERSARIANTES_FIELD_DIAS_DESC"
+				default="30"
+				min="1"
+				max="366"
+				step="1"
+				filter="integer"
+				showon="periodo:proximos"
+			/>
+		</fieldset>
+	</fields>
+</metadata>

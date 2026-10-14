@@ -1,288 +1,165 @@
-# Guia de Migração para IDS Joomla EB 2.0
+# Guia de atualização — IDS Joomla EB 3.1.0 e Joomla 6
 
-## 📋 Visão Geral
+Este guia cobre três situações:
 
-Este documento fornece instruções detalhadas para migrar do IDS Joomla EB 1.x para 2.0, que adiciona suporte completo ao Joomla 6.x.
+1. [Vou atualizar o Joomla 5 para o Joomla 6](#vou-atualizar-o-joomla-5-para-o-joomla-6)
+2. [Meu site saiu do ar depois de atualizar para o Joomla 6](#meu-site-saiu-do-ar-depois-de-atualizar-para-o-joomla-6)
+3. [O que muda ao sair das versões 1.x/2.x](#o-que-muda-ao-sair-das-versões-1x2x)
 
-## 🎯 Mudanças Principais
+Todos os caminhos abaixo são exercitados pelos testes automatizados do repositório
+(`php tests/integration/run.php`), em sites Joomla reais.
 
-### Versão 2.0.0
-- ✅ Compatibilidade com Joomla 5.4+ e 6.x
-- ✅ Requisito mínimo: PHP 8.3.0
-- ✅ Sistema de atualizações automáticas
-- ✅ Versionamento semântico implementado
-- ✅ Todos os manifestos XML atualizados
+## Requisitos da versão 3.1.0
 
-## 📌 Requisitos
+| | Mínimo | Observação |
+|---|---|---|
+| Joomla | 5.4 | Sites em Joomla 4.x ou 5.0–5.3 devem primeiro atualizar o Joomla para a 5.4 |
+| PHP | 8.1 | O Joomla 6 exige PHP 8.3 |
+| Banco | MySQL 8.0 / MariaDB 10.4 | |
 
-### Antes da Migração
+## Vou atualizar o Joomla 5 para o Joomla 6
 
-| Item | Versão 1.x | Versão 2.0 |
-|------|-----------|-----------|
-| **PHP** | 7.4.0+ | **8.3.0+** |
-| **Joomla** | 4.0+ | **5.4+** ou **6.x** |
-| **MySQL** | 5.6+ | 5.7+ ou 8.0+ |
+A ordem correta é **pacote primeiro, Joomla depois**:
 
-### ⚠️ Importante
+1. Faça backup dos arquivos e do banco de dados.
+2. Com o site ainda no **Joomla 5.4**, atualize o IDS Joomla EB para a **3.1.0**:
+   - pelo aviso em **Sistema → Atualizar → Extensões**, ou
+   - em **Sistema → Instalar → Extensões → Instalar da URL**, colando
+     `https://github.com/astatonn/ids-joomla-eb/releases/latest/download/pkg_ids_joomla_eb.zip`.
+3. Confira o site e o painel.
+4. Atualize o Joomla para a versão 6 em **Sistema → Atualizar → Joomla**. Na verificação
+   pré-atualização, o pacote *IDS Joomla EB* deve aparecer como compatível.
 
-- Se você está no **Joomla 4.x**, atualize primeiro para **Joomla 5.4** antes de instalar esta versão
-- Certifique-se de que seu servidor atende aos requisitos de **PHP 8.3+**
+Não é necessário ativar o plugin *Behaviour - Backward Compatibility 6* para este pacote.
 
-## 🚀 Processo de Migração
+## Meu site saiu do ar depois de atualizar para o Joomla 6
 
-### Opção 1: Atualização Automática (Recomendado)
+### Como reconhecer
 
-Se você já tem a versão 1.0 instalada:
-
-1. **Acesse o Joomla Update System**
-   ```
-   Sistema → Atualizar → Extensões
-   ```
-
-2. **Verifique Atualizações**
-   - Clique em "Verificar Atualizações"
-   - O sistema detectará automaticamente a versão 2.0.0
-
-3. **Revise o Changelog**
-   - Leia as mudanças antes de atualizar
-   - Verifique os requisitos mínimos
-
-4. **Execute a Atualização**
-   - Clique em "Atualizar"
-   - Aguarde a conclusão do processo
-
-### Opção 2: Instalação Manual
-
-Se você não tem a versão 1.0 ou prefere instalação manual:
-
-1. **Faça Backup**
-   ```bash
-   # Backup do banco de dados
-   mysqldump -u usuario -p nome_bd > backup_joomla.sql
-
-   # Backup dos arquivos
-   tar -czf backup_joomla_files.tar.gz /caminho/para/joomla/
-   ```
-
-2. **Baixe o Pacote**
-   - Acesse: https://github.com/astatonn/ids-joomla-eb/releases/tag/v2.0.0
-   - Baixe: `pkg_ids_joomla_eb.zip`
-
-3. **Instale via Joomla**
-   ```
-   Sistema → Instalar → Extensões
-   ```
-   - Arraste o arquivo ZIP ou navegue até ele
-   - Clique em "Upload e Instalar"
-
-4. **Verifique a Instalação**
-   - Acesse: `Sistema → Gerenciar → Extensões`
-   - Procure por "IDS Joomla EB Package"
-   - Versão deve mostrar: **2.0.0**
-
-## 🔧 Configurações Pós-Migração
-
-### 1. Ativar Plugin de Compatibilidade (Joomla 6 apenas)
-
-Se você está usando Joomla 6:
+O site público mostra erro 500 e o log do servidor (Apache/PHP) registra:
 
 ```
-Sistema → Plugins → Buscar: "Backward Compatibility"
+PHP Fatal error:  Trait "Joomla\CMS\MVC\Model\DatabaseAwareTrait" not found in
+.../administrator/components/com_aniversariantes/src/Service/Html/ANIVERSARIANTES.php on line 25
 ```
 
-- Ative: **Behaviour - Backward Compatibility 6**
-- Isso garante compatibilidade total com extensões de Joomla 5
+**Causa:** o componente *Aniversariantes* das versões 1.x/2.x usa uma classe que o Joomla 6
+removeu. Ele é carregado em toda página que exibe o módulo *Seção de Aniversariantes do Mês*, por
+isso o site inteiro cai. O plugin de compatibilidade do Joomla 6 não cobre essa classe, então
+ativá-lo não resolve.
 
-### 2. Verificar Template
+O **painel administrativo continua funcionando**: os dois caminhos abaixo são feitos por ele.
 
-```
-Sistema → Gerenciar → Templates de Site
-```
+### Paliativo imediato (1 minuto)
 
-- Verifique se "IDS Gov - Exército Brasileiro" está listado
-- Versão deve mostrar: **2.0.0**
-- Configure conforme necessário
+Em **Conteúdo → Módulos do site**, despublique o módulo *Seção de Aniversariantes do Mês*
+(`mod_aniver`). O site volta a abrir na hora, sem a lista de aniversariantes.
 
-### 3. Verificar Componentes
+### Correção definitiva
 
-```
-Sistema → Gerenciar → Extensões → Componentes
-```
+Em **Sistema → Instalar → Extensões**, instale a versão 3.1.0:
 
-Verifique se estão atualizados:
-- ✅ Aniversariantes - v2.0.0
-- ✅ PagTesouro - v2.0.0
+- aba **Instalar da URL**:
+  `https://github.com/astatonn/ids-joomla-eb/releases/latest/download/pkg_ids_joomla_eb.zip`
+- ou aba **Enviar arquivo de pacote**, com o `pkg_ids_joomla_eb.zip` baixado da
+  [última release](https://github.com/astatonn/ids-joomla-eb/releases/latest).
 
-### 4. Verificar Módulos
+Ao terminar aparece a mensagem *IDS Joomla EB 3.1.0 atualizado com sucesso* e o site volta ao ar.
+Se tiver despublicado o módulo de aniversariantes, publique-o novamente. Cadastros, módulos e as
+opções do template continuam como estavam.
 
-```
-Sistema → Gerenciar → Extensões → Módulos
-```
+### Se nem o painel abrir
 
-Todos devem estar na versão **2.0.0**:
-- ✅ Seção de Aniversariantes (mod_aniver)
-- ✅ Popup de Imagem (mod_imagempopup)
-- ✅ Feed Instagram (mod_instafeed)
-- ✅ Seção de Links (mod_links)
-- ✅ Botão Leia Mais (mod_readmorenews)
-- ✅ Carrossel de Vídeos (mod_videosiframe)
+Com acesso ao servidor, na pasta do Joomla:
 
-## 📊 Versionamento Semântico
-
-O projeto agora segue [Semantic Versioning](https://semver.org/):
-
-```
-MAJOR.MINOR.PATCH
-2.0.0
-```
-
-- **MAJOR** (2): Mudanças incompatíveis (PHP 8.3, Joomla 5.4+)
-- **MINOR** (0): Novas funcionalidades compatíveis
-- **PATCH** (0): Correções de bugs
-
-## 🔄 Sistema de Atualizações Automáticas
-
-### Como Funciona
-
-1. **Verificação Automática**: Joomla verifica atualizações periodicamente
-2. **Notificação**: Você será notificado quando houver atualizações
-3. **Um Clique**: Atualize com um único clique
-4. **Changelog**: Veja o que mudou antes de atualizar
-
-### Verificar Manualmente
-
-```
-Sistema → Atualizar → Extensões → Verificar Atualizações
-```
-
-### Servidores de Atualização
-
-Todas as extensões apontam para:
-```
-https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/
-```
-
-- `ids-joomla-eb-updates.xml` - Pacote principal
-- `template-govbr-updates.xml` - Template
-- `com_aniversariantes-updates.xml` - Componente Aniversariantes
-- `com_pagtesouro-updates.xml` - Componente PagTesouro
-- `mod_*-updates.xml` - Módulos individuais
-
-## ⚠️ Problemas Conhecidos
-
-### Componente PagTesouro (com_pagtesouro)
-
-**Estrutura Legacy detectada**
-
-O componente `com_pagtesouro` usa a estrutura antiga do Joomla 3:
-- Não usa namespace moderno
-- Usa MVC legado (controller.php, models/, views/)
-
-**Status:**
-- ✅ Funciona corretamente no Joomla 6
-- ⚠️ Recomenda-se refatoração futura
-
-**Próximos Passos:**
-- Versão 3.0 incluirá refatoração completa
-- Migração para estrutura namespace
-- Implementação de Service Provider
-
-## 🐛 Solução de Problemas
-
-### Erro: "Versão do PHP incompatível"
-
-**Problema:** Seu servidor não tem PHP 8.3+
-
-**Solução:**
 ```bash
-# Verificar versão atual
-php -v
-
-# Se < 8.3, atualize o PHP no servidor
-# Consulte seu provedor de hospedagem
+php cli/joomla.php extension:install --url=https://github.com/astatonn/ids-joomla-eb/releases/latest/download/pkg_ids_joomla_eb.zip
 ```
 
-### Erro: "Joomla version not compatible"
+Sem acesso ao terminal, despublique o módulo direto no banco (troque `jos_` pelo prefixo das suas
+tabelas) e depois instale a 3.1.0 pelo painel:
 
-**Problema:** Você está em Joomla 4.x tentando instalar v2.0
-
-**Solução:**
-1. Atualize para Joomla 5.4 primeiro
-2. Depois instale IDS Joomla EB 2.0
-
-### Atualizações não aparecem
-
-**Problema:** Sistema não detecta atualizações
-
-**Solução:**
-```
-Sistema → Cache → Limpar Cache
-Sistema → Atualizar → Extensões → Limpar Cache
-Sistema → Atualizar → Extensões → Verificar Atualizações
+```sql
+UPDATE jos_modules SET published = 0 WHERE module = 'mod_aniver';
 ```
 
-### Template não aparece após atualização
+## O que muda ao sair das versões 1.x/2.x
 
-**Problema:** Template sumiu após update
+A atualização é feita no lugar: as extensões mantêm os mesmos identificadores e nada precisa ser
+reinstalado ou reconfigurado.
 
-**Solução:**
-```
-Sistema → Descobrir → Descobrir
-```
-Selecione o template e clique em "Instalar"
+### Preservado
 
-## 📚 Recursos Adicionais
+- Cadastro de aniversariantes, UASGs e serviços do PagTesouro (as tabelas não mudam).
+- Todas as opções do estilo do template e o template como padrão.
+- Módulos publicados, posições e configurações.
+- Itens de menu e links existentes, inclusive `index.php?option=com_pagtesouro&view=formulario`.
 
-- **Repositório GitHub**: https://github.com/astatonn/ids-joomla-eb
-- **Issues**: https://github.com/astatonn/ids-joomla-eb/issues
-- **Releases**: https://github.com/astatonn/ids-joomla-eb/releases
-- **Changelog**: [CHANGELOG.md](CHANGELOG.md)
+### Convertido automaticamente
 
-## 🆘 Suporte
+| Módulo | Antes | Agora |
+|--------|-------|-------|
+| **Links** | "Quantidade de links" + campos *Link 1* a *Link 12* | Lista de links: botão **+** para adicionar, setas para ordenar. Ícones fora da lista pronta viram *Outro ícone* com a classe preservada |
+| **Vídeos** | "Quantidade de vídeos" + campos *Link 1* a *Link 12* | Lista de vídeos, sem limite fixo |
 
-### Antes de Reportar
+### Nomes novos na lista de módulos
 
-1. ✅ Verificou os requisitos mínimos?
-2. ✅ Limpou o cache?
-3. ✅ Ativou o plugin de compatibilidade (Joomla 6)?
-4. ✅ Verificou o CHANGELOG.md?
+| Antes | Agora |
+|-------|-------|
+| Seção de Aniversariantes do Mês | IDS Gov - Aniversariantes |
+| Seção de Links | IDS Gov - Links |
+| Imagem PopUp | IDS Gov - Popup (imagem ou aviso) |
+| Módulo de Feed do Instagram | IDS Gov - Instagram |
+| Leia Mais | IDS Gov - Botão Leia Mais |
+| Módulo para exibição de vídeos em carrossel | IDS Gov - Vídeos (YouTube) |
 
-### Reportar Problemas
+Os módulos que você já criou continuam com o título que você deu a eles.
 
-Crie uma issue no GitHub:
-```
-https://github.com/astatonn/ids-joomla-eb/issues/new
-```
+### Vale conferir depois de atualizar
 
-Inclua:
-- Versão do Joomla
-- Versão do PHP
-- Versão do IDS Joomla EB
-- Descrição do problema
-- Passos para reproduzir
-- Screenshots (se aplicável)
+- **Opções do template:** a aba única *Avançado* virou seis abas (Identidade, Aparência, Menu,
+  Rodapé, Redes sociais, Cidadão e cookies). Os valores são os mesmos.
+- **Redes sociais:** os endereços agora precisam começar com `https://`. Ao salvar o estilo, o
+  Joomla completa os que estiverem sem.
+- **Aniversariantes:** a lista do mês passou a ser ordenada pelo dia, e "hoje" segue o fuso horário
+  do site (**Sistema → Configuração global → Servidor → Fuso horário**).
+- **Popup:** com *Fechar sozinho* desligado, o popup não fecha mais por conta própria. Há também a
+  opção de exibi-lo só uma vez por visita ou por dia.
+- **Instagram:** o script de terceiros (embedista.com) foi removido; fica só o embed oficial.
+- **PagTesouro:** o CPF/CNPJ é validado antes de abrir o PagTesouro (11 dígitos ou 14 caracteres).
+- **Personalizações de layout:** se você alterou arquivos dos módulos diretamente em
+  `modules/mod_.../`, elas são substituídas. O jeito suportado de personalizar agora é criar um
+  layout alternativo em `templates/SEU_TEMPLATE/html/mod_.../`.
 
-## ✅ Checklist de Migração
+## Avisos de atualização
 
-Após a migração, confirme:
+A partir da 3.1.0, o Joomla avisa no painel quando houver versão nova (veja
+[Atualizações no README](README.md#atualizações)). As tags `v2.0.0` e `v3.0.0` do repositório nunca
+tiveram release: quem viu um aviso de atualização que falhava ao baixar estava vendo esse problema,
+resolvido agora.
 
-- [ ] PHP 8.3+ instalado
-- [ ] Joomla 5.4+ ou 6.x rodando
-- [ ] Backup realizado
-- [ ] IDS Joomla EB 2.0.0 instalado
-- [ ] Template versão 2.0.0
-- [ ] Componentes versão 2.0.0
-- [ ] Módulos versão 2.0.0
-- [ ] Plugin de compatibilidade ativo (Joomla 6)
-- [ ] Site testado e funcionando
-- [ ] Sistema de atualizações verificado
+## Problemas comuns
 
-## 🎉 Pronto!
+**"Maximum PHP file upload size is too small" ao enviar o pacote.**
+O arquivo tem cerca de 8 MB e o padrão do PHP é 2 MB. Use **Instalar da URL** ou aumente
+`upload_max_filesize` e `post_max_size` no `php.ini`.
 
-Você completou a migração com sucesso! Seu site agora está pronto para o futuro com Joomla 6 e receberá atualizações automáticas.
+**O aviso de atualização não aparece.**
+O Joomla precisa estar na versão 5.4 ou superior e o servidor precisa acessar
+`raw.githubusercontent.com` e `github.com`. Em **Sistema → Atualizar → Extensões**, use
+**Verificar atualizações**. Em **Sistema → Atualizar → Sites de atualização**, confira se
+*IDS Joomla EB* está ativo.
 
----
+**O servidor não tem acesso à internet.**
+Baixe o `pkg_ids_joomla_eb.zip` em outra máquina e use **Enviar arquivo de pacote**. Os avisos
+automáticos dependem do acesso do servidor ao GitHub (direto ou por proxy, configurado em
+**Sistema → Configuração global → Servidor**).
 
-**Última atualização:** 27 de Outubro de 2025
-**Versão do documento:** 1.0
-**Aplica-se a:** IDS Joomla EB 2.0.0
+**"O pacote IDS Joomla EB requer Joomla 5.4 ou superior".**
+Atualize antes o Joomla para a 5.4 (a última versão da série 5) e repita a instalação.
+
+## Ajuda
+
+Abra uma [issue](https://github.com/astatonn/ids-joomla-eb/issues/new) informando as versões do
+Joomla, do PHP e do pacote, o que aconteceu e, se houver, a linha de erro do log do servidor. A
+comunidade também está no [Discord](https://discord.gg/tfUnXT3QcD).

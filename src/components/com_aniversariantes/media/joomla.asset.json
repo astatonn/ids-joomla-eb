@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "com_aniversariantes",
+  "version": "3.1.0",
+  "description": "IDS Joomla EB - Aniversariantes",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "com_aniversariantes.lista",
+      "type": "style",
+      "uri": "com_aniversariantes/lista.css"
+    }
+  ]
+}

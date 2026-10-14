@@ -1,19 +1,11 @@
-FROM joomla:php8.3-apache
+# Ambiente local para experimentar o pacote. Por padrão usa a imagem oficial mais recente do Joomla.
+# Para outra versão: JOOMLA_IMAGE=joomla:5.4-php8.3-apache docker compose up --build
+ARG JOOMLA_IMAGE=joomla:php8.3-apache
+FROM ${JOOMLA_IMAGE}
 
-# Instalar pacotes adicionais
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    bash \
-    curl
+# O pacote completo tem cerca de 8 MB; o padrão do PHP (2 MB) impediria o envio pelo painel.
+RUN printf 'upload_max_filesize = 32M\npost_max_size = 34M\n' > /usr/local/etc/php/conf.d/ids-joomla-eb.ini
 
-# Criar um arquivo customizado de configuração do PHP para permitir uploads de até 20 MB
-RUN echo "upload_max_filesize = 20M\npost_max_size = 20M" > /usr/local/etc/php/conf.d/custom-php.ini
-
-# Definir o diretório de trabalho
 WORKDIR /var/www/html
-
-# Expor a porta 80
 EXPOSE 80
-
-# Comando padrão de execução
 CMD ["apache2-foreground"]

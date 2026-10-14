@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="COM_PAGTESOURO_FILTER_SEARCH_LABEL"
+			description="COM_PAGTESOURO_FILTER_SEARCH_SERVICOS_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="state"
+			type="list"
+			label="JSTATUS"
+			class="js-select-submit-on-change"
+			default=""
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+		<field
+			name="uasg_id"
+			type="sql"
+			label="COM_PAGTESOURO_HEADING_UASG"
+			class="js-select-submit-on-change"
+			query="SELECT id, descricao AS title FROM #__pagtesouro_uasgs ORDER BY descricao ASC"
+			key_field="id"
+			value_field="title"
+			default=""
+			>
+			<option value="">COM_PAGTESOURO_OPTION_SELECT_UASG</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			class="js-select-submit-on-change"
+			default="a.descricao ASC"
+			validate="options"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.descricao ASC">COM_PAGTESOURO_ORDER_DESCRICAO_ASC</option>
+			<option value="a.descricao DESC">COM_PAGTESOURO_ORDER_DESCRICAO_DESC</option>
+			<option value="a.codigo ASC">COM_PAGTESOURO_ORDER_CODIGO_ASC</option>
+			<option value="a.codigo DESC">COM_PAGTESOURO_ORDER_CODIGO_DESC</option>
+			<option value="uasg_descricao ASC">COM_PAGTESOURO_ORDER_UASG_ASC</option>
+			<option value="uasg_descricao DESC">COM_PAGTESOURO_ORDER_UASG_DESC</option>
+			<option value="a.state ASC">JSTATUS_ASC</option>
+			<option value="a.state DESC">JSTATUS_DESC</option>
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+		</field>
+		<field
+			name="limit"
+			type="limitbox"
+			label="JGLOBAL_LIST_LIMIT"
+			default="25"
+			class="js-select-submit-on-change"
+		/>
+	</fields>
+</form>

@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	ATENÇÃO: não altere o conteúdo de <name>.
+	O Joomla deriva dele o identificador do template ("idsgov-exrcitobrasileiro"), que é a pasta em
+	/templates e a chave dos estilos já salvos nos sites. Mudar o nome cria um template NOVO em vez
+	de atualizar o existente.
+-->
+<extension type="template" client="site" method="upgrade">
+	<name>IDS Gov - Exército Brasileiro</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>TPL_IDSGOV_XML_DESCRIPTION</description>
+	<inheritable>1</inheritable>
+
+	<files>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>html</folder>
+		<folder>includes</folder>
+		<folder>language</folder>
+	</files>
+
+	<media destination="templates/site/govbr-ds" folder="media">
+		<folder>css</folder>
+		<folder>favicons</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>fonts</folder>
+		<folder>less</folder>
+		<folder>metadata</folder>
+		<folder>scss</folder>
+		<folder>sprites</folder>
+		<folder>svgs</folder>
+		<folder>webfonts</folder>
+	</media>
+
+	<!-- Os nomes amigáveis das posições ficam em language/*/tpl_idsgov-exrcitobrasileiro.sys.ini -->
+	<positions>
+		<position>menuacesso</position>
+		<position>search</position>
+		<position>menu-body</position>
+		<position>menu-logos</position>
+		<position>menu-links</position>
+		<position>main-top</position>
+		<position>breadcrumbs</position>
+		<position>content-top</position>
+		<position>content-bottom</position>
+		<position>main-bottom</position>
+		<position>menumapa</position>
+		<position>error-search</position>
+		<position>debug</position>
+	</positions>
+
+	<!--
+		Cada <fieldset> vira uma aba na edição do estilo do template.
+		Os NOMES dos campos são os mesmos das versões anteriores: reagrupar em abas não altera
+		nem apaga as configurações já salvas.
+	-->
+	<config>
+		<fields name="params">
+
+			<!-- 1. Identidade: quem é o site -->
+			<fieldset name="identidade" label="TPL_IDSGOV_FIELDSET_IDENTIDADE" description="TPL_IDSGOV_FIELDSET_IDENTIDADE_DESC">
+				<field
+					name="texto_titulo"
+					type="text"
+					label="TPL_IDSGOV_TITULO_LABEL"
+					description="TPL_IDSGOV_TITULO_DESC"
+					hint="TPL_IDSGOV_TITULO_HINT"
+					default="Template básico"
+					filter="string"
+				/>
+				<field
+					name="texto_subtitulo"
+					type="text"
+					label="TPL_IDSGOV_SUBTITULO_LABEL"
+					description="TPL_IDSGOV_SUBTITULO_DESC"
+					hint="TPL_IDSGOV_SUBTITULO_HINT"
+					default=""
+					filter="string"
+				/>
+				<field
+					name="texto_assinatura"
+					type="text"
+					label="TPL_IDSGOV_ASSINATURA_LABEL"
+					description="TPL_IDSGOV_ASSINATURA_DESC"
+					hint="TPL_IDSGOV_ASSINATURA_HINT"
+					default=""
+					filter="string"
+				/>
+				<field
+					name="title_page"
+					type="text"
+					label="TPL_IDSGOV_TITLE_PAGE_LABEL"
+					description="TPL_IDSGOV_TITLE_PAGE_DESC"
+					hint="TPL_IDSGOV_TITLE_PAGE_HINT"
+					filter="string"
+				/>
+
+				<field name="spacer_logo" type="spacer" hr="true" />
+
+				<field
+					name="imagem_logo"
+					type="media"
+					label="TPL_IDSGOV_LOGO_LABEL"
+					description="TPL_IDSGOV_LOGO_DESC"
+					preview="true"
+					default=""
+				/>
+				<field
+					name="logo_comlink"
+					type="list"
+					label="TPL_IDSGOV_LOGO_COMLINK_LABEL"
+					description="TPL_IDSGOV_LOGO_COMLINK_DESC"
+					default="0"
+					validate="options"
+					>
+					<option value="0">TPL_IDSGOV_LOGO_COMLINK_NENHUM</option>
+					<option value="1">TPL_IDSGOV_LOGO_COMLINK_INICIAL</option>
+					<option value="2">TPL_IDSGOV_LOGO_COMLINK_PERSONALIZADO</option>
+				</field>
+				<field
+					name="logo_link"
+					type="url"
+					label="TPL_IDSGOV_LOGO_LINK_LABEL"
+					description="TPL_IDSGOV_LOGO_LINK_DESC"
+					hint="https://www.eb.mil.br"
+					showon="logo_comlink:2"
+					relative="true"
+					filter="url"
+					validate="url"
+					default=""
+				/>
+			</fieldset>
+
+			<!-- 2. Aparência: cores e largura -->
+			<fieldset name="aparencia" label="TPL_IDSGOV_FIELDSET_APARENCIA" description="TPL_IDSGOV_FIELDSET_APARENCIA_DESC">
+				<field
+					name="tema"
+					type="radio"
+					label="TPL_IDSGOV_TEMA_LABEL"
+					description="TPL_IDSGOV_TEMA_DESC"
+					layout="joomla.form.field.radio.buttons"
+					default=""
+					>
+					<option value="">TPL_IDSGOV_TEMA_VERDE</option>
+					<option value="azul">TPL_IDSGOV_TEMA_AZUL</option>
+					<option value="amarelo">TPL_IDSGOV_TEMA_AMARELO</option>
+					<option value="vermelho">TPL_IDSGOV_TEMA_VERMELHO</option>
+				</field>
+				<field
+					name="largura"
+					type="radio"
+					label="TPL_IDSGOV_LARGURA_LABEL"
+					description="TPL_IDSGOV_LARGURA_DESC"
+					layout="joomla.form.field.radio.buttons"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_LARGURA_FIXA</option>
+					<option value="1">TPL_IDSGOV_LARGURA_FLUIDA</option>
+				</field>
+			</fieldset>
+
+			<!-- 3. Menu principal -->
+			<fieldset name="menu" label="TPL_IDSGOV_FIELDSET_MENU" description="TPL_IDSGOV_FIELDSET_MENU_DESC">
+				<field
+					name="tipo-menu"
+					type="radio"
+					label="TPL_IDSGOV_TIPO_MENU_LABEL"
+					description="TPL_IDSGOV_TIPO_MENU_DESC"
+					layout="joomla.form.field.radio.buttons"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_TIPO_MENU_VERTICAL</option>
+					<option value="1">TPL_IDSGOV_TIPO_MENU_HORIZONTAL</option>
+				</field>
+				<field
+					name="tipomenu"
+					type="radio"
+					label="TPL_IDSGOV_TIPOMENU_LABEL"
+					description="TPL_IDSGOV_TIPOMENU_DESC"
+					layout="joomla.form.field.radio.buttons"
+					default="0"
+					filter="integer"
+					showon="tipo-menu:0"
+					>
+					<option value="0">TPL_IDSGOV_TIPOMENU_FLUTUANTE</option>
+					<option value="1">TPL_IDSGOV_TIPOMENU_EMPURRANDO</option>
+				</field>
+				<field
+					name="cabecalhomenu"
+					type="list"
+					label="TPL_IDSGOV_CABECALHOMENU_LABEL"
+					description="TPL_IDSGOV_CABECALHOMENU_DESC"
+					default="1"
+					validate="options"
+					showon="tipo-menu:0"
+					>
+					<option value="1">TPL_IDSGOV_CABECALHOMENU_LOGO_TITULO</option>
+					<option value="2">TPL_IDSGOV_CABECALHOMENU_LOGO</option>
+					<option value="3">TPL_IDSGOV_CABECALHOMENU_TITULO</option>
+				</field>
+				<field
+					name="texto_menuinfo"
+					type="textarea"
+					label="TPL_IDSGOV_MENUINFO_LABEL"
+					description="TPL_IDSGOV_MENUINFO_DESC"
+					rows="4"
+					default=""
+					filter="raw"
+					showon="tipo-menu:0"
+				/>
+				<field
+					name="note_menu_posicoes"
+					type="note"
+					class="alert alert-info"
+					label="TPL_IDSGOV_NOTE_MENU_LABEL"
+					description="TPL_IDSGOV_NOTE_MENU_DESC"
+				/>
+			</fieldset>
+
+			<!-- 4. Rodapé -->
+			<fieldset name="rodape" label="TPL_IDSGOV_FIELDSET_RODAPE" description="TPL_IDSGOV_FIELDSET_RODAPE_DESC">
+				<field
+					name="cor_footer"
+					type="radio"
+					label="TPL_IDSGOV_COR_FOOTER_LABEL"
+					description="TPL_IDSGOV_COR_FOOTER_DESC"
+					layout="joomla.form.field.radio.buttons"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_COR_FOOTER_ESCURO</option>
+					<option value="1">TPL_IDSGOV_COR_FOOTER_CLARO</option>
+				</field>
+				<field
+					name="imagem_logo_footer"
+					type="media"
+					label="TPL_IDSGOV_LOGO_FOOTER_LABEL"
+					description="TPL_IDSGOV_LOGO_FOOTER_DESC"
+					preview="true"
+					default=""
+				/>
+				<field
+					name="imagem_footer_acesso"
+					type="radio"
+					label="TPL_IDSGOV_FOOTER_ACESSO_LABEL"
+					description="TPL_IDSGOV_FOOTER_ACESSO_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_NAO</option>
+					<option value="1">TPL_IDSGOV_SIM</option>
+				</field>
+				<field
+					name="imagem_footer_brasil"
+					type="radio"
+					label="TPL_IDSGOV_FOOTER_BRASIL_LABEL"
+					description="TPL_IDSGOV_FOOTER_BRASIL_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_NAO</option>
+					<option value="1">TPL_IDSGOV_SIM</option>
+				</field>
+				<field
+					name="imagem_footer_brasil_src"
+					type="media"
+					label="TPL_IDSGOV_FOOTER_BRASIL_SRC_LABEL"
+					description="TPL_IDSGOV_FOOTER_BRASIL_SRC_DESC"
+					preview="true"
+					showon="imagem_footer_brasil:1"
+					default=""
+				/>
+				<field
+					name="texto_licenca"
+					type="textarea"
+					label="TPL_IDSGOV_LICENCA_LABEL"
+					description="TPL_IDSGOV_LICENCA_DESC"
+					rows="4"
+					default="Desenvolvido com o CMS de c&amp;oacute;digo aberto &lt;strong&gt;&lt;a aria-label=&quot;Desenvolvido por Comunidade Joomla&quot; href=&quot;https://www.joomla.org&quot;&gt;Joomla&lt;/a&gt;&lt;/strong&gt;."
+					filter="raw"
+				/>
+			</fieldset>
+
+			<!-- 5. Redes sociais -->
+			<fieldset name="redes" label="TPL_IDSGOV_FIELDSET_REDES" description="TPL_IDSGOV_FIELDSET_REDES_DESC">
+				<field
+					name="redes_sociais"
+					type="radio"
+					label="TPL_IDSGOV_REDES_SOCIAIS_LABEL"
+					description="TPL_IDSGOV_REDES_SOCIAIS_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_NAO</option>
+					<option value="1">TPL_IDSGOV_SIM</option>
+				</field>
+				<field
+					name="redes_instagram"
+					type="url"
+					label="TPL_IDSGOV_REDES_INSTAGRAM_LABEL"
+					description="TPL_IDSGOV_REDES_URL_DESC"
+					hint="https://www.instagram.com/perfil_da_om"
+					showon="redes_sociais:1"
+					filter="url"
+					validate="url"
+					default=""
+				/>
+				<field
+					name="redes_twitter"
+					type="url"
+					label="TPL_IDSGOV_REDES_TWITTER_LABEL"
+					description="TPL_IDSGOV_REDES_URL_DESC"
+					hint="https://x.com/perfil_da_om"
+					showon="redes_sociais:1"
+					filter="url"
+					validate="url"
+					default=""
+				/>
+				<field
+					name="redes_facebook"
+					type="url"
+					label="TPL_IDSGOV_REDES_FACEBOOK_LABEL"
+					description="TPL_IDSGOV_REDES_URL_DESC"
+					hint="https://www.facebook.com/perfil_da_om"
+					showon="redes_sociais:1"
+					filter="url"
+					validate="url"
+					default=""
+				/>
+				<field
+					name="redes_youtube"
+					type="url"
+					label="TPL_IDSGOV_REDES_YOUTUBE_LABEL"
+					description="TPL_IDSGOV_REDES_URL_DESC"
+					hint="https://www.youtube.com/@canal_da_om"
+					showon="redes_sociais:1"
+					filter="url"
+					validate="url"
+					default=""
+				/>
+			</fieldset>
+
+			<!-- 6. Atendimento ao cidadão e aviso de cookies -->
+			<fieldset name="cidadao" label="TPL_IDSGOV_FIELDSET_CIDADAO" description="TPL_IDSGOV_FIELDSET_CIDADAO_DESC">
+				<field
+					name="componente_atendimentocidadao"
+					type="radio"
+					label="TPL_IDSGOV_ATENDIMENTO_LABEL"
+					description="TPL_IDSGOV_ATENDIMENTO_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_NAO</option>
+					<option value="1">TPL_IDSGOV_SIM</option>
+				</field>
+				<field
+					name="atendimentocidadao_siorg"
+					type="text"
+					label="TPL_IDSGOV_SIORG_LABEL"
+					description="TPL_IDSGOV_SIORG_DESC"
+					hint="26"
+					inputmode="numeric"
+					showon="componente_atendimentocidadao:1"
+					default="26"
+					filter="string"
+				/>
+
+				<field name="spacer_cookies" type="spacer" hr="true" />
+
+				<field
+					name="cookies_aviso"
+					type="radio"
+					label="TPL_IDSGOV_COOKIES_AVISO_LABEL"
+					description="TPL_IDSGOV_COOKIES_AVISO_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_NAO</option>
+					<option value="1">TPL_IDSGOV_SIM</option>
+				</field>
+				<field
+					name="cookies_mensagem"
+					type="textarea"
+					label="TPL_IDSGOV_COOKIES_MENSAGEM_LABEL"
+					description="TPL_IDSGOV_COOKIES_MENSAGEM_DESC"
+					rows="4"
+					showon="cookies_aviso:1"
+					default="Nós utilizamos cookies para aprimorar a experiência de navegação em nosso site. Coletamos informações básicas sobre a(s) visita(s) realizada(s).&lt;br&gt;Se você concorda, clique em &quot;Ciente&quot;."
+					filter="raw"
+				/>
+				<field
+					name="cookies_ciente_titulo"
+					type="text"
+					label="TPL_IDSGOV_COOKIES_CIENTE_LABEL"
+					description="TPL_IDSGOV_COOKIES_CIENTE_DESC"
+					showon="cookies_aviso:1"
+					default="Ciente"
+					filter="string"
+				/>
+				<field
+					name="cookies_leiamais"
+					type="radio"
+					label="TPL_IDSGOV_COOKIES_LEIAMAIS_LABEL"
+					description="TPL_IDSGOV_COOKIES_LEIAMAIS_DESC"
+					layout="joomla.form.field.radio.switcher"
+					showon="cookies_aviso:1"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">TPL_IDSGOV_NAO</option>
+					<option value="1">TPL_IDSGOV_SIM</option>
+				</field>
+				<field
+					name="cookies_leiamais_titulo"
+					type="text"
+					label="TPL_IDSGOV_COOKIES_LEIAMAIS_TITULO_LABEL"
+					description="TPL_IDSGOV_COOKIES_LEIAMAIS_TITULO_DESC"
+					showon="cookies_aviso:1[AND]cookies_leiamais:1"
+					default="Política de cookies"
+					filter="string"
+				/>
+				<field
+					name="cookies_leiamais_link"
+					type="url"
+					label="TPL_IDSGOV_COOKIES_LEIAMAIS_LINK_LABEL"
+					description="TPL_IDSGOV_COOKIES_LEIAMAIS_LINK_DESC"
+					hint="/politica-de-cookies"
+					showon="cookies_aviso:1[AND]cookies_leiamais:1"
+					relative="true"
+					filter="url"
+					validate="url"
+					default="/cookie-banner-information.html"
+				/>
+			</fieldset>
+
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Template">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/template-govbr-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

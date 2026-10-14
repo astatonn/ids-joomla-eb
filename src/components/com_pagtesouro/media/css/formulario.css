@@ -1,0 +1,79 @@
+/* IDS Joomla EB - com_pagtesouro: formulário público de geração da GRU */
+.pagtesouro-form {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.pagtesouro-form .control-group {
+  margin-bottom: 15px;
+}
+
+.pagtesouro-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.pagtesouro-form select,
+.pagtesouro-form input[type="text"],
+.pagtesouro-form input[type="number"] {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+
+.pagtesouro-form select:disabled {
+  background-color: #f4f4f4;
+  cursor: not-allowed;
+}
+
+.pagtesouro-form .btn-primary {
+  background-color: #243413;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 15px;
+  padding: 8px 16px;
+}
+
+.pagtesouro-form .btn-primary:hover,
+.pagtesouro-form .btn-primary:focus {
+  background-color: #45472f;
+}
+
+.pagtesouro-form .alert {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.pagtesouro-form .alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+
+.pagtesouro-form .alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+
+.pagtesouro-form [hidden] {
+  display: none !important;
+}
+
+.pagtesouro-introducao {
+  margin-bottom: 20px;
+}
+
+.pagtesouro-aviso {
+  color: #555;
+  font-size: 0.875em;
+  margin-top: 10px;
+}

@@ -1,0 +1,38 @@
+/* IDS Joomla EB - com_aniversariantes: lista pública de aniversariantes */
+.aniversariantes-mes {
+  margin-bottom: 1.5rem;
+}
+
+.aniversariantes-mes-titulo {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.aniversariantes-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aniversariantes-item {
+  align-items: baseline;
+  border-bottom: 1px solid var(--color-secondary-04, #ccc);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.aniversariantes-data {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  min-width: 3.5rem;
+}
+
+.aniversariantes-hoje .aniversariantes-nome {
+  font-weight: 700;
+}
+
+.aniversariantes-selo {
+  white-space: nowrap;
+}

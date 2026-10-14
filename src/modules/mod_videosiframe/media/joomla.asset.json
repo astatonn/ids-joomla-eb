@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_videosiframe",
+  "version": "3.1.0",
+  "description": "IDS Joomla EB - Vídeos",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_videosiframe.carrossel",
+      "type": "style",
+      "uri": "mod_videosiframe/carrossel.css"
+    }
+  ]
+}

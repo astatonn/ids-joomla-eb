@@ -1,0 +1,65 @@
+/* IDS Joomla EB - mod_imagempopup: janela exibida ao abrir a página */
+.mod-imagempopup.overlay {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.mod-imagempopup.overlay[hidden] {
+  display: none;
+}
+
+.mod-imagempopup .popup-box {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 80%;
+  overflow-y: auto;
+  padding: 20px;
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .mod-imagempopup .popup-box {
+    width: 90%;
+  }
+}
+
+.mod-imagempopup .img-pop {
+  max-height: 60vh;
+  max-width: 100%;
+}
+
+.mod-imagempopup .text-pop {
+  max-height: 100%;
+  overflow-y: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.mod-imagempopup .close-btn {
+  align-self: flex-end;
+  background-color: #c00;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+
+.mod-imagempopup .close-btn:hover,
+.mod-imagempopup .close-btn:focus {
+  background-color: #900;
+}

@@ -1,0 +1,29 @@
+# Nenhuma conversão automática de fim de linha: os arquivos do repositório são, byte a byte,
+# os que entram nos pacotes. Isso mantém o build reprodutível em qualquer sistema operacional.
+* -text
+
+*.zip   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+
+# "Download ZIP" do GitHub = pacote instalável no Joomla.
+# O que não faz parte do pacote fica fora do arquivo baixado (continua no repositório/clone).
+/src            export-ignore
+/build          export-ignore
+/tests          export-ignore
+/updates        export-ignore
+/dist           export-ignore
+/.github        export-ignore
+/.claude        export-ignore
+/compose.yaml   export-ignore
+/dockerfile     export-ignore
+/.editorconfig  export-ignore
+/.gitattributes export-ignore
+/.gitignore     export-ignore

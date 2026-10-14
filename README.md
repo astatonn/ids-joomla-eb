@@ -6,89 +6,222 @@
   <h1><a href="https://github.com/astatonn/ids-joomla-eb">Template Padrão Digital de Governo para Joomla</a><br>Exército Brasileiro</h1>
 
   <!-- Labels: -->
-  <!-- First row: -->
-  <a href="https://github.com/astatonn/ids-joomla-eb">
-    <img src="https://img.shields.io/github/repo-size/astatonn/ids-joomla-eb" height="20">
+  <a href="https://github.com/astatonn/ids-joomla-eb/releases/latest">
+    <img src="https://img.shields.io/github/v/release/astatonn/ids-joomla-eb?label=vers%C3%A3o" height="20" alt="Versão">
+  </a>
+  <img src="https://img.shields.io/badge/Joomla-5.4%20%7C%206.x-green.svg" height="20" alt="Joomla 5.4 e 6.x">
+  <img src="https://img.shields.io/badge/PHP-8.1%2B-purple.svg" height="20" alt="PHP 8.1 ou superior">
+  <a href="https://github.com/astatonn/ids-joomla-eb/actions/workflows/ci.yml">
+    <img src="https://github.com/astatonn/ids-joomla-eb/actions/workflows/ci.yml/badge.svg" height="20" alt="Testes">
   </a>
   <a href="https://discord.gg/tfUnXT3QcD">
-    <img src="https://img.shields.io/discord/1212095458751549560" height="20">
+    <img src="https://img.shields.io/discord/1212095458751549560" height="20" alt="Discord">
   </a>
- 
-<!-- Short description: -->
-  <h1>Sobre o Template</h1>
 </div>
 
-## 🎉 Versão 2.0 - Compatível com Joomla 6
+Pacote para o [Joomla](https://www.joomla.org) com a identidade visual do Governo Federal
+([Padrão Digital de Governo](https://www.gov.br/ds/)) para sites e intranets do Exército Brasileiro:
+um template, dois componentes e seis módulos, instalados e atualizados de uma vez só.
 
-[![Versão](https://img.shields.io/badge/vers%C3%A3o-2.0.0-blue.svg)](https://github.com/astatonn/ids-joomla-eb/releases/tag/v2.0.0)
-[![Joomla](https://img.shields.io/badge/Joomla-5.4%2B%20%7C%206.x-green.svg)](https://www.joomla.org)
-[![PHP](https://img.shields.io/badge/PHP-8.3%2B-purple.svg)](https://www.php.net)
-[![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT%20%7C%20GPL%20v2-lightgrey.svg)](LICENSE)
+> [!IMPORTANT]
+> **Vai atualizar o Joomla 5 para o Joomla 6?** Instale a versão **3.1.0** deste pacote **antes**.
+> As versões anteriores derrubam o site no Joomla 6 com o erro
+> `Trait "Joomla\CMS\MVC\Model\DatabaseAwareTrait" not found`.
+>
+> **Já atualizou e o site saiu do ar?** O painel administrativo continua funcionando: instale a
+> 3.1.0 por ele e o site volta. O passo a passo está em [MIGRATION.md](MIGRATION.md#meu-site-saiu-do-ar-depois-de-atualizar-para-o-joomla-6).
 
-Este template foi criado a partir das especificações disponíveis em https://www.gov.br/ds/, com **compatibilidade total com Joomla 5.4+ e Joomla 6.x**.
+## O que está incluído
 
-### ✨ Novidades da Versão 2.0
+| Tipo | Nome no Joomla | Para que serve |
+|------|----------------|----------------|
+| Template | **IDS Gov - Exército Brasileiro** | Visual gov.br com temas verde, azul, amarelo e vermelho, menu lateral ou horizontal, alto contraste, VLibras, aviso de cookies e bloco de Ouvidoria (Fala.BR) |
+| Componente | **Aniversariantes** | Cadastro dos aniversariantes da OM (posto/graduação, nome e data) e página pública com a lista |
+| Componente | **PagTesouro** | Cadastro de UASGs e serviços e formulário público que leva o contribuinte ao PagTesouro para emitir a GRU |
+| Módulo | **IDS Gov - Aniversariantes** | Aniversariantes do mês, de hoje ou dos próximos dias |
+| Módulo | **IDS Gov - Links** | Seção de links em cartões com ícone ou em lista compacta |
+| Módulo | **IDS Gov - Popup (imagem ou aviso)** | Janela com imagem e/ou texto ao abrir a página |
+| Módulo | **IDS Gov - Instagram** | Perfil do Instagram da OM (embed oficial) |
+| Módulo | **IDS Gov - Botão Leia Mais** | Botão para a página com todas as notícias |
+| Módulo | **IDS Gov - Vídeos (YouTube)** | Carrossel de vídeos do YouTube |
 
-- ✅ **Compatibilidade com Joomla 6.x** - Totalmente testado e funcional
-- ✅ **Atualizações Automáticas** - Sistema integrado de updates via Joomla
-- ✅ **PHP 8.3+** - Código modernizado para máxima performance
-- ✅ **Versionamento Semântico** - Seguindo padrões da indústria
-- ✅ **9 Extensões Incluídas** - 1 template, 2 componentes, 6 módulos
+O template também traz layouts próprios para os módulos e componentes do Joomla: menu (seis
+layouts), busca inteligente, trilha de navegação, banners (carrossel), últimas notícias, destaques,
+artigos, blog de categoria, tags, resultados da busca e paginação.
 
-### 📦 O que está incluído
+## Requisitos
 
-| Tipo | Nome | Versão | Descrição |
-|------|------|--------|-----------|
-| 📄 **Template** | IDS Gov - EB | 2.0.0 | Baseado no Padrão Digital de Governo |
-| 🧩 **Componente** | Aniversariantes | 2.0.0 | Gerenciamento de aniversariantes |
-| 🧩 **Componente** | PagTesouro | 2.0.0 | Sistema de gestão de pagamentos |
-| 📦 **Módulo** | mod_aniver | 2.0.0 | Seção de aniversariantes |
-| 📦 **Módulo** | mod_imagempopup | 2.0.0 | Popup de imagem |
-| 📦 **Módulo** | mod_instafeed | 2.0.0 | Feed do Instagram |
-| 📦 **Módulo** | mod_links | 2.0.0 | Seção de links customizada |
-| 📦 **Módulo** | mod_readmorenews | 2.0.0 | Botão leia mais |
-| 📦 **Módulo** | mod_videosiframe | 2.0.0 | Carrossel de vídeos YouTube |
+| | Mínimo | Observação |
+|---|---|---|
+| **Joomla** | 5.4 | Testado em 5.4.1, 5.4.10, 6.0.1 e 6.2.0 |
+| **PHP** | 8.1 | O Joomla 6 exige PHP 8.3 |
+| **Banco de dados** | MySQL 8.0 ou MariaDB 10.4 | Os componentes Aniversariantes e PagTesouro usam MySQL/MariaDB |
 
-### 📋 Requisitos
+Não é necessário ativar o plugin *Behaviour - Backward Compatibility 6*: o pacote não usa nenhuma
+API antiga do Joomla.
 
-- **Joomla:** 5.4+ ou 6.x
-- **PHP:** 8.3 ou superior
-- **MySQL:** 5.7+ ou 8.0+
-- **Apache/Nginx** com mod_rewrite habilitado
+## Instalação
 
-### 🚀 Instalação Rápida
+No painel administrativo, abra **Sistema → Instalar → Extensões** e escolha uma das formas:
 
-1. **Baixe a última versão:**
+1. **Instalar da URL** (recomendado, não depende do limite de upload do PHP). Cole:
+
    ```
-   https://github.com/astatonn/ids-joomla-eb/releases/latest
+   https://github.com/astatonn/ids-joomla-eb/releases/latest/download/pkg_ids_joomla_eb.zip
    ```
 
-2. **Instale via Joomla:**
-   - Sistema → Instalar → Extensões
-   - Arraste o arquivo `pkg_ids_joomla_eb.zip`
-   - Aguarde a instalação
+2. **Enviar arquivo de pacote.** Baixe o `pkg_ids_joomla_eb.zip` da
+   [última release](https://github.com/astatonn/ids-joomla-eb/releases/latest) e arraste para a tela.
+   O arquivo tem cerca de 8 MB; se o Joomla reclamar do tamanho, aumente `upload_max_filesize` e
+   `post_max_size` no PHP ou use a opção 1.
 
-3. **Ative o template:**
-   - Sistema → Gerenciar → Templates de Site
-   - Selecione "IDS Gov - Exército Brasileiro"
-   - Clique em "Tornar Padrão"
+3. **Pela linha de comando**, na pasta do Joomla:
 
-### 🔄 Sistema de Atualizações Automáticas
+   ```bash
+   php cli/joomla.php extension:install --url=https://github.com/astatonn/ids-joomla-eb/releases/latest/download/pkg_ids_joomla_eb.zip
+   ```
 
-Esta versão implementa atualizações automáticas:
+O *Download ZIP* do GitHub (botão **Code**) também continua sendo um pacote instalável.
 
-1. Acesse **Sistema → Atualizar → Extensões**
-2. Clique em **Verificar Atualizações**
-3. Atualize com um clique quando disponível
+Para **atualizar**, instale por cima do mesmo jeito ou use o aviso do próprio Joomla
+(veja [Atualizações](#atualizações)). Nada é perdido: cadastros, módulos e as opções do template
+são preservados, e as configurações antigas dos módulos Links e Vídeos são convertidas
+automaticamente.
 
-Todas as extensões são atualizadas individualmente através do Joomla Update System.
+## Primeiros passos
 
-### 📚 Documentação
+1. **Ative o template:** em **Sistema → Estilos de templates do site**, marque
+   *IDS Gov - Exército Brasileiro* como padrão e abra o estilo para configurar.
+2. **Configure o estilo.** As opções ficam em seis abas:
 
-- **[Wiki](https://github.com/astatonn/ids-joomla-eb/wiki)** - Guia completo de instalação e uso
-- **[CHANGELOG.md](CHANGELOG.md)** - Histórico de mudanças
-- **[MIGRATION.md](MIGRATION.md)** - Guia de migração para v2.0
-- **[Issues](https://github.com/astatonn/ids-joomla-eb/issues)** - Reporte problemas
+   | Aba | O que você define |
+   |-----|-------------------|
+   | **Identidade** | Título, subtítulo, assinatura, logo e o que acontece ao clicar na logo |
+   | **Aparência** | Tema de cores (verde, azul, amarelo, vermelho) e largura fixa ou fluida |
+   | **Menu** | Menu vertical (lateral) ou horizontal, abertura flutuante ou empurrando, topo e rodapé do menu |
+   | **Rodapé** | Cor, logo, selo Acesso à Informação, marca do Governo Federal e texto legal |
+   | **Redes sociais** | Instagram, X, Facebook e YouTube |
+   | **Cidadão e cookies** | Bloco de Ouvidoria (Fala.BR, com o código SIORG) e barra de aviso de cookies |
+
+3. **Publique os menus.** Crie módulos do tipo *Menu* e escolha a posição e o layout (aba
+   *Avançado* do módulo):
+
+   | Posição | Layout do módulo de menu | Resultado |
+   |---------|--------------------------|-----------|
+   | Menu principal: itens `[menu-body]` | *Menu principal (multinível)* ou *(um nível)* | Menu lateral |
+   | Menu principal: links / barra horizontal `[menu-links]` | *Links do menu* | Links no rodapé do menu e barra horizontal |
+   | Menu principal: logos `[menu-logos]` | *Logos do menu* | Logos no rodapé do menu (campo *Imagem do link*) |
+   | Cabeçalho: Acesso Rápido `[menuacesso]` | *Acesso Rápido* | Atalhos no cabeçalho |
+   | Rodapé: mapa do site `[menumapa]` | *Mapa do site* | Colunas de links no rodapé |
+   | Conteúdo: acima / abaixo | *Cartões (cards)* | Cartões com ícone |
+
+   Ícones [Font Awesome 5](https://fontawesome.com/v5/search?m=free) podem ser informados no campo
+   *Classe do ícone do link* de cada item de menu (por exemplo `fa-newspaper`).
+
+4. **Demais posições:** Cabeçalho: Busca `[search]` (módulo *Busca Inteligente*), Página: trilha de
+   navegação `[breadcrumbs]`, Página: topo `[main-top]`, Conteúdo: acima `[content-top]`, Conteúdo:
+   abaixo `[content-bottom]`, Página: fim `[main-bottom]` e Página de erro: busca `[error-search]`
+   (módulo *Busca Inteligente* com o layout *Busca da página de erro*).
+
+5. **Módulos do pacote:** em **Conteúdo → Módulos do site → Novo**, todos começam com **IDS Gov**.
+
+### Dúvidas frequentes
+
+**Como faço o botão "Leia mais" levar para a página com todas as notícias?**
+No módulo *IDS Gov - Botão Leia Mais*, em **Destino do botão**, escolha *Categoria de artigos* e
+selecione a categoria das notícias. Publique o módulo logo abaixo do módulo de notícias, na mesma
+posição.
+
+**Onde cadastro os aniversariantes?**
+Em **Componentes → Aniversariantes**. O módulo *IDS Gov - Aniversariantes* só escolhe o período
+(mês, hoje ou próximos dias) e a forma de exibir. Para uma página com a lista, crie um item de menu
+do tipo **Aniversariantes → Lista de aniversariantes**.
+
+**Como publico o formulário do PagTesouro?**
+Cadastre a UASG e os serviços em **Componentes → PagTesouro** e crie um item de menu do tipo
+**PagTesouro → Formulário de pagamento (GRU)**. Com uma única UASG publicada, ela já vem selecionada.
+
+**O módulo do Instagram mostra só um link.**
+O conteúdo vem direto do `instagram.com` no navegador do visitante. Em redes onde o Instagram é
+bloqueado (comum em intranets) aparece apenas o link para o perfil.
+
+## Atualizações
+
+O Joomla consulta este repositório e **avisa dentro do painel** quando há versão nova:
+
+- no **Painel inicial**, no bloco de notificações (*Extensões: atualizações disponíveis*);
+- em **Sistema → Atualizar → Extensões**, com o botão **Changelog** mostrando o que mudou;
+- na **verificação pré-atualização** do Joomla (antes de ir para uma nova versão principal), que
+  informa se o pacote é compatível com a versão de destino.
+
+Com o pacote instalado aparece **um único aviso**, o do pacote, que atualiza tudo de uma vez. Quem
+instalou uma extensão avulsa (só um módulo, por exemplo) recebe o aviso daquela extensão. Os
+arquivos baixados têm o checksum SHA-256/SHA-512 conferido pelo Joomla.
+
+Para os avisos funcionarem, o **servidor** precisa conseguir acessar `raw.githubusercontent.com` e
+`github.com` (se a rede usa proxy, configure-o em **Sistema → Configuração global → Servidor →
+Proxy**). Sites que instalaram a versão 1.0.0 já têm o endereço de atualização registrado e passam
+a ver o aviso da 3.1.0 assim que estiverem no Joomla 5.4 ou superior.
+
+Não apareceu o aviso? Em **Sistema → Atualizar → Extensões** clique em **Verificar atualizações**;
+se necessário, em **Sistema → Atualizar → Sites de atualização** confira se *IDS Joomla EB* está
+ativo e use **Reconstruir**.
+
+## Ambiente local com Docker
+
+```bash
+php build/build.php          # opcional: gera dist/pkg_ids_joomla_eb.zip para instalar sozinho
+docker compose up --build
+```
+
+O site sobe em <http://localhost:8080> (administrador em `/administrator`, usuário `joomla`, senha
+`joomla@secured`). Use `JOOMLA_PORT=8081` para outra porta e
+`JOOMLA_IMAGE=joomla:5.4-php8.3-apache` para outra versão do Joomla.
+
+## Desenvolvimento
+
+```
+src/                   código-fonte de cada extensão (edite aqui)
+  template/            IDS Gov - Exército Brasileiro
+  components/          com_aniversariantes, com_pagtesouro
+  modules/             mod_aniver, mod_imagempopup, mod_instafeed, mod_links, mod_readmorenews, mod_videosiframe
+packages/              um ZIP por extensão, gerado a partir de src/ (versionado)
+pkg_ids_joomla_eb.xml  manifesto do pacote · script.php · language/
+updates/               servidores de atualização e changelog lidos pelo Joomla (gerados)
+build/build.php        gera packages/, dist/ e updates/
+tests/                 verificações estáticas e testes de integração em Docker
+```
+
+```bash
+php build/build.php                 # depois de alterar src/: regenera packages/, dist/ e updates/
+php tests/lint.php                  # sintaxe, APIs removidas do Joomla 6, manifestos, idiomas, update servers
+php tests/integration/run.php       # instala em Joomla 5.4 e 6 reais (Docker) e testa site e painel
+php tests/integration/run.php --list
+```
+
+Os testes de integração cobrem: instalação limpa (Joomla 5.4.1, 5.4.10, 6.0.1 e 6.2.0), atualização
+a partir do pacote 1.0.0 seguida da atualização do Joomla para a versão 6, recuperação de um site
+quebrado pelo erro do `DatabaseAwareTrait`, e os avisos de atualização (pacote e extensão avulsa).
+
+### Como publicar uma versão
+
+A ordem importa: os sites em produção leem `updates/` direto da branch `master`.
+
+1. Descreva as mudanças no [CHANGELOG.md](CHANGELOG.md) em uma seção `## [X.Y.Z] - AAAA-MM-DD`.
+2. `php build/build.php --set-version=X.Y.Z` e faça o commit **em um branch**.
+3. `git tag vX.Y.Z && git push origin vX.Y.Z`: o workflow *Release* confere os checksums e publica
+   os arquivos na release.
+4. **Só depois** leve o commit para a `master`. A partir daí os sites recebem o aviso de atualização,
+   e o workflow *Testes* confirma que cada arquivo anunciado existe e tem o checksum declarado.
+
+## Documentação
+
+- [MIGRATION.md](MIGRATION.md): atualização para a 3.1.0, Joomla 6 e recuperação de site fora do ar
+- [CHANGELOG.md](CHANGELOG.md): histórico de mudanças
+- [Wiki](https://github.com/astatonn/ids-joomla-eb/wiki) · [Issues](https://github.com/astatonn/ids-joomla-eb/issues) · [Discord](https://discord.gg/tfUnXT3QcD)
+
+Este template foi criado a partir das especificações disponíveis em <https://www.gov.br/ds/> e é
+baseado na versão do [marceloalencar](https://github.com/marceloalencar).
 
 ## Demonstração
 Este template está atualmente em uso em alguns dos sites listados abaixo:
@@ -183,7 +316,7 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <br />
     <a href="http://intranet.13bdainfmtz.eb.mil.br "><sub><b>Intranet</b></sub></a>
             <br />
-         <a href="https://13bdainfmtz.eb.mil.br/"><sub><b>Intranet</b></sub></a>   
+         <a href="https://13bdainfmtz.eb.mil.br/"><sub><b>Internet</b></sub></a>   
     <br />
     </td>
         <td align="center">
@@ -209,7 +342,7 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <br />
     <a href="https://www.1bdacmec.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
-       <a href="https://intranet.1bdacmec.eb.mil.br"><sub><b>Internet</b></sub></a>
+       <a href="https://intranet.1bdacmec.eb.mil.br"><sub><b>Intranet</b></sub></a>
     <br />
     </td>
         <td align="center">
@@ -230,7 +363,6 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
     <a href="https://www.3bsup.eb.mil.br/"><sub><b>Internet</b></sub></a>
     <br />
     </td>
-         </td>
        <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/main/6RCB.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
@@ -239,7 +371,6 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
            <a href="https://www.intranet.6rcb.eb.mil.br/"><sub><b>Intranet</b></sub></a>
         <br />
     </td>
-      </td>
        <td align="center">
        <img src="https://github.com/astatonn/bras-esEB/blob/main/6cta_logo.png" style="border-radius: 50%; border: 3px solid #4CAF50; height: 100px;" alt="8º Regimento de Cavalaria Mecanizado" />
        <br />
@@ -271,16 +402,14 @@ Este template está atualmente em uso em alguns dos sites listados abaixo:
        <br />
     <a href="https://geoportal.eb.mil.br/portal/"><sub><b>Internet</b></sub></a>
     <br />
-    </td>****
+    </td>
   </tr>
     
 </table>
 
-## Como usar
-Acesse nossa [Wiki](https://github.com/astatonn/ids-joomla-eb/wiki) para realizar a instalação
-
 ## Contribuições
 Este espaço está aberto a contribuições da comunidade. Sinta-se livre para enviar _pull requests_ ou relatar falhas ou sugestões.
+Alterações de código devem ser feitas em `src/` (os arquivos em `packages/` são gerados pelo build).
 
 ## Contribuidores
 
@@ -325,5 +454,3 @@ Agradecemos a todos que contribuíram para este projeto!
     </td>
   </tr>
 </table>
-
-</div>
