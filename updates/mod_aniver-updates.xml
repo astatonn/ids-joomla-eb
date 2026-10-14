@@ -1,35 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Gerado por build/build.php. Não edite à mão: os checksums precisam bater com os arquivos da release. -->
 <updates>
-	<!-- Versão 2.0.0 - Joomla 5.4+ e 6.x -->
 	<update>
-		<name>Seção de Aniversariantes</name>
-		<description>Seção de Aniversariantes - Compatível com Joomla 6.x</description>
+		<name>IDS Gov - Aniversariantes (módulo)</name>
+		<description>IDS Gov - Aniversariantes (módulo) 3.1.0 - compatível com Joomla 5.4 e Joomla 6</description>
 		<element>mod_aniver</element>
 		<type>module</type>
 		<client>site</client>
-		<version>2.0.0</version>
-		<infourl title="Módulo Seção de Aniversariantes">https://github.com/astatonn/ids-joomla-eb</infourl>
+		<version>3.1.0</version>
+		<infourl title="IDS Joomla EB 3.1.0">https://github.com/astatonn/ids-joomla-eb/releases/tag/v3.1.0</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">
-				https://github.com/astatonn/ids-joomla-eb/releases/download/v2.0.0/mod_aniver.zip
-			</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/astatonn/ids-joomla-eb/releases/download/v3.1.0/mod_aniver.zip</downloadurl>
 		</downloads>
+		<sha256>3414642bfe184323a775e696795a58c8359fdfe35ee75b36fac860d3a49a533d</sha256>
+		<sha512>a41d27c639b098978380a6e4ccd2b549841574ae16be1032da40051b1c69deafb07e88c69d2776c4bdb0a08d3f1111214f3452e02b9217aaafb987249fa203b2</sha512>
+		<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
 		<tags>
 			<tag>stable</tag>
 		</tags>
 		<maintainer>3º Sgt Souza Lima</maintainer>
-		<maintainerurl>https://github.com/astatonn</maintainerurl>
-		<targetplatform name="joomla" version="(5\.(4|5|6|7|8|9)|6\.[0-9]+)" />
-		<php_minimum>8.3.0</php_minimum>
-		<changelog>
-			<![CDATA[
-				<h3>Versão 2.0.0 - Outubro 2025</h3>
-				<ul>
-					<li>Compatibilidade com Joomla 6.x</li>
-					<li>Requisito mínimo: PHP 8.3 e Joomla 5.4+</li>
-					<li>Sistema de atualizações automáticas</li>
-				</ul>
-			]]>
-		</changelog>
+		<maintainerurl>https://github.com/astatonn/ids-joomla-eb</maintainerurl>
+		<targetplatform name="joomla" version="(5\.[4-9]|6\.[0-9]+)" />
+		<php_minimum>8.1.0</php_minimum>
 	</update>
 </updates>

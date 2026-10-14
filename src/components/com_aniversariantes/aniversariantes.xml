@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_aniversariantes</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>COM_ANIVERSARIANTES_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Component\Aniversariantes</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Site -->
+	<files folder="site">
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/com_aniversariantes.ini</language>
+		<language tag="pt-BR">pt-BR/com_aniversariantes.ini</language>
+	</languages>
+
+	<media destination="com_aniversariantes" folder="media">
+		<folder>css</folder>
+		<filename>joomla.asset.json</filename>
+	</media>
+
+	<!-- Administrador -->
+	<administration>
+		<menu img="class:calendar">COM_ANIVERSARIANTES</menu>
+		<submenu>
+			<menu link="option=com_aniversariantes&amp;view=aniversariantes" view="aniversariantes" img="class:calendar">COM_ANIVERSARIANTES_SUBMENU_ANIVERSARIANTES</menu>
+		</submenu>
+		<files folder="administrator">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="administrator/language">
+			<language tag="en-GB">en-GB/com_aniversariantes.ini</language>
+			<language tag="en-GB">en-GB/com_aniversariantes.sys.ini</language>
+			<language tag="pt-BR">pt-BR/com_aniversariantes.ini</language>
+			<language tag="pt-BR">pt-BR/com_aniversariantes.sys.ini</language>
+		</languages>
+	</administration>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Aniversariantes">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/com_aniversariantes-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

@@ -1,0 +1,1 @@
+-- 3.1.0: sem alteração de estrutura. Este arquivo registra a versão do esquema no Joomla.

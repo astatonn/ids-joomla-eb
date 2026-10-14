@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_links</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>MOD_LINKS_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Module\Links</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<folder module="mod_links">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="section-name"
+					type="text"
+					label="MOD_LINKS_TITULO_LABEL"
+					description="MOD_LINKS_TITULO_DESC"
+					hint="MOD_LINKS_TITULO_HINT"
+					filter="string"
+				/>
+				<field
+					name="compact-links"
+					type="radio"
+					label="MOD_LINKS_COMPACTO_LABEL"
+					description="MOD_LINKS_COMPACTO_DESC"
+					layout="joomla.form.field.radio.buttons"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">MOD_LINKS_COMPACTO_CARTOES</option>
+					<option value="1">MOD_LINKS_COMPACTO_LISTA</option>
+				</field>
+
+				<!-- Clique em "+" para adicionar um link; arraste para mudar a ordem. -->
+				<field
+					name="links"
+					type="subform"
+					label="MOD_LINKS_LINKS_LABEL"
+					description="MOD_LINKS_LINKS_DESC"
+					multiple="true"
+					layout="joomla.form.field.subform.repeatable"
+					buttons="add,remove,move"
+					max="48"
+					>
+					<form>
+						<field
+							name="nome"
+							type="text"
+							label="MOD_LINKS_LINK_NOME_LABEL"
+							description="MOD_LINKS_LINK_NOME_DESC"
+							hint="MOD_LINKS_LINK_NOME_HINT"
+							required="true"
+							filter="string"
+						/>
+						<field
+							name="url"
+							type="url"
+							label="MOD_LINKS_LINK_URL_LABEL"
+							description="MOD_LINKS_LINK_URL_DESC"
+							hint="https://www.eb.mil.br"
+							required="true"
+							relative="true"
+							filter="url"
+							validate="url"
+						/>
+						<field
+							name="icone"
+							type="groupedlist"
+							label="MOD_LINKS_LINK_ICONE_LABEL"
+							description="MOD_LINKS_LINK_ICONE_DESC"
+							default="fas fa-link"
+							>
+							<!-- "none" (e não vazio): com valor vazio o Joomla reaplicaria o ícone padrão ao reabrir o formulário -->
+							<option value="none">MOD_LINKS_ICONE_NENHUM</option>
+							<option value="custom">MOD_LINKS_ICONE_OUTRO</option>
+							<group label="MOD_LINKS_ICONE_GRUPO_GERAL">
+								<option value="fas fa-link">MOD_LINKS_ICONE_LINK</option>
+								<option value="fas fa-globe">MOD_LINKS_ICONE_GLOBO</option>
+								<option value="fas fa-home">MOD_LINKS_ICONE_CASA</option>
+								<option value="fas fa-star">MOD_LINKS_ICONE_ESTRELA</option>
+								<option value="fas fa-info-circle">MOD_LINKS_ICONE_INFORMACAO</option>
+								<option value="fas fa-search">MOD_LINKS_ICONE_BUSCA</option>
+								<option value="fas fa-cog">MOD_LINKS_ICONE_ENGRENAGEM</option>
+								<option value="fas fa-lock">MOD_LINKS_ICONE_CADEADO</option>
+							</group>
+							<group label="MOD_LINKS_ICONE_GRUPO_COMUNICACAO">
+								<option value="fas fa-envelope">MOD_LINKS_ICONE_EMAIL</option>
+								<option value="fas fa-phone">MOD_LINKS_ICONE_TELEFONE</option>
+								<option value="fas fa-comments">MOD_LINKS_ICONE_MENSAGENS</option>
+								<option value="fas fa-bullhorn">MOD_LINKS_ICONE_MEGAFONE</option>
+								<option value="fas fa-newspaper">MOD_LINKS_ICONE_NOTICIAS</option>
+								<option value="fas fa-video">MOD_LINKS_ICONE_VIDEO</option>
+								<option value="fas fa-camera">MOD_LINKS_ICONE_FOTO</option>
+							</group>
+							<group label="MOD_LINKS_ICONE_GRUPO_DOCUMENTOS">
+								<option value="fas fa-file-alt">MOD_LINKS_ICONE_DOCUMENTO</option>
+								<option value="fas fa-file-pdf">MOD_LINKS_ICONE_PDF</option>
+								<option value="fas fa-download">MOD_LINKS_ICONE_DOWNLOAD</option>
+								<option value="fas fa-book">MOD_LINKS_ICONE_LIVRO</option>
+								<option value="fas fa-clipboard-list">MOD_LINKS_ICONE_FORMULARIO</option>
+								<option value="fas fa-calendar-alt">MOD_LINKS_ICONE_CALENDARIO</option>
+								<option value="fas fa-balance-scale">MOD_LINKS_ICONE_LEGISLACAO</option>
+								<option value="fas fa-chart-bar">MOD_LINKS_ICONE_GRAFICO</option>
+							</group>
+							<group label="MOD_LINKS_ICONE_GRUPO_PESSOAS">
+								<option value="fas fa-user">MOD_LINKS_ICONE_PESSOA</option>
+								<option value="fas fa-users">MOD_LINKS_ICONE_PESSOAS</option>
+								<option value="fas fa-id-card">MOD_LINKS_ICONE_IDENTIDADE</option>
+								<option value="fas fa-graduation-cap">MOD_LINKS_ICONE_ENSINO</option>
+								<option value="fas fa-medal">MOD_LINKS_ICONE_MEDALHA</option>
+								<option value="fas fa-heartbeat">MOD_LINKS_ICONE_SAUDE</option>
+								<option value="fas fa-hands-helping">MOD_LINKS_ICONE_APOIO</option>
+							</group>
+							<group label="MOD_LINKS_ICONE_GRUPO_SERVICOS">
+								<option value="fas fa-shield-alt">MOD_LINKS_ICONE_ESCUDO</option>
+								<option value="fas fa-flag">MOD_LINKS_ICONE_BANDEIRA</option>
+								<option value="fas fa-map-marker-alt">MOD_LINKS_ICONE_LOCALIZACAO</option>
+								<option value="fas fa-building">MOD_LINKS_ICONE_PREDIO</option>
+								<option value="fas fa-money-bill-wave">MOD_LINKS_ICONE_PAGAMENTO</option>
+								<option value="fas fa-tools">MOD_LINKS_ICONE_FERRAMENTAS</option>
+								<option value="fas fa-desktop">MOD_LINKS_ICONE_SISTEMA</option>
+								<option value="fas fa-external-link-alt">MOD_LINKS_ICONE_EXTERNO</option>
+							</group>
+						</field>
+						<field
+							name="icone_custom"
+							type="text"
+							label="MOD_LINKS_LINK_ICONE_CUSTOM_LABEL"
+							description="MOD_LINKS_LINK_ICONE_CUSTOM_DESC"
+							hint="fas fa-anchor"
+							showon="icone:custom"
+							filter="string"
+						/>
+						<field
+							name="nova_aba"
+							type="radio"
+							label="MOD_LINKS_LINK_NOVA_ABA_LABEL"
+							description="MOD_LINKS_LINK_NOVA_ABA_DESC"
+							layout="joomla.form.field.radio.switcher"
+							default="1"
+							filter="integer"
+							>
+							<option value="0">MOD_LINKS_NAO</option>
+							<option value="1">MOD_LINKS_SIM</option>
+						</field>
+					</form>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Links">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/mod_links-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

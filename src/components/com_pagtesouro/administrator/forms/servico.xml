@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cadastro de serviço do PagTesouro (pertence a uma UASG) -->
+<form>
+	<fieldset name="details" label="COM_PAGTESOURO_SERVICO_DETAILS">
+		<field
+			name="id"
+			type="hidden"
+			default="0"
+			filter="integer"
+		/>
+		<field
+			name="uasg_id"
+			type="sql"
+			label="COM_PAGTESOURO_FIELD_SERVICO_UASG_LABEL"
+			description="COM_PAGTESOURO_FIELD_SERVICO_UASG_DESC"
+			query="SELECT id, CONCAT(descricao, ' (órgão ', orgao, ' / UG ', ug, ')') AS title FROM #__pagtesouro_uasgs ORDER BY descricao ASC"
+			key_field="id"
+			value_field="title"
+			required="true"
+			default=""
+			filter="integer"
+			>
+			<option value="">COM_PAGTESOURO_OPTION_SELECT_UASG</option>
+		</field>
+		<field
+			name="descricao"
+			type="text"
+			label="COM_PAGTESOURO_FIELD_SERVICO_DESCRICAO_LABEL"
+			description="COM_PAGTESOURO_FIELD_SERVICO_DESCRICAO_DESC"
+			hint="COM_PAGTESOURO_FIELD_SERVICO_DESCRICAO_HINT"
+			required="true"
+			maxlength="255"
+			filter="string"
+		/>
+		<field
+			name="codigo"
+			type="text"
+			label="COM_PAGTESOURO_FIELD_CODIGO_LABEL"
+			description="COM_PAGTESOURO_FIELD_CODIGO_DESC"
+			hint="COM_PAGTESOURO_FIELD_CODIGO_HINT"
+			required="true"
+			maxlength="10"
+			inputmode="numeric"
+			class="w-auto"
+			filter="string"
+		/>
+		<field
+			name="state"
+			type="radio"
+			label="COM_PAGTESOURO_FIELD_STATE_LABEL"
+			description="COM_PAGTESOURO_FIELD_SERVICO_STATE_DESC"
+			layout="joomla.form.field.radio.switcher"
+			default="1"
+			filter="integer"
+			>
+			<option value="0">COM_PAGTESOURO_NAO</option>
+			<option value="1">COM_PAGTESOURO_SIM</option>
+		</field>
+	</fieldset>
+</form>

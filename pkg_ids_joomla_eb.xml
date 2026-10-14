@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Pacote IDS Joomla EB: instala/atualiza de uma vez o template, os componentes e os módulos.
+	Os arquivos em packages/ são gerados a partir de src/ por "php build/build.php".
+-->
 <extension type="package" method="upgrade">
-    <name>IDS Joomla EB Package</name>
-    <packagename>ids_joomla_eb</packagename>
-    <creationDate>October 2025</creationDate>
-    <author>Sgt Souza Lima</author>
-    <authorEmail>lucas.lima.rk@gmail.com</authorEmail>
-    <authorUrl>https://astatonn.com</authorUrl>
-    <copyright>Copyright (C) 2025 Todos os direitos reservados.</copyright>
-    <license>GNU General Public License version 2 or later</license>
-    <description>PKG_IDS_JOOMLA_EB_XML_DESCRIPTION</description>
-    <version>2.0.0</version>
+	<name>pkg_ids_joomla_eb</name>
+	<packagename>ids_joomla_eb</packagename>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>PKG_IDS_JOOMLA_EB_XML_DESCRIPTION</description>
 
-    <!-- Namespace para suporte ao Joomla 5+ -->
-    <namespace path="src">IDS\Package\IDSJoomlaEB</namespace>
+	<scriptfile>script.php</scriptfile>
 
-    <!-- Scripts de instalação -->
-    <scriptfile>script.php</scriptfile>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/pkg_ids_joomla_eb.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pkg_ids_joomla_eb.sys.ini</language>
+	</languages>
 
-    <!-- Arquivos de idioma do pacote -->
-    <languages folder="language">
-        <language tag="en-GB">en-GB.pkg_ids_joomla_eb.ini</language>
-        <language tag="en-GB">en-GB.pkg_ids_joomla_eb.sys.ini</language>
-        <language tag="pt-BR">pt-BR.pkg_ids_joomla_eb.ini</language>
-        <language tag="pt-BR">pt-BR.pkg_ids_joomla_eb.sys.ini</language>
-    </languages>
+	<files folder="packages">
+		<!-- Template (o identificador vem do nome "IDS Gov - Exército Brasileiro") -->
+		<file type="template" id="idsgov-exrcitobrasileiro" client="site">novpadraoegov.zip</file>
 
-    <files folder="packages">
-        <!-- Template -->
-        <file type="template" id="govbr-ds">novpadraoegov.zip</file>
-        
-        <!-- Componentes -->
-        <file type="component" id="com_aniversariantes">com_aniversariantes.zip</file>
-        <file type="component" id="com_pagtesouro">com_pagtesouro.zip</file>
-        
-        <!-- Módulos -->
-        <file type="module" id="mod_aniver" client="site">mod_aniver.zip</file>
-        <file type="module" id="mod_imagempopup" client="site">mod_imagempopup.zip</file>
-        <file type="module" id="mod_instafeed" client="site">mod_instafeed.zip</file>
-        <file type="module" id="mod_links" client="site">mod_links.zip</file>
-        <file type="module" id="mod_readmorenews" client="site">mod_readmorenews.zip</file>
-        <file type="module" id="mod_videosiframe" client="site">mod_videosiframe.zip</file>
-    </files>
-    
-    <updateservers>
-        <server type="extension" priority="1" name="IDS Joomla EB Updates">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/ids-joomla-eb-updates.xml</server>
-    </updateservers>
+		<!-- Componentes -->
+		<file type="component" id="com_aniversariantes">com_aniversariantes.zip</file>
+		<file type="component" id="com_pagtesouro">com_pagtesouro.zip</file>
+
+		<!-- Módulos -->
+		<file type="module" id="mod_aniver" client="site">mod_aniver.zip</file>
+		<file type="module" id="mod_imagempopup" client="site">mod_imagempopup.zip</file>
+		<file type="module" id="mod_instafeed" client="site">mod_instafeed.zip</file>
+		<file type="module" id="mod_links" client="site">mod_links.zip</file>
+		<file type="module" id="mod_readmorenews" client="site">mod_readmorenews.zip</file>
+		<file type="module" id="mod_videosiframe" client="site">mod_videosiframe.zip</file>
+	</files>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Joomla EB">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/ids-joomla-eb-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
 </extension>

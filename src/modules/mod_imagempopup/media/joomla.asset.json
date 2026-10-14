@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_imagempopup",
+  "version": "3.1.0",
+  "description": "IDS Joomla EB - Popup",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_imagempopup.popup",
+      "type": "style",
+      "uri": "mod_imagempopup/popup.css"
+    },
+    {
+      "name": "mod_imagempopup.popup",
+      "type": "script",
+      "uri": "mod_imagempopup/popup.js",
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

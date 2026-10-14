@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_instafeed</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>MOD_INSTAFEED_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Module\Instafeed</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<folder module="mod_instafeed">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="note_firewall"
+					type="note"
+					class="alert alert-warning"
+					label="MOD_INSTAFEED_NOTE_LABEL"
+					description="MOD_INSTAFEED_NOTE_DESC"
+				/>
+				<field
+					name="profile"
+					type="text"
+					label="MOD_INSTAFEED_PERFIL_LABEL"
+					description="MOD_INSTAFEED_PERFIL_DESC"
+					hint="perfil_da_om"
+					required="true"
+					filter="string"
+				/>
+				<field
+					name="largura"
+					type="number"
+					label="MOD_INSTAFEED_LARGURA_LABEL"
+					description="MOD_INSTAFEED_LARGURA_DESC"
+					default="540"
+					min="326"
+					max="1080"
+					step="2"
+					filter="integer"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Instagram">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/mod_instafeed-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

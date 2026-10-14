@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="COM_ANIVERSARIANTES_FILTER_SEARCH_LABEL"
+			description="COM_ANIVERSARIANTES_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="mes"
+			type="list"
+			label="COM_ANIVERSARIANTES_FILTER_MES_LABEL"
+			class="js-select-submit-on-change"
+			default=""
+			>
+			<option value="">COM_ANIVERSARIANTES_FILTER_MES_SELECIONE</option>
+			<option value="1">JANUARY</option>
+			<option value="2">FEBRUARY</option>
+			<option value="3">MARCH</option>
+			<option value="4">APRIL</option>
+			<option value="5">MAY</option>
+			<option value="6">JUNE</option>
+			<option value="7">JULY</option>
+			<option value="8">AUGUST</option>
+			<option value="9">SEPTEMBER</option>
+			<option value="10">OCTOBER</option>
+			<option value="11">NOVEMBER</option>
+			<option value="12">DECEMBER</option>
+		</field>
+		<field
+			name="pg"
+			type="sql"
+			label="COM_ANIVERSARIANTES_FILTER_PG_LABEL"
+			class="js-select-submit-on-change"
+			query="SELECT DISTINCT pg AS value, pg AS text FROM #__aniversariantes_ ORDER BY pg"
+			key_field="value"
+			value_field="text"
+			default=""
+			>
+			<option value="">COM_ANIVERSARIANTES_FILTER_PG_SELECIONE</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			class="js-select-submit-on-change"
+			default="a.nome ASC"
+			validate="options"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.nome ASC">COM_ANIVERSARIANTES_ORDER_NOME_ASC</option>
+			<option value="a.nome DESC">COM_ANIVERSARIANTES_ORDER_NOME_DESC</option>
+			<option value="diames ASC">COM_ANIVERSARIANTES_ORDER_DIAMES_ASC</option>
+			<option value="diames DESC">COM_ANIVERSARIANTES_ORDER_DIAMES_DESC</option>
+			<option value="a.aniversario ASC">COM_ANIVERSARIANTES_ORDER_NASCIMENTO_ASC</option>
+			<option value="a.aniversario DESC">COM_ANIVERSARIANTES_ORDER_NASCIMENTO_DESC</option>
+			<option value="a.pg ASC">COM_ANIVERSARIANTES_ORDER_PG_ASC</option>
+			<option value="a.pg DESC">COM_ANIVERSARIANTES_ORDER_PG_DESC</option>
+			<option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+			<option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+		</field>
+		<field
+			name="limit"
+			type="limitbox"
+			label="JGLOBAL_LIST_LIMIT"
+			default="25"
+			class="js-select-submit-on-change"
+		/>
+	</fields>
+</form>

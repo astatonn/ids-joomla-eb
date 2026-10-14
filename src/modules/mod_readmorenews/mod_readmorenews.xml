@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_readmorenews</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>MOD_READMORENEWS_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Module\Readmorenews</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<folder module="mod_readmorenews">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="note_como_usar"
+					type="note"
+					class="alert alert-info"
+					label="MOD_READMORENEWS_NOTE_LABEL"
+					description="MOD_READMORENEWS_NOTE_DESC"
+				/>
+				<field
+					name="texto"
+					type="text"
+					label="MOD_READMORENEWS_TEXTO_LABEL"
+					description="MOD_READMORENEWS_TEXTO_DESC"
+					default="Leia Mais"
+					filter="string"
+				/>
+				<field
+					name="destino"
+					type="list"
+					label="MOD_READMORENEWS_DESTINO_LABEL"
+					description="MOD_READMORENEWS_DESTINO_DESC"
+					default="menu"
+					validate="options"
+					>
+					<option value="categoria">MOD_READMORENEWS_DESTINO_CATEGORIA</option>
+					<option value="menu">MOD_READMORENEWS_DESTINO_MENU</option>
+					<option value="url">MOD_READMORENEWS_DESTINO_URL</option>
+				</field>
+				<field
+					name="categoria"
+					type="category"
+					extension="com_content"
+					label="MOD_READMORENEWS_CATEGORIA_LABEL"
+					description="MOD_READMORENEWS_CATEGORIA_DESC"
+					showon="destino:categoria"
+					default=""
+					filter="integer"
+					>
+					<option value="">JOPTION_SELECT_CATEGORY</option>
+				</field>
+				<field
+					name="menu-readmore"
+					type="menuitem"
+					label="MOD_READMORENEWS_MENU_LABEL"
+					description="MOD_READMORENEWS_MENU_DESC"
+					showon="destino:menu"
+					default=""
+					>
+					<option value="">MOD_READMORENEWS_MENU_SELECIONE</option>
+				</field>
+				<field
+					name="url"
+					type="url"
+					label="MOD_READMORENEWS_URL_LABEL"
+					description="MOD_READMORENEWS_URL_DESC"
+					hint="https://www.eb.mil.br/noticias"
+					showon="destino:url"
+					relative="true"
+					filter="url"
+					validate="url"
+					default=""
+				/>
+				<field
+					name="nova_aba"
+					type="radio"
+					label="MOD_READMORENEWS_NOVA_ABA_LABEL"
+					description="MOD_READMORENEWS_NOVA_ABA_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					filter="integer"
+					showon="destino:url"
+					>
+					<option value="0">MOD_READMORENEWS_NAO</option>
+					<option value="1">MOD_READMORENEWS_SIM</option>
+				</field>
+				<!-- Mantido das versões anteriores: permite esconder o botão sem despublicar o módulo -->
+				<field
+					name="showbuttonreademore"
+					type="radio"
+					label="MOD_READMORENEWS_EXIBIR_LABEL"
+					description="MOD_READMORENEWS_EXIBIR_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="yes"
+					>
+					<option value="no">MOD_READMORENEWS_NAO</option>
+					<option value="yes">MOD_READMORENEWS_SIM</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Botão Leia Mais">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/mod_readmorenews-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_videosiframe</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>MOD_VIDEOSIFRAME_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Module\Videosiframe</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<folder module="mod_videosiframe">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<media destination="mod_videosiframe" folder="media">
+		<folder>css</folder>
+		<filename>joomla.asset.json</filename>
+	</media>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="titulo"
+					type="text"
+					label="MOD_VIDEOSIFRAME_TITULO_LABEL"
+					description="MOD_VIDEOSIFRAME_TITULO_DESC"
+					default="Vídeos"
+					filter="string"
+				/>
+
+				<!-- Clique em "+" para adicionar um vídeo; arraste para mudar a ordem. -->
+				<field
+					name="videos"
+					type="subform"
+					label="MOD_VIDEOSIFRAME_VIDEOS_LABEL"
+					description="MOD_VIDEOSIFRAME_VIDEOS_DESC"
+					multiple="true"
+					layout="joomla.form.field.subform.repeatable-table"
+					buttons="add,remove,move"
+					max="24"
+					>
+					<form>
+						<field
+							name="url"
+							type="url"
+							label="MOD_VIDEOSIFRAME_VIDEO_URL_LABEL"
+							description="MOD_VIDEOSIFRAME_VIDEO_URL_DESC"
+							hint="https://www.youtube.com/watch?v=..."
+							required="true"
+							filter="url"
+							validate="url"
+						/>
+						<field
+							name="titulo"
+							type="text"
+							label="MOD_VIDEOSIFRAME_VIDEO_TITULO_LABEL"
+							description="MOD_VIDEOSIFRAME_VIDEO_TITULO_DESC"
+							hint="MOD_VIDEOSIFRAME_VIDEO_TITULO_HINT"
+							filter="string"
+						/>
+					</form>
+				</field>
+			</fieldset>
+
+			<fieldset name="aparencia" label="MOD_VIDEOSIFRAME_FIELDSET_APARENCIA">
+				<field
+					name="video-width"
+					type="number"
+					label="MOD_VIDEOSIFRAME_LARGURA_LABEL"
+					description="MOD_VIDEOSIFRAME_LARGURA_DESC"
+					default="560"
+					min="200"
+					max="1280"
+					step="10"
+					filter="integer"
+				/>
+				<field
+					name="video-height"
+					type="number"
+					label="MOD_VIDEOSIFRAME_ALTURA_LABEL"
+					description="MOD_VIDEOSIFRAME_ALTURA_DESC"
+					default="315"
+					min="120"
+					max="720"
+					step="5"
+					filter="integer"
+				/>
+				<field
+					name="movimento"
+					type="radio"
+					label="MOD_VIDEOSIFRAME_MOVIMENTO_LABEL"
+					description="MOD_VIDEOSIFRAME_MOVIMENTO_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">MOD_VIDEOSIFRAME_NAO</option>
+					<option value="1">MOD_VIDEOSIFRAME_SIM</option>
+				</field>
+				<field
+					name="segundos_por_video"
+					type="number"
+					label="MOD_VIDEOSIFRAME_VELOCIDADE_LABEL"
+					description="MOD_VIDEOSIFRAME_VELOCIDADE_DESC"
+					default="5"
+					min="2"
+					max="60"
+					step="1"
+					filter="integer"
+					showon="movimento:1"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Vídeos">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/mod_videosiframe-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gerado por build/build.php a partir do CHANGELOG.md. Não edite à mão. -->
+<changelogs>
+	<changelog>
+		<element>pkg_ids_joomla_eb</element>
+		<type>package</type>
+		<version>3.1.0</version>
+		<fix>
+			<item>Aniversariantes: erro fatal no Joomla 6 que derrubava o site inteiro (Trait &quot;Joomla\CMS\MVC\Model\DatabaseAwareTrait&quot; not found). O componente foi reescrito sem nenhuma classe removida do Joomla.</item>
+			<item>Aniversariantes: tela branca no Joomla 6 quando o plugin de compatibilidade estava desativado (o código dependia da constante JPATH_PLATFORM).</item>
+			<item>Aniversariantes: a lista do mês passou a ser ordenada pelo dia do aniversário, e não pelo ano de nascimento.</item>
+			<item>Aniversariantes: &quot;hoje&quot; agora segue o fuso horário configurado no site, e não o horário UTC do servidor.</item>
+			<item>PagTesouro: o pacote da versão 3.0.0 não instalava (faltavam pastas declaradas no manifesto) e a versão 1.0.0 não funcionava no Joomla 6 (usava JHtml, JFactory e JText). O componente foi refeito por completo.</item>
+			<item>Todas as extensões: voltaram a declarar method=&quot;upgrade&quot;. Sem isso o Joomla recusava reinstalar ou atualizar uma extensão já instalada.</item>
+			<item>Atualizações: os endereços de download apontavam para arquivos que nunca foram publicados (erro 404) e o template era anunciado com o identificador errado, então nenhum aviso de atualização funcionava.</item>
+			<item>Template: erro de JavaScript em todas as páginas quando o menu era vertical, título duplicado no HTML e página de erro que dependia de arquivos externos (CDN).</item>
+			<item>Template: a página de erro falhava (Class &quot;Text&quot; not found) ao exibir exceções encadeadas no modo de depuração.</item>
+			<item>Template: imagens escolhidas no gerenciador de mídia agora funcionam em qualquer página, inclusive com URLs amigáveis.</item>
+			<item>Template: a página de erro tinha um cabeçalho diferente do restante do site, sem as cores do tema. Agora usa o mesmo cabeçalho, menu e rodapé das demais páginas.</item>
+			<item>Links: aviso de PHP exibido na página de erro (o módulo não encontrava o tema de cores do template).</item>
+			<item>Links: o quarto link aparecia no formulário mesmo quando só três eram pedidos.</item>
+			<item>Popup: com o temporizador desligado o popup ainda fechava sozinho.</item>
+		</fix>
+		<addition>
+			<item>Avisos de atualização dentro do Joomla: no painel inicial, em Sistema → Atualizar → Extensões e na verificação pré-atualização do Joomla 6, com checksum SHA-256/SHA-512 e botão Changelog.</item>
+			<item>Template: as opções do estilo foram organizadas em seis abas (Identidade, Aparência, Menu, Rodapé, Redes sociais, Cidadão e cookies), com descrições, exemplos e campos que só aparecem quando fazem sentido.</item>
+			<item>Template: nomes amigáveis para as posições de módulo e para os layouts alternativos de menu, banners e busca.</item>
+			<item>Módulos: todos aparecem na lista de tipos de módulo com o prefixo &quot;IDS Gov&quot; e uma descrição de uso.</item>
+			<item>Links: os links agora são uma lista que cresce conforme a necessidade (antes eram 12 campos fixos), com ícones escolhidos por nome e opção de abrir na mesma aba. Os links já cadastrados são convertidos automaticamente.</item>
+			<item>Vídeos: lista de vídeos sem limite fixo, aceita links youtu.be, Shorts e transmissões ao vivo, velocidade ajustável e opção de carrossel parado. Os vídeos já cadastrados são convertidos automaticamente.</item>
+			<item>Botão Leia Mais: o destino pode ser uma categoria de artigos (todas as notícias), um item de menu ou um endereço, e o texto do botão é configurável.</item>
+			<item>Aniversariantes (módulo): escolha do período (mês, hoje ou próximos dias), título configurável e opção de ocultar o módulo quando não houver aniversariantes.</item>
+			<item>Aniversariantes (componente): filtros por mês e por posto/graduação, ordenação pelo calendário e tipo de item de menu &quot;Lista de aniversariantes&quot;.</item>
+			<item>PagTesouro: tipo de item de menu &quot;Formulário de pagamento (GRU)&quot;, publicação/despublicação de UASGs e serviços, permissões por grupo e seleção automática quando há uma única UASG ou serviço.</item>
+			<item>Popup: frequência de exibição (sempre, uma vez por visita ou uma vez por dia), fechamento pela tecla Esc e por clique fora da janela, link na imagem e texto alternativo. O clique fora e os botões do editor foram sugeridos por @DUGELO no PR #13.</item>
+			<item>Código-fonte de todas as extensões em src/, script de build reprodutível e testes automatizados de instalação e atualização em Joomla 5.4 e 6.</item>
+		</addition>
+		<change>
+			<item>Requisitos: Joomla 5.4 ou superior e PHP 8.1 ou superior (o Joomla 6 exige PHP 8.3).</item>
+			<item>Aniversariantes: a data de nascimento é digitada no formato brasileiro (dd/mm/aaaa), qualquer que seja o idioma do painel.</item>
+			<item>Formulários: os campos de sim/não mostram &quot;Sim&quot; e &quot;Não&quot; (o pacote pt-BR oficial do Joomla exibe &quot;Nunca&quot; no lugar de &quot;Não&quot;).</item>
+			<item>PagTesouro: o formulário público não faz mais requisições ao servidor; os serviços de cada UASG são carregados junto com a página.</item>
+			<item>PagTesouro: o CPF/CNPJ é validado antes de abrir o PagTesouro e o CNPJ alfanumérico é aceito.</item>
+			<item>Módulos: reescritos na estrutura nativa do Joomla 5/6, o que permite criar layouts alternativos pelo template.</item>
+			<item>Instagram: usa somente o script oficial do Instagram e aceita o perfil com @ ou o endereço completo.</item>
+			<item>Pacote: com o pacote instalado, o Joomla mostra um único aviso de atualização (o do pacote) em vez de um por extensão.</item>
+		</change>
+		<remove>
+			<item>Instagram: script de terceiros (embedista.com) que era carregado em todas as páginas com o módulo.</item>
+			<item>Template: botão &quot;Envie um Feedback&quot; da página de erro, que não tinha nenhuma ação.</item>
+			<item>Aniversariantes: arquivos gerados pelo Component Creator que não eram usados (campos, presets, web services de exemplo).</item>
+		</remove>
+		<note>
+			<item>Quem está no Joomla 5.4 deve instalar esta versão ANTES de atualizar o Joomla para a versão 6.</item>
+			<item>Quem já atualizou para o Joomla 6 e está com o site fora do ar encontra o passo a passo de recuperação no arquivo MIGRATION.md do repositório.</item>
+			<item>O plugin &quot;Behaviour - Backward Compatibility 6&quot; não é mais necessário para estas extensões.</item>
+		</note>
+	</changelog>
+</changelogs>

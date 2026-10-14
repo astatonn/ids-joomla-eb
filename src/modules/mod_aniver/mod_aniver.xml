@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_aniver</name>
+	<version>3.1.0</version>
+	<creationDate>2026-10-14</creationDate>
+	<author>3º Sgt Souza Lima</author>
+	<authorEmail>lucas.lima.rk@gmail.com</authorEmail>
+	<authorUrl>https://github.com/astatonn/ids-joomla-eb</authorUrl>
+	<copyright>(C) 2024-2026 Lucas Lima e colaboradores</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<description>MOD_ANIVER_XML_DESCRIPTION</description>
+	<namespace path="src">Astatonn\Module\Aniver</namespace>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files>
+		<folder module="mod_aniver">services</folder>
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="note_cadastro"
+					type="note"
+					class="alert alert-info"
+					label="MOD_ANIVER_NOTE_CADASTRO_LABEL"
+					description="MOD_ANIVER_NOTE_CADASTRO_DESC"
+				/>
+				<field
+					name="titulo"
+					type="text"
+					label="MOD_ANIVER_TITULO_LABEL"
+					description="MOD_ANIVER_TITULO_DESC"
+					default="Aniversariantes"
+					filter="string"
+				/>
+				<field
+					name="periodo"
+					type="list"
+					label="MOD_ANIVER_PERIODO_LABEL"
+					description="MOD_ANIVER_PERIODO_DESC"
+					default="mes"
+					validate="options"
+					>
+					<option value="mes">MOD_ANIVER_PERIODO_MES</option>
+					<option value="hoje">MOD_ANIVER_PERIODO_HOJE</option>
+					<option value="proximos">MOD_ANIVER_PERIODO_PROXIMOS</option>
+				</field>
+				<field
+					name="dias"
+					type="number"
+					label="MOD_ANIVER_DIAS_LABEL"
+					description="MOD_ANIVER_DIAS_DESC"
+					default="7"
+					min="1"
+					max="366"
+					step="1"
+					filter="integer"
+					showon="periodo:proximos"
+				/>
+				<field
+					name="mostrar_data"
+					type="radio"
+					label="MOD_ANIVER_MOSTRAR_DATA_LABEL"
+					description="MOD_ANIVER_MOSTRAR_DATA_DESC"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">MOD_ANIVER_NAO</option>
+					<option value="1">MOD_ANIVER_SIM</option>
+				</field>
+				<field
+					name="sem_aniversariantes"
+					type="list"
+					label="MOD_ANIVER_VAZIO_LABEL"
+					description="MOD_ANIVER_VAZIO_DESC"
+					default="mensagem"
+					validate="options"
+					>
+					<option value="mensagem">MOD_ANIVER_VAZIO_MENSAGEM</option>
+					<option value="ocultar">MOD_ANIVER_VAZIO_OCULTAR</option>
+				</field>
+				<field
+					name="mensagem_vazio"
+					type="text"
+					label="MOD_ANIVER_MENSAGEM_VAZIO_LABEL"
+					description="MOD_ANIVER_MENSAGEM_VAZIO_DESC"
+					default="Nenhum aniversariante no período."
+					filter="string"
+					showon="sem_aniversariantes:mensagem"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<!-- Atualizações: o Joomla consulta este endereço e avisa no painel quando houver versão nova -->
+	<updateservers>
+		<server type="extension" priority="1" name="IDS Gov - Aniversariantes (módulo)">https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/mod_aniver-updates.xml</server>
+	</updateservers>
+	<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
+</extension>

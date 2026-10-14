@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tipo de item de menu: PagTesouro → Formulário de pagamento (GRU) -->
+<metadata>
+	<layout title="COM_PAGTESOURO_FORMULARIO_VIEW_DEFAULT_TITLE" option="COM_PAGTESOURO_FORMULARIO_VIEW_DEFAULT_OPTION">
+		<message>
+			<![CDATA[COM_PAGTESOURO_FORMULARIO_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<fields name="params">
+		<fieldset name="basic" label="COM_PAGTESOURO_FIELDSET_EXIBICAO">
+			<field
+				name="introducao"
+				type="textarea"
+				label="COM_PAGTESOURO_FIELD_INTRODUCAO_LABEL"
+				description="COM_PAGTESOURO_FIELD_INTRODUCAO_DESC"
+				rows="4"
+				filter="safehtml"
+				default=""
+			/>
+			<field
+				name="note_cadastro"
+				type="note"
+				class="alert alert-info"
+				label="COM_PAGTESOURO_NOTE_CADASTRO_LABEL"
+				description="COM_PAGTESOURO_NOTE_CADASTRO_DESC"
+			/>
+		</fieldset>
+	</fields>
+</metadata>

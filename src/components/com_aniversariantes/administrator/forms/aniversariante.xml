@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Formulário de cadastro de aniversariante.
+	A data usa sempre o formato brasileiro (dd/mm/aaaa), definido aqui em "format" e "filterformat".
+	Não use translateformat="true": o pacote pt-BR do Joomla traz formatos de data inconsistentes.
+
+	Para incluir um novo posto/graduação (ou "SC" para servidor civil, por exemplo), acrescente uma
+	linha <option> no grupo adequado. O texto de "value" é o que será exibido no site.
+-->
+<form>
+	<fieldset name="details" label="COM_ANIVERSARIANTES_FIELDSET_DETAILS">
+		<field
+			name="id"
+			type="hidden"
+			default="0"
+			filter="integer"
+		/>
+		<field
+			name="pg"
+			type="groupedlist"
+			label="COM_ANIVERSARIANTES_FIELD_PG_LABEL"
+			description="COM_ANIVERSARIANTES_FIELD_PG_DESC"
+			required="true"
+			default=""
+			filter="string"
+			>
+			<option value="">COM_ANIVERSARIANTES_FIELD_PG_SELECIONE</option>
+			<group label="COM_ANIVERSARIANTES_PG_GRUPO_GENERAIS">
+				<option value="Gen Ex">Gen Ex</option>
+				<option value="Gen Div">Gen Div</option>
+				<option value="Gen Bda">Gen Bda</option>
+			</group>
+			<group label="COM_ANIVERSARIANTES_PG_GRUPO_SUPERIORES">
+				<option value="Cel">Cel</option>
+				<option value="TC">TC</option>
+				<option value="Maj">Maj</option>
+			</group>
+			<group label="COM_ANIVERSARIANTES_PG_GRUPO_INTERMEDIARIOS_SUBALTERNOS">
+				<option value="Cap">Cap</option>
+				<option value="1º Ten">1º Ten</option>
+				<option value="2º Ten">2º Ten</option>
+				<option value="Asp Of">Asp Of</option>
+			</group>
+			<group label="COM_ANIVERSARIANTES_PG_GRUPO_SUBTEN_SGT">
+				<option value="ST">ST</option>
+				<option value="1º Sgt">1º Sgt</option>
+				<option value="2º Sgt">2º Sgt</option>
+				<option value="3º Sgt">3º Sgt</option>
+			</group>
+			<group label="COM_ANIVERSARIANTES_PG_GRUPO_CB_SD">
+				<option value="Cb">Cb</option>
+				<option value="Sd EP">Sd EP</option>
+				<option value="Sd Ev">Sd Ev</option>
+			</group>
+			<group label="COM_ANIVERSARIANTES_PG_GRUPO_ALUNOS">
+				<option value="Cad">Cad</option>
+				<option value="Al">Al</option>
+			</group>
+		</field>
+		<field
+			name="nome"
+			type="text"
+			label="COM_ANIVERSARIANTES_FIELD_NOME_LABEL"
+			description="COM_ANIVERSARIANTES_FIELD_NOME_DESC"
+			hint="COM_ANIVERSARIANTES_FIELD_NOME_HINT"
+			required="true"
+			maxlength="255"
+			filter="string"
+		/>
+		<field
+			name="aniversario"
+			type="calendar"
+			label="COM_ANIVERSARIANTES_FIELD_ANIVERSARIO_LABEL"
+			description="COM_ANIVERSARIANTES_FIELD_ANIVERSARIO_DESC"
+			hint="dd/mm/aaaa"
+			required="true"
+			format="%d/%m/%Y"
+			filterformat="d/m/Y"
+			showtime="false"
+			todaybutton="false"
+			filter="none"
+		/>
+	</fieldset>
+</form>

@@ -1,0 +1,10 @@
+# Gerado por "php build/build.php" para anexar às releases
+/dist/
+
+# Configuração local de ferramentas
+/.claude/
+/.idea/
+/.vscode/
+*.swp
+.DS_Store
+Thumbs.db

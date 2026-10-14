@@ -1,61 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Gerado por build/build.php. Não edite à mão: os checksums precisam bater com os arquivos da release. -->
 <updates>
-	<!-- Versão 3.0.0 - Arquitetura Moderna Joomla 6 -->
 	<update>
-		<name>PagTesouro</name>
-		<description>Sistema de gestão de pagamentos - Arquitetura moderna Joomla 6</description>
+		<name>IDS Gov - PagTesouro (componente)</name>
+		<description>IDS Gov - PagTesouro (componente) 3.1.0 - compatível com Joomla 5.4 e Joomla 6</description>
 		<element>com_pagtesouro</element>
 		<type>component</type>
-		<version>3.0.0</version>
-		<infourl title="Componente PagTesouro">https://github.com/astatonn/ids-joomla-eb</infourl>
+		<version>3.1.0</version>
+		<infourl title="IDS Joomla EB 3.1.0">https://github.com/astatonn/ids-joomla-eb/releases/tag/v3.1.0</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">
-				https://github.com/astatonn/ids-joomla-eb/releases/download/v3.0.0/com_pagtesouro.zip
-			</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/astatonn/ids-joomla-eb/releases/download/v3.1.0/com_pagtesouro.zip</downloadurl>
 		</downloads>
+		<sha256>800fdd003c30b78d26dc355dd08b4de117e37f54f99055338f3b6c93945bfb7d</sha256>
+		<sha512>b691f2d2d4a7774c6f1b61a23535d7e6b94cc595c72de44100cbc91ebef3a73bc4d0828dc2426777249f61143b11722c03bcf569c89d71613eb10309f5020b23</sha512>
+		<changelogurl>https://raw.githubusercontent.com/astatonn/ids-joomla-eb/master/updates/changelog.xml</changelogurl>
 		<tags>
 			<tag>stable</tag>
 		</tags>
 		<maintainer>3º Sgt Souza Lima</maintainer>
-		<maintainerurl>https://github.com/astatonn</maintainerurl>
-		<targetplatform name="joomla" version="(5\.(4|5|6|7|8|9)|6\.[0-9]+)" />
-		<php_minimum>8.3.0</php_minimum>
-		<changelog>
-			<![CDATA[
-				<h3>Versão 3.0.0 - Outubro 2025 - BREAKING CHANGES</h3>
-				<ul>
-					<li><strong>🎉 Refatoração Completa!</strong></li>
-					<li>✅ Namespace moderno: IDS\Component\PagTesouro</li>
-					<li>✅ Service Provider implementado</li>
-					<li>✅ Estrutura MVC moderna (src/ folder)</li>
-					<li>✅ Controllers, Models, Views e Tables refatorados</li>
-					<li>✅ Tipagem forte PHP 8.3+</li>
-					<li>✅ Código otimizado e performance melhorada</li>
-					<li>⚠️ Migração automática de v2.x</li>
-				</ul>
-			]]>
-		</changelog>
-	</update>
-
-	<!-- Versão 2.0.0 - Joomla 5.4+ e 6.x (Legacy) -->
-	<update>
-		<name>PagTesouro</name>
-		<description>Sistema de gestão de pagamentos - Compatível com Joomla 6.x</description>
-		<element>com_pagtesouro</element>
-		<type>component</type>
-		<version>2.0.0</version>
-		<infourl title="Componente PagTesouro">https://github.com/astatonn/ids-joomla-eb</infourl>
-		<downloads>
-			<downloadurl type="full" format="zip">
-				https://github.com/astatonn/ids-joomla-eb/releases/download/v2.0.0/com_pagtesouro.zip
-			</downloadurl>
-		</downloads>
-		<tags>
-			<tag>stable</tag>
-		</tags>
-		<maintainer>3º Sgt Souza Lima</maintainer>
-		<maintainerurl>https://github.com/astatonn</maintainerurl>
-		<targetplatform name="joomla" version="(5\.(4|5|6|7|8|9)|6\.[0-9]+)" />
-		<php_minimum>8.3.0</php_minimum>
+		<maintainerurl>https://github.com/astatonn/ids-joomla-eb</maintainerurl>
+		<targetplatform name="joomla" version="(5\.[4-9]|6\.[0-9]+)" />
+		<php_minimum>8.1.0</php_minimum>
 	</update>
 </updates>

@@ -1,0 +1,62 @@
+name: Release
+
+# Publica a release quando uma tag vX.Y.Z é enviada.
+#
+# Ordem correta para lançar uma versão (ver README, "Como publicar uma versão"):
+#   1. php build/build.php --set-version=X.Y.Z   e commit em um branch
+#   2. git tag vX.Y.Z && git push origin vX.Y.Z   → este workflow publica os arquivos
+#   3. só então levar o commit para a master      → os sites passam a ver o aviso de atualização
+#
+# Se a master anunciar uma versão antes de a release existir, os sites recebem o aviso mas o
+# download falha (foi o que aconteceu com as versões 2.0.0 e 3.0.0).
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: zlib, mbstring, simplexml
+          coverage: none
+
+      - name: A tag confere com a versão dos manifestos
+        run: |
+          versao=$(grep -oP '(?<=<version>)[^<]+' pkg_ids_joomla_eb.xml)
+          if [ "v$versao" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::A tag $GITHUB_REF_NAME não corresponde à versão $versao do pacote"
+            exit 1
+          fi
+          echo "VERSAO=$versao" >> "$GITHUB_ENV"
+
+      - name: Verificações estáticas
+        run: php tests/lint.php
+
+      - name: Gerar o pacote e conferir os checksums anunciados em updates/
+        run: php build/build.php --check
+
+      - name: Notas da versão (seção do CHANGELOG.md)
+        run: |
+          awk -v v="$VERSAO" '
+            $0 ~ "^## \\[" v "\\]" { dentro = 1; next }
+            dentro && /^## / { exit }
+            dentro { print }
+          ' CHANGELOG.md > notas.md
+          test -s notas.md
+
+      - name: Publicar a release com os arquivos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/*.zip \
+            --title "IDS Joomla EB $VERSAO" \
+            --notes-file notas.md \
+            --verify-tag
