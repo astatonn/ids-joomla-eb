@@ -178,6 +178,26 @@ O site sobe em <http://localhost:8080> (administrador em `/administrator`, usuá
 `joomla@secured`). Use `JOOMLA_PORT=8081` para outra porta e
 `JOOMLA_IMAGE=joomla:5.4-php8.3-apache` para outra versão do Joomla.
 
+### Segurança: PHP2Shell
+
+As CVEs [CVE-2026-109618](https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w)
+e [CVE-2026-109619](https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp), conhecidas
+como **PHP2Shell**, permitem execução remota de código sem autenticação no runtime PHP. Elas não
+podem ser corrigidas por uma extensão Joomla: atualize o PHP do servidor para ao menos **8.2.35**,
+**8.3.36**, **8.4.27** ou **8.5.12**, ou instale o pacote corrigido e oficialmente confirmado pela sua
+distribuição. PHP 8.1 e anteriores não receberam uma versão corrigida do projeto PHP.
+
+O ambiente Docker valida essa versão no build e desativa `session.upload_progress` como defesa em
+profundidade. Antes de subir ou recriar o ambiente, obtenha a base atualizada:
+
+```bash
+docker compose build --pull --no-cache
+docker compose up
+```
+
+Em produção, atualize também a imagem/pacote PHP do servidor e reinicie todos os processos PHP
+(PHP-FPM ou Apache). A configuração complementar não substitui a atualização.
+
 ## Desenvolvimento
 
 ```

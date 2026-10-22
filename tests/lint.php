@@ -477,7 +477,36 @@ if ($changelog === false || !$changelog->xpath("//changelog[version='$version']/
 ok();
 
 // ---------------------------------------------------------------------------------------------
-// 6. JSON
+// 6. Ambiente Docker seguro
+// ---------------------------------------------------------------------------------------------
+$php2shellConfig = 'docker/php/conf.d/ids-joomla-eb.ini';
+
+if (!is_file(ROOT . '/' . $php2shellConfig)) {
+    fail("$php2shellConfig: configuração de defesa em profundidade para PHP2Shell ausente");
+} else {
+    $config = read($php2shellConfig);
+
+    if (!preg_match('/^session\.upload_progress\.enabled\s*=\s*Off\s*$/mi', $config)) {
+        fail("$php2shellConfig: session.upload_progress.enabled precisa estar desativado");
+    }
+}
+
+$dockerfile = read('dockerfile');
+
+foreach (['8.2.35', '8.3.36', '8.4.27', '8.5.12', 'CVE-2026-109618', 'CVE-2026-109619'] as $required) {
+    if (!str_contains($dockerfile, $required)) {
+        fail("dockerfile: falta a validação PHP2Shell para $required");
+    }
+}
+
+if (!str_contains($dockerfile, "COPY $php2shellConfig ")) {
+    fail("dockerfile: não copia $php2shellConfig para a imagem");
+}
+
+ok();
+
+// ---------------------------------------------------------------------------------------------
+// 7. JSON
 // ---------------------------------------------------------------------------------------------
 foreach (array_filter(files('src', '/\.json$/'), $isOurs) as $file) {
     $json = json_decode(read($file), true);
