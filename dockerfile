@@ -1,6 +1,6 @@
 # Ambiente local para experimentar o pacote. Por padrão usa a imagem oficial mais recente do Joomla 5.4.
 # Para outra versão: JOOMLA_IMAGE=joomla:5.4-php8.3-apache docker compose up --build
-ARG JOOMLA_IMAGE=joomla:5.4-php8.3-apache
+ARG JOOMLA_IMAGE=joomla:6.2.0-php8.5-apache
 FROM ${JOOMLA_IMAGE}
 
 # CVE-2026-109618 e CVE-2026-109619 (PHP2Shell): a imagem base precisa ter o patch.
